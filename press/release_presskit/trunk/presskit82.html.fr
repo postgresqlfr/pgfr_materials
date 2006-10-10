@@ -26,7 +26,7 @@ bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances demandés par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
 comparables aux systèmes commerciaux des entreprises leaders.
-La version 8.2 devrait amener un nombre encore plus grands de migrations vers
+La version 8.2 devrait amener un nombre encore plus grand de migrations vers
 PostgreSQL.
 </p>
 
@@ -54,8 +54,8 @@ le développement incluent&nbsp;:
 <p><b>Améliorations des performances&nbsp;:</b> la version 8.2 améliore les
 performances d'environ 20% sur les tests de système OLTP (online transaction
 processing) de pointe. Les utilisateurs peuvent gagner plus encore dans les
-rendements de d'entreposage de données. Les changements comprennent des tris en
-mémoire et sur disque plus rapides, meilleur dimensionnement des
+rendements d'entreposage de données. Les changements comprennent des tris en
+mémoire et sur disque plus rapides, meilleur dimensionnement en
 multi-processeurs, meilleure planification des requêtes sur les données
 partitionnées, chargements massifs plus rapides et jointures externes grandement
 accélérées.
@@ -73,14 +73,14 @@ Cela permet d'optimiser les performances sans temps d'arrêt.
 </p>
 
 <p><b>Fonctionnalités SQL 2003&nbsp;:</b>  PostgreSQL, bien connu pour son
-respect des standard, a ajouté nombre de nouvelles fonctionnalités introduites
+respect des standards, a ajouté nombre de nouvelles fonctionnalités introduites
 dans les spécifications SQL 2003. Parmi celles-ci, on trouve&nbsp;: les
 aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
 RETURNING et les aggrégats mutli-colonnes.
 </p>
 
 Les fonctionnalités de bases de données avancées, présentes dans PostgreSQL 8.2
-avant tout système de bases de données majeur incluent&nbsp;:
+avant tout autre système de bases de données majeur, incluent&nbsp;:
 
 <p><b>Index inversés généralisés&nbsp;:</b> supporte une manière plus extensible
 et programmable d'indexer les données textuelles pleines et semi-structurées.
