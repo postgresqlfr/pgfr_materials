@@ -1,0 +1,277 @@
+<!-- BEGIN page_title_block -->
+PostgreSQL 8.2 Press Kit
+<!-- END page_title_block -->
+
+<h1>PostgreSQL 8.2 Press Kit</h1>
+
+<h2>Contents</h2>
+
+<p>
+ &nbsp; <a href="#original_release">Text of Original Release</a><br />
+ &nbsp; <a href="#additional_features">Additional Features</a><br />
+ &nbsp; <a href="#download">Where to Download</a><br />
+ &nbsp;	<a href="#docs">Documentation</a><br />
+ &nbsp; <a href="#license">License</a><br />
+ &nbsp; <a href="#contact">Contacts</a><br />
+ &nbsp; <a href="#quoted_companies">Quoted Company Information</a><br />
+ &nbsp; <a href="#companies">Corporate Support</a><br />
+ &nbsp; <a href="#additional_software">Additional Software</a><br />
+ &nbsp; <a href="#translations">English Version</a><br />
+</p>
+
+<a name="original_release"></a><h2>Original Press Release</h2>
+<p><b>## November 2006:</b> The PostgreSQL Global Development
+Group today announces the release of version 8.2 of the PostgreSQL
+object-relational database management system. This 14th public release
+adds features, maturity, and performance requested by business users,
+delivering manageability comparable to leading enterprise database
+systems.  Version 8.2 is expected to drive even more migrations
+toward PostgreSQL.</p>
+
+<p>"This release touches almost every command and database facility,"
+said PostgreSQL core team member and EnterpriseDB database architect
+Bruce Momjian. "It adds expanded, compatible syntax and interfaces
+which have been requested by our community, making it easier for
+new DBAs to fully use all of PostgreSQL's advanced features."</p>
+
+<p>"Unisys is pleased to note significant enhancements in the scalability
+and performance of PostgreSQL on large-scale multi-processor systems,"
+states Ali Shadman, vice president and general manager, Open Source
+Solutions, Systems and Technology, Unisys. "The newly released 8.2
+version continues the maturation of PostgreSQL into a database
+management system capable of enterprise adoption."</p>
+<p>
+New tools and features to make database management and development easier include:</p>
+
+<p><b>Performance improvements:</b> version 8.2 improves performance around 20%
+overall in high-end OLTP (online transaction processing) system tests.
+Users can gain even more in data warehousing efficiency.  The changes include faster in-memory and on-disk sorting, better multi-processor scaling, better planning of partitioned data queries, faster bulk loads and vastly accelerated outer joins.</p>
+
+<p><b>Warm Standby Databases:</b>  through an extension to our Point in Time Recovery
+feature (introduced in version 8.0), administrators now can easily create a
+failover copy of your database cluster.</p>
+
+<p><b>Online Index Builds:</b> index builds can now occur while applications write to
+database tables, allowing performance tuning without downtime.</p>
+
+<p><b>SQL 2003 Features:</b>  PostgreSQL, well known for standards compliance,
+has added syntax for several more features introduced in the ANSI
+SQL 2003 specification, including: statistical aggregates, multi-row
+VALUE statments, UPDATE RETURNING and multi-column aggregates.</p>
+
+Advanced database features, being offered in PostgreSQL 8.2 before any other
+major database system, include:
+
+<p><b>Generalized Inverted Indexes:</b> support a more scalable and programmable
+way of indexing semi-structured and full text data.</p>
+
+<p><b>DTrace:</b>  PostgreSQL has also been instrumented for Solaris DTrace and
+other advanced tracing tools via the Generic Monitoring Framework.</p>
+
+<p>"With data warehouse instances housing billion-row tables and multiple
+terabytes of data, online index builds and hot-standby capabilities
+are crucial," said Theo Schlossnagle, Principal at OmniTI Computer
+Consulting. "We are also excited that PostgreSQL is now a first-
+class Dtrace citizen.  This means our regular system analysis efforts
+can now incorporate database-specific data leading to much more
+meaningful results."</p>
+
+<p>There are dozens of additional features and improvements in 8.2 which will
+make PostgreSQL DBAs more productive.  See the press kit for details.
+Download PostgreSQL from <a href="/download">our download page.</a></p>
+
+<p><b>About PostgreSQL:</b> PostgreSQL is the collective work of hundreds of developers, building on twenty-one years of development which started at the University of California, Berkeley. With its long-time support of an enterprise-level feature set including transactions, functions, triggers, and subqueries, PostgreSQL is being used by many of today's most demanding businesses and government agencies. PostgreSQL is distributed under a BSD license, which allows use and distribution without fees for both commercial and non-commercial applications.
+</p>
+
+<a name="additional_features"></a><h2>Additional Features in this Release</h2>
+As well as the major features listed in the press release, there
+are more than 200 new features and enhancements contributed by
+dozens of developers for version 8.2. Among them are:
+<ul>
+<li>Advisory Locks: allow application-level database object control using
+PostgreSQL's fast locking engine.</li>
+<li>Selective pg_dump: permits drawing transactionally-consistent dumps of
+sets of relations, selecting their inclusion/exclusion using regular
+expressions.</li>
+<li>Prepared Statements: has new administrative interfaces and performance improvements for prepared statements.</li>
+<li>ISN/ISBN: this module, containing data types to support ISN product locators for inventory and retail systems, has been upgraded to support the latest international standards.</li>
+<li>Cryptography: the pgcrypto module, supporting cryptography inside the database, has been updated with the latest algorithms.</li>
+<li>SQL Enhancments: introducing new syntax, including UPDATE RETURNING, DROP IF EXISTS, ON COMMIT and new ownership and permissions commands, to make managing database objects on the command line easier.</li>
+<li>PSQL Batch Selection: supports returning rows to the console in batches instead of all at once.</li>
+<li>ECPG Refactor: the embedded PostgreSQL C interface has been extensively re-written and new interfaces added.</li>
+<li>Major TSearch2 Improvements: UTF-8 support, thesaurus, query rewriting support and GIN indexing.</li>
+<li>PL/Python: now supports named parameters and set returning functions.</li>
+</ul>
+<p>PostgreSQL's extensible architecture has led to a large community of
+extensions ranging from additional procedural languages, interfaces
+to external systems, new index types, and replication and high
+availability tools that are hosted on <a href="http://www.pgfoundry.org">the official PostgreSQL community project site.</a>
+Community projects that have made significant advances in the 8.2
+release cycle include:</p>
+<ul>
+<li>Full Disjunctions: thanks to Google Summer of Code, PostgreSQL is the first database system to have an implementation of this radical new join algorithm.</li>
+<li>PGPoolII: PGPool, under sponsorship from the Japanese Government, has added new load-balancing and partitioning capabilities</li>
+<li>PL/Java: one of our two Java procedural languages has reached full production status, allowing full utilization of Java inside the database.</li>
+</ul>
+
+<p>
+You can read about the dozens more improvements to 8.2 in
+the <a href="/docs/current/static/release.html">Release
+Notes.</a>
+</p>
+
+<a name="download"></a><h2>Where to Download</h2>
+
+<ul>
+<li><a href="/ftp/latest/">List of FTP Mirrors</a></li>
+<li><a href="/download/bittorrent">Bittorrent</a></li>
+<li><a href="/ftp/binary/v8.2.0/win32/">Windows
+Installer</a> (also available via Bittorrent)</li>
+<li><a href="/ftp/binary/v8.2.0/">Other Binaries,
+including Linux, Mac OSX and Solaris</a></li>
+<li><a href="/projects/pgsql/">SourceForge</a> (including
+Windows installer)</li>
+</ul>
+
+<a name="docs"></a><h2>Documentation</h2>
+
+<ul>
+<li><a href="/docs">Official
+Documentation</a></li>
+<li><a href="/docs/techdocs">TechDocs</a></li>
+<li><a href="/about/press/faq">Frequently Asked Questions</a></li>
+</ul>
+
+<a name="license"></a><h2>License</h2>
+<p>
+PostgreSQL uses the <a href="/about/licence">BSD license</a>,
+which only requires that the licensed source code maintain its
+copyright and licensing information. This
+<a href="http://www.opensource.org/licenses/bsd-license.php">OSI-certified
+license</a> is widely appreciated as flexible
+and business-friendly, since it does not restrict the use
+of PostgreSQL with commercial and proprietary applications. Together with
+multi-company support and public ownership of the code,
+the BSD license makes PostgreSQL very popular with vendors wanting to embed a database in
+their own products without fear of fees, vendor lock-in, or changes in licensing terms.
+</p>
+
+<a name="contact"></a><h2>Contacts</h2>
+
+<p><a href="***YOUR LOCAL POSTGRESQL PAGE***">PostgreSQL home page</a></p>
+<p><a href="http://www.postgresql.org">PostgreSQL home page (English)</a></p>
+
+<p>Inquiries:<br />
+***YOUR NAME***<br />
+***YOUR CITY***<br />
+***YOUR PHONE NUMBER***<br />
+<a href="mailto:***YOUR @POSTGRESL EMAIL***">***YOUR @POSTGRESL EMAIL***</a></p>
+
+<p>For contacts in other regions, see <a
+href="/about/press/contact">our international contact
+list.</a></p>
+
+<a name="quoted_companies"></a><h2>Full Text of Quotes and Quoted Companies</h2>
+<p>"Unisys is pleased to note significant enhancements in the scalability
+and performance of PostgreSQL on large-scale multi-processor systems,"
+states Ali Shadman, vice president and general manager, Open Source
+Solutions, Systems and Technology, Unisys. "The newly released 8.2
+version continues the maturation of PostgreSQL into a database
+management system capable of enterprise adoption. PostgreSQL is a key
+component of Unisys Open and Secure Integrated Solution -- OASIS -- for
+Java EE-based transaction processing using selected open source
+technologies. Unisys intends to continue actively assisting the
+community in taking PostgreSQL farther into the enterprise."</p>
+<p><b>About Unisys:</b> <a href="http://www.unisys.com/">Unisys</a> is a
+worldwide technology services and solutions company. Our
+consultants apply Unisys expertise in consulting, systems integration,
+outsourcing, infrastructure, and server technology to help our clients
+achieve secure business operations. We build more secure organizations
+by creating visibility into clients' business operations. Leveraging
+Unisys 3D Visible Enterprise, we make visible the impact of their
+decisions - ahead of investments, opportunities and risks.
+<a href="mailto:brian.daly@unisys.com">Contact Brian Daly</a> for questions about this release: 215-986-2214 (English only)</p>
+<p>"We manage many mission-critical PostgreSQL systems on Solaris 10.
+With data warehouse instances housing billion-row tables and multiple
+terabytes of data, online index builds and hot-standby capabilities
+are crucial," said Theo Schlossnagle, Principal at OmniTI Computer
+Consulting.  "We are also excited that PostgreSQL is now a first-
+class Dtrace citizen.  This means our regular system analysis efforts
+can now incorporate database-specific data leading to much more
+meaningful results."</p>
+<p><b>About OmniTI:</b> <a href="http://omniti.com/home">OmniTI</a>
+ is an Internet technologies consulting company based in
+Columbia, Maryland.  With a client list that reads like a who's who
+of Internet destinations, OmniTI has proven itself as the go-to
+company for the most challenging scalability, performance, and
+security problems that face large-scale web applications today.
+Contact 877-887-3031 or info@omniti.com (English only).</p>
+
+<a name="companies"></a><h2>Corporate Support</h2>
+
+PostgreSQL enjoys the support of numerous companies, who
+sponsor developers, provide hosting resources, and give us
+financial support.  The largest long-term sponsors are listed
+on our <a href="/about/sponsors">development sponsors
+page.</a>
+
+There is also a large community of <a
+href="/support/professional_support">companies offering
+PostgreSQL Support</a>, from individual consultants to
+multinational companies.
+
+<a href="/about/donate">Donations</a> glady accepted.
+
+<a name="additional_software"></a><h2>Links</h2>
+<p>
+The main PostgreSQL project is enhanced by more than 100 active
+sub-projects that provide production-quality solutions for
+replication, migration, compatibility, interoperability, design
+and graphical administration tools.
+</p>
+
+<h3>Related Projects</h3>
+
+<ul>
+<li><a href="http://projects.postgresql.org">pgFoundry</a></li>
+<li><a href="http://gborg.postgresql.org">GBorg</a></li>
+</ul>
+
+<h3>Drivers</h3>
+
+<ul>
+<li><a href="http://jdbc.postgresql.org/">JDBC</a></li>
+<li><a href="http://pgfoundry.org/projects/psqlodbc/">ODBC</a></li>
+<li><a href="http://pgfoundry.org/projects/npgsql">.Net</a></li>
+<li><a href="http://search.cpan.org/~dbdpg/DBD-Pg/Pg.pm">Perl DBI</a></li>
+<li><a href="http://initd.org/projects/psycopg1">Python</a></li>
+</ul>
+
+<h3>Advanced Feature Packages</h3>
+
+<ul>
+<li><a href="http://postgis.refractions.net/">Geographic Information Server (PostGIS)</a></li>
+<li><a href="http://openfts.sourceforge.net/">Full Text Search (OpenFTS)</a></li>
+<li><a href="http://www.bizgres.org">Business Intelligence/Data Warehousing (Bizgres)</a></li>
+</ul>
+
+<h3>Graphical User Interfaces</h3>
+
+<ul>
+<li><a href="http://www.pgadmin.org/">pgAdmin3</a></li>
+<li><a href="http://phppgadmin.sourceforge.net/">phpPgAdmin</a></li>
+<li><a href="/docs/techdocs.54">List of other
+GUIs</a></li>
+</ul>
+
+<h3>Replication</h3>
+
+<ul>
+<li><a href="http://www.slony.info/">Slony-I</a></li>
+<li><a href="http://pgfoundry.org/projects/pgpool/">pgPool</a></li>
+<li><a href="http://pgfoundry.org/projects/pgcluster/">pgCluster</a></li>
+</ul>
+
+<a name="translations"></a><h2>Official English Version of this Document</h2>
+
+<p><a href="/about/press/presskit82.html.en">8.2 PressKit</a></p>
