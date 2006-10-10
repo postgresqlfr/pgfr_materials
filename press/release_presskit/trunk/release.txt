@@ -1,61 +1,85 @@
-2 NOVEMBER 2006, Sao Paulo, Brazil: The PostgreSQL Global Development
-Group today announces the release of version 8.2 of the PostgreSQL
-object-relational database management system. This 14th public release
-adds features, maturity, and performance requested by business users,
-delivering manageability comparable to leading enterprise database
-systems.  Version 8.2 is expected to drive even more migrations
-toward PostgreSQL.
+02 Novembre 2006 : Le PostgreSQL Global Development
+Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
+bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
+apporte les fonctionnalités, la maturité et les performances demandés par les
+utilisateurs professionnels. Cette version fournit des fonctions de gestion
+comparables aux systèmes commerciaux des entreprises leaders.
+La version 8.2 devrait amener un nombre encore plus grands de migrations vers
+PostgreSQL.
 
-"This release touches almost every command and database facility,"
-said PostgreSQL core team member and EnterpriseDB database architect
-Bruce Momjian. "It adds expanded, compatible syntax and interfaces
-which have been requested by our community, making it easier for
-new DBAs to fully use all of PostgreSQL's advanced features."
+<< Cette version touche pratiquement toute les commandes et fonctions de
+la base de données, >> dit Bruce Momjan, membre du core team et architecte
+de bases de données chez EnterpriseDB. << Elle ajoute une syntaxe étendue
+et compatible et des interfaces réclamées par notre communauté, ce qui facilite
+l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
+PostgreSQL. >>
 
-"Unisys is pleased to note significant enhancements in the scalability
-and performance of PostgreSQL on large-scale multi-processor systems,"
-states Ali Shadman, vice president and general manager, Open Source
-Solutions, Systems and Technology, Unisys. "The newly released 8.2
-version continues the maturation of PostgreSQL into a database
-management system capable of enterprise adoption."
+<< Unisys est heureux de constater des améliorations notables de
+l'extensibilité et des performances de PostgreSQL sur les systèmes
+multi-processeurs de grande puissance, >> rapporte Ali Shadman,
+vice-président et directeur général, Open Source Solutions, Systems and
+Technology, Unisys. << La version 8.2, nouvellement réalisée, continue
+la maturation de PostgreSQL vers un système de gestion de bases de données
+adoptable par les entreprises. >>
 
-New tools and features to make database management and development easier include:
+Les nouveaux outils et fonctionnalités facilitant la gestion de bases de données et
+le développement incluent :
 
-Performance improvements: version 8.2 improves performance around 20%
-overall in high-end OLTP (online transaction processing) system tests.
-Users can gain even more in data warehousing efficiency.  The changes include faster in-memory and on-disk sorting, better multi-processor scaling, better planning of partitioned data queries, faster bulk loads and vastly accelerated outer joins.
+Améliorations des performances : la version 8.2 améliore les
+performances d'environ 20% sur les tests de système OLTP (online transaction
+processing) de pointe. Les utilisateurs peuvent gagner plus encore dans les
+rendements de d'entreposage de données. Les changements comprennent des tris en
+mémoire et sur disque plus rapides, meilleur dimensionnement des
+multi-processeurs, meilleure planification des requêtes sur les données
+partitionnées, chargements massifs plus rapides et jointures externes grandement
+accélérées.
 
-Warm Standby Databases:  through an extension to our Point in Time Recovery
-feature (introduced in version 8.0), administrators now can easily create a
-failover copy of your database cluster.
+Sauvegarde à chaud de bases de données : grâce à une extension de
+la fonctionnalité << Point in Time Recovery >> (restauration
+d'un instantané), les administrateurs peuvent désormais aisément créer une copie
+de basculement (failover) du groupe de bases de données.
 
-Online Index Builds: index builds can now occur while applications write to
-database tables, allowing performance tuning without downtime.
+Construction des index en ligne : les index peuvent désormais
+être construits alors que les applications écrivent dans les tables de la base.
+Cela permet d'optimiser les performances sans temps d'arrêt.
 
-SQL 2003 Features:  PostgreSQL, well known for standards compliance,
-has added syntax for several more features introduced in the ANSI
-SQL 2003 specification, including: statistical aggregates, multi-row
-VALUE statments, UPDATE RETURNING and multi-column aggregates.
+Fonctionnalités SQL 2003 : PostgreSQL, bien connu pour son
+respect des standard, a ajouté nombre de nouvelles fonctionnalités introduites
+dans les spécifications SQL 2003. Parmi celles-ci, on trouve : les
+aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
+RETURNING et les aggrégats mutli-colonnes.
 
-Advanced database features, being offered in PostgreSQL 8.2 before any other
-major database system, include:
+Les fonctionnalités de bases de données avancées, présentes dans PostgreSQL 8.2
+avant tout système de bases de données majeur incluent :
 
-Generalized Inverted Indexes: support a more scalable and programmable
-way of indexing semi-structured and full text data.
+Index inversés généralisés : supporte une manière plus extensible
+et programmable d'indexer les données textuelles pleines et semi-structurées.
 
-DTrace:  PostgreSQL has also been instrumented for Solaris DTrace and
-other advanced tracing tools via the Generic Monitoring Framework.
+DTrace :  PostgreSQL a également été instrumenté pour le DTrace
+de Solaris et d'autres outils de traçage avancés à travers le Generic Monitoring
+Framework.
 
-"With data warehouse instances housing billion-row tables and multiple
-terabytes of data, online index builds and hot-standby capabilities
-are crucial," said Theo Schlossnagle, Principal at OmniTI Computer
-Consulting. "We are also excited that PostgreSQL is now a first-
-class Dtrace citizen.  This means our regular system analysis efforts
-can now incorporate database-specific data leading to much more
-meaningful results."
+<< Avec des entrepôts de données contenant des tables de plusieurs
+milliards de lignes et plusieurs téraoctets de données, la création d'index en
+ligne et les possibilités de sauvagarde à chaud sont cruciales, >>
+rapporte Theo Schlossnagle, directeur chez OmniTI ComputerConsulting.
+<< Nous sommes également ravis que PostgreSQL devienne un citoyen de
+première classe dans la communauté DTrace. Cela signifie que nos efforts
+principaux d'analyse de systèmes peuvent désormais incorporer des données
+spécifiques aux bases de données conduisant à des résultats plus
+pertinents. >>
 
-There are dozens of additional features and improvements in 8.2 which will
-make PostgreSQL DBAs more productive.  See the press kit (http://www.postgresql.org/about/press/presskit82.html.en) for details.
-Download PostgreSQL from our download page: http://www.postgresql.org/download
+Plusieurs dizaines de fonctionnalités additionnelles et d'améliorations dans
+la version 8.2 rendent les DBA PostgreSQL plus productifs. Voir le kit presse
+pour de plus amples détails
+(http://www.postgresql.org/about/press/presskit82.html.en). Le téléchargement de PostgreSQL peut se faire à
+partir de la page de téléchargement (http://www.postgresql.org/download).
 
-ABOUT POSTGRESQL: PostgreSQL is the collective work of hundreds of developers, building on twenty-one years of development which started at the University of California, Berkeley. With its long-time support of an enterprise-level feature set including transactions, functions, triggers, and subqueries, PostgreSQL is being used by many of today's most demanding businesses and government agencies. PostgreSQL is distributed under a BSD license, which allows use and distribution without fees for both commercial and non-commercial applications.
+À propos de PostgreSQL : PostgreSQL est un travail collaboratif
+de plusieurs centaines de développeurs. Il repose sur 21 années de
+développement, commencé à l'University of California, Berkeley. Fort de son
+support continu d'un ensemble de fonctionnalités de niveau entreprise, telles
+que les transactions, les fonctions, les déclencheurs et les sous-requêtes,
+PostgreSQL est utilisé par des agences gouvernementales et des entreprises parmi
+les plus exigeantes.
+
