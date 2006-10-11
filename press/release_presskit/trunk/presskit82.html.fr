@@ -283,7 +283,7 @@ Il existe également une grande communauté de
 des consultants indépendants aux sociétés multinationales.
 </p>
 <p>
-<a href="/about/donate">Donations</a> accepté avec joie.
+<a href="/about/donate">Donations</a> acceptées avec joie.
 </p>
 
 <a name="additional_software"></a><h2>Liens</h2>
