@@ -31,8 +31,8 @@ PostgreSQL.
 </p>
 
 <p>&laquo;&nbsp;Cette version touche pratiquement toute les commandes et fonctions de
-la base de données,&raquo; dit Bruce Momjan, membre du core team et architecte
-de bases de données chez EnterpriseDB. &laquo; Elle ajoute une syntaxe étendue
+la base de données,&nbsp;&raquo; dit Bruce Momjan, membre du core team et architecte
+de bases de données chez EnterpriseDB. &laquo;&nbsp;Elle ajoute une syntaxe étendue
 et compatible et des interfaces réclamées par notre communauté, ce qui facilite
 l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
 PostgreSQL.&nbsp;&raquo;
@@ -79,8 +79,10 @@ aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
 RETURNING et les aggrégats mutli-colonnes.
 </p>
 
+<p>
 Les fonctionnalités de bases de données avancées, présentes dans PostgreSQL 8.2
 avant tout autre système de bases de données majeur, incluent&nbsp;:
+</p>
 
 <p><b>Index inversés généralisés&nbsp;:</b> supporte une manière plus extensible
 et programmable d'indexer les données textuelles pleines et semi-structurées.
@@ -269,16 +271,20 @@ Contacter 877-887-3031 ou info@omniti.com (En anglais uniquement).</p>
 
 <a name="companies"></a><h2>Support commercial</h2>
 
+<p>
 PostgreSQL bénéficie du support de nombreuses sociétés qui, financent des
 développeurs, fournissent des ressources pour l'hébergement et nous fournissent
 du support financier. Les mécènes les plus fidèles sont listés sur notre
 <a href="/about/sponsors">page des mécènes dedéveloppement.</a>
-
+</p>
+<p>
 Il existe également une grande communauté de
 <a href="/support/professional_support">sociétés offrant du support PostgreSQL</a>,
 des consultants indépendants aux sociétés multinationales.
-
+</p>
+<p>
 <a href="/about/donate">Donations</a> accepté avec joie.
+</p>
 
 <a name="additional_software"></a><h2>Liens</h2>
 <p>
