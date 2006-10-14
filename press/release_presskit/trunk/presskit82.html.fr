@@ -214,10 +214,10 @@ licence.
 
 <a name="contact"></a><h2>Contacts</h2>
 
-<p><a href="http://www.PostgreSQLFr.org">PostgreSQL home page</a></p>
+<p><a href="http://www.PostgreSQLFr.org">Page d'acceuil PostgreSQLFr</a></p>
 <p><a href="http://www.postgresql.org">PostgreSQL home page (English)</a></p>
 
-<p>Inquiries:<br />
+<p>Contact :<br />
 Stéphane SCHILDKNECHT<br />
 PÎTRES<br />
 +33 2 32 49 77 91<br />
@@ -275,7 +275,7 @@ Contacter 877-887-3031 ou info@omniti.com (En anglais uniquement).</p>
 PostgreSQL bénéficie du support de nombreuses sociétés qui, financent des
 développeurs, fournissent des ressources pour l'hébergement et nous fournissent
 du support financier. Les mécènes les plus fidèles sont listés sur notre
-<a href="/about/sponsors">page des mécènes dedéveloppement.</a>
+<a href="/about/sponsors">page des mécènes de développement.</a>
 </p>
 <p>
 Il existe également une grande communauté de
@@ -283,7 +283,7 @@ Il existe également une grande communauté de
 des consultants indépendants aux sociétés multinationales.
 </p>
 <p>
-<a href="/about/donate">Donations</a> acceptées avec joie.
+<a href="/about/donate">Dons</a> acceptés avec joie.
 </p>
 
 <a name="additional_software"></a><h2>Liens</h2>
