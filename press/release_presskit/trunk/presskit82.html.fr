@@ -126,7 +126,7 @@ plus de 200 nouvelles fonctionnalités et améliorations apportées par plusieur
 dizaines de développeurs pour la version 8.2. Parmi celles-ci, on trouve&nbsp;:
 <ul>
 <li>Verrous consultatifs&nbsp;: autorise le contrôle des objets de la base au
-niveau applicatif à l'aide du moteur de vérouillage rapide de PostgreSQL.</li>
+niveau applicatif à l'aide du moteur de verrouillage rapide de PostgreSQL.</li>
 <li>pg_dump sélectif&nbsp;: permet d'écrire des sauvegardes d'ensembles de
 relations cohérentes au niveau transactionnel en sélectionnant leur
 inclusion/exclusion à l'aide d'expressions rationelles.</li>
@@ -208,7 +208,7 @@ ne restraint pas l'utilisation de PostgreSQL avec des appllications commerciales
 et propriétaires. Associé au support de multiples compagnies et à une possession
 publique du code, la licence BSD rend PostgreSQL très populaire auprès des
 vendeurs qui souhaitent embarquer la base dans leurs propres produit sans
-crainte de droits à payer, de vérouillage propriétaire ou de changement de
+crainte de droits à payer, de verrouillage propriétaire ou de changement de
 licence.
 </p>
 
