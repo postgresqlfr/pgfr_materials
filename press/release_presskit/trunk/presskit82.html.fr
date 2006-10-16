@@ -23,16 +23,16 @@ PostgreSQL 8.2 Press Kit
 <p><b>## Novembre 2006:</b> Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
 bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
-apporte les fonctionnalités, la maturité et les performances demandés par les
+apporte les fonctionnalités, la maturité et les performances souhaitées par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
-comparables aux systèmes commerciaux des entreprises leaders.
-La version 8.2 devrait amener un nombre encore plus grand de migrations vers
+comparables aux systèmes commerciaux leaders.
+La version 8.2 devrait donc amener un nombre encore plus grand de migrations vers
 PostgreSQL.
 </p>
 
-<p>&laquo;&nbsp;Cette version touche pratiquement toute les commandes et fonctions de
-la base de données,&nbsp;&raquo; dit Bruce Momjan, membre du core team et architecte
-de bases de données chez EnterpriseDB. &laquo;&nbsp;Elle ajoute une syntaxe étendue
+<p>Selon Bruce Momjan, membre du core team et architecte de bases de
+données chez EnterpriseDB, &laquo;&nbsp;cette version touche pratiquement toutes les commandes et fonctions de
+la base de données,&nbsp;&raquo;. &laquo;&nbsp;Elle ajoute une syntaxe étendue
 et compatible et des interfaces réclamées par notre communauté, ce qui facilite
 l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
 PostgreSQL.&nbsp;&raquo;
@@ -42,9 +42,9 @@ PostgreSQL.&nbsp;&raquo;
 l'extensibilité et des performances de PostgreSQL sur les systèmes
 multi-processeurs de grande puissance,&nbsp;&raquo; rapporte Ali Shadman,
 vice-président et directeur général, Open Source Solutions, Systems and
-Technology, Unisys. &laquo;&nbsp;La version 8.2, nouvellement réalisée, continue
-la maturation de PostgreSQL vers un système de gestion de bases de données
-adoptable par les entreprises.&nbsp;&raquo;
+Technology, Unisys. &laquo;&nbsp;La version 8.2, nouvellement réalisée,
+poursuit la maturation de PostgreSQL vers un système de gestion de bases
+de données adoptable par les entreprises.&nbsp;&raquo;
 </p>
 <p>
 Les nouveaux outils et fonctionnalités facilitant la gestion de bases de données et
@@ -55,10 +55,10 @@ le développement incluent&nbsp;:
 performances d'environ 20% sur les tests de système OLTP (online transaction
 processing) de pointe. Les utilisateurs peuvent gagner plus encore dans les
 rendements d'entreposage de données. Les changements comprennent des tris en
-mémoire et sur disque plus rapides, meilleur dimensionnement en
-multi-processeurs, meilleure planification des requêtes sur les données
-partitionnées, chargements massifs plus rapides et jointures externes grandement
-accélérées.
+mémoire et sur disque plus rapides, un meilleur dimensionnement en
+multi-processeurs, une meilleure planification des requêtes sur les données
+partitionnées, des chargements massifs plus rapides et des jointures externes
+grandement accélérées.
 </p>
 
 <p><b>Sauvegarde à chaud de bases de données&nbsp;:</b> grâce à une extension de
@@ -72,9 +72,9 @@ de basculement (<i>failover</i>) du groupe de bases de données.
 Cela permet d'optimiser les performances sans temps d'arrêt.
 </p>
 
-<p><b>Fonctionnalités SQL 2003&nbsp;:</b>  PostgreSQL, bien connu pour son
+<p><b>Fonctionnalités SQL:2003&nbsp;:</b>  PostgreSQL, bien connu pour son
 respect des standards, a ajouté nombre de nouvelles fonctionnalités introduites
-dans les spécifications SQL 2003. Parmi celles-ci, on trouve&nbsp;: les
+dans les spécifications SQL:2003. Parmi celles-ci, on trouve&nbsp;: les
 aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
 RETURNING et les aggrégats mutli-colonnes.
 </p>

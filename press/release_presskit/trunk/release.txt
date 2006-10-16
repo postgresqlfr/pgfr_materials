@@ -1,15 +1,15 @@
 02 Novembre 2006 : Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
 bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
-apporte les fonctionnalités, la maturité et les performances demandés par les
+apporte les fonctionnalités, la maturité et les performances souhaitées par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
-comparables aux systèmes commerciaux des entreprises leaders.
-La version 8.2 devrait amener un nombre encore plus grand de migrations vers
+comparables aux systèmes commerciaux leaders.
+La version 8.2 devrait donc amener un nombre encore plus grand de migrations vers
 PostgreSQL.
 
-<< Cette version touche pratiquement toute les commandes et fonctions de
-la base de données, >> dit Bruce Momjan, membre du core team et architecte
-de bases de données chez EnterpriseDB. << Elle ajoute une syntaxe étendue
+Selon Bruce Momjan, membre du core team et architecte de bases de données
+chez EnterpriseDB, << cette version touche pratiquement toutes les commandes
+ et fonctions de la base de données, >>. << Elle ajoute une syntaxe étendue
 et compatible et des interfaces réclamées par notre communauté, ce qui facilite
 l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
 PostgreSQL. >>
@@ -18,7 +18,7 @@ PostgreSQL. >>
 l'extensibilité et des performances de PostgreSQL sur les systèmes
 multi-processeurs de grande puissance, >> rapporte Ali Shadman,
 vice-président et directeur général, Open Source Solutions, Systems and
-Technology, Unisys. << La version 8.2, nouvellement réalisée, continue
+Technology, Unisys. << La version 8.2, nouvellement réalisée, poursuit
 la maturation de PostgreSQL vers un système de gestion de bases de données
 adoptable par les entreprises. >>
 
@@ -29,10 +29,10 @@ Améliorations des performances : la version 8.2 améliore les
 performances d'environ 20% sur les tests de système OLTP (online transaction
 processing) de pointe. Les utilisateurs peuvent gagner plus encore dans les
 rendements d'entreposage de données. Les changements comprennent des tris en
-mémoire et sur disque plus rapides, meilleur dimensionnement en
-multi-processeurs, meilleure planification des requêtes sur les données
-partitionnées, chargements massifs plus rapides et jointures externes grandement
-accélérées.
+mémoire et sur disque plus rapides, un meilleur dimensionnement en
+multi-processeurs, une meilleure planification des requêtes sur les données
+partitionnées, des chargements massifs plus rapides et des jointures externes
+grandement accélérées.
 
 Sauvegarde à chaud de bases de données : grâce à une extension de
 la fonctionnalité << Point in Time Recovery >> (restauration
@@ -72,7 +72,8 @@ pertinents. >>
 Plusieurs dizaines de fonctionnalités additionnelles et d'améliorations dans
 la version 8.2 rendent les DBA PostgreSQL plus productifs. Voir le kit presse
 pour de plus amples détails
-(http://www.postgresql.org/about/press/presskit82.html.en). Le téléchargement de PostgreSQL peut se faire à
+(http://www.postgresql.org/about/press/presskit82.html.en).
+Le téléchargement de PostgreSQL peut se faire à
 partir de la page de téléchargement (http://www.postgresql.org/download).
 
 À propos de PostgreSQL : PostgreSQL est un travail collaboratif
