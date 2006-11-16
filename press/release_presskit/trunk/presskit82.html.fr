@@ -20,7 +20,7 @@ PostgreSQL 8.2 Press Kit
 </p>
 
 <a name="original_release"></a><h2>Version presse d'origine</h2>
-<p><b>## Novembre 2006:</b> Le PostgreSQL Global Development
+<p><b>13 Novembre 2006, San Francisco, CA, USA&nbsp;:</b> Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
 bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances souhaitées par les
