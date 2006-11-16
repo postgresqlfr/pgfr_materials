@@ -1,4 +1,4 @@
-02 Novembre 2006 : Le PostgreSQL Global Development
+13 Novembre 2006, San Francisco, CA, USA : Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
 bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances souhaitées par les
