@@ -1,10 +1,10 @@
-13 Novembre 2006, San Francisco, CA, USA : Le PostgreSQL Global Development
+5 décembre 2006, Washington DC (Conférence LISA), USA : Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
 bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances souhaitées par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
 comparables aux systèmes commerciaux leaders.
-La version 8.2 devrait donc amener un nombre encore plus grand de migrations vers
+La version 8.2 devrait donc conduire à un nombre encore plus grand de migrations vers
 PostgreSQL.
 
 Selon Bruce Momjan, membre du core team et architecte de bases de données
