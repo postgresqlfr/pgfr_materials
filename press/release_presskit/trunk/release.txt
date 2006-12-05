@@ -1,6 +1,6 @@
 5 décembre 2006, Washington DC (Conférence LISA), USA : Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
-bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
+bases de données relationnelles/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances souhaitées par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
 comparables aux systèmes commerciaux leaders.
@@ -9,14 +9,14 @@ PostgreSQL.
 
 Selon Bruce Momjan, membre du core team et architecte de bases de données
 chez EnterpriseDB, << cette version touche pratiquement toutes les commandes
- et fonctions de la base de données, >>. << Elle ajoute une syntaxe étendue
+ et fonctions de la base de données >>. << Elle ajoute une syntaxe étendue
 et compatible et des interfaces réclamées par notre communauté, ce qui facilite
 l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
 PostgreSQL. >>
 
 << Unisys est heureux de constater des améliorations notables de
 l'extensibilité et des performances de PostgreSQL sur les systèmes
-multi-processeurs de grande puissance, >> rapporte Ali Shadman,
+multi-processeurs de grande puissance, >> rapporte Ali Shadman
 vice-président et directeur général, Open Source Solutions, Systems and
 Technology, Unisys. << La version 8.2, nouvellement réalisée, poursuit
 la maturation de PostgreSQL vers un système de gestion de bases de données
@@ -37,17 +37,17 @@ grandement accélérées.
 Sauvegarde à chaud de bases de données : grâce à une extension de
 la fonctionnalité << Point in Time Recovery >> (restauration
 d'un instantané), les administrateurs peuvent désormais aisément créer une copie
-de basculement (failover) du groupe de bases de données.
+de basculement (failover) du cluster de bases de données.
 
 Construction des index en ligne : les index peuvent désormais
 être construits alors que les applications écrivent dans les tables de la base.
 Cela permet d'optimiser les performances sans temps d'arrêt.
 
 Fonctionnalités SQL 2003 : PostgreSQL, bien connu pour son
-respect des standards, a ajouté nombre de nouvelles fonctionnalités introduites
+respect des standards, a ajouté un grand nombre des nouvelles fonctionnalités introduites
 dans les spécifications SQL 2003. Parmi celles-ci, on trouve : les
 aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
-RETURNING et les aggrégats mutli-colonnes.
+RETURNING et les aggrégats multi-colonnes.
 
 Les fonctionnalités de bases de données avancées, présentes dans PostgreSQL 8.2
 avant tout autre système de bases de données majeur, incluent :
@@ -79,7 +79,7 @@ partir de la page de téléchargement (http://www.postgresql.org/download).
 À propos de PostgreSQL : PostgreSQL est un travail collaboratif
 de plusieurs centaines de développeurs. Il repose sur 21 années de
 développement, commencé à l'University of California, Berkeley. Fort de son
-support continu d'un ensemble de fonctionnalités de niveau entreprise, telles
+support continu d'un ensemble de fonctionnalités de niveau entreprise, tels
 que les transactions, les fonctions, les déclencheurs et les sous-requêtes,
 PostgreSQL est utilisé par des agences gouvernementales et des entreprises parmi
 les plus exigeantes.

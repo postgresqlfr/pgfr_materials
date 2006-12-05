@@ -19,11 +19,11 @@ PostgreSQL 8.2 Press Kit
  &nbsp; <a href="#translations">Version anglaise</a><br />
 </p>
 
-<a name="original_release"></a><h2>Version presse d'origine</h2>
+<a name="original_release"></a><h2>Version presse originale</h2>
 <p><b>5 décembre 2006, Washington DC (Conférence LISA), USA&nbsp;:</b>
 Le PostgreSQL Global Development
 Group annonce aujourd'hui la sortie de la version 8.2 du système de gestion de
-bases de données relationnelle/objet PostgreSQL. Cette 14ème version publique
+bases de données relationnelles/objet PostgreSQL. Cette 14ème version publique
 apporte les fonctionnalités, la maturité et les performances souhaitées par les
 utilisateurs professionnels. Cette version fournit des fonctions de gestion
 comparables aux systèmes commerciaux leaders.
@@ -33,7 +33,7 @@ PostgreSQL.
 
 <p>Selon Bruce Momjan, membre du core team et architecte de bases de
 données chez EnterpriseDB, &laquo;&nbsp;cette version touche pratiquement toutes les commandes et fonctions de
-la base de données,&nbsp;&raquo;. &laquo;&nbsp;Elle ajoute une syntaxe étendue
+la base de données&nbsp;&raquo;. &laquo;&nbsp;Elle ajoute une syntaxe étendue
 et compatible et des interfaces réclamées par notre communauté, ce qui facilite
 l'utilisation par de nouveaux DBA de toutes les fonctionnalités avancées de
 PostgreSQL.&nbsp;&raquo;
@@ -65,7 +65,7 @@ grandement accélérées.
 <p><b>Sauvegarde à chaud de bases de données&nbsp;:</b> grâce à une extension de
 la fonctionnalité &laquo;&nbsp;Point in Time Recovery&nbsp;&raquo; (restauration
 d'un instantané), les administrateurs peuvent désormais aisément créer une copie
-de basculement (<i>failover</i>) du groupe de bases de données.
+de basculement (<i>failover</i>) du <i>cluster</i> de bases de données.
 </p>
 
 <p><b>Construction des index en ligne&nbsp;:</b> les index peuvent désormais
@@ -74,10 +74,10 @@ Cela permet d'optimiser les performances sans temps d'arrêt.
 </p>
 
 <p><b>Fonctionnalités SQL:2003&nbsp;:</b>  PostgreSQL, bien connu pour son
-respect des standards, a ajouté nombre de nouvelles fonctionnalités introduites
+respect des standards, a ajouté un grand nombre des nouvelles fonctionnalités introduites
 dans les spécifications SQL:2003. Parmi celles-ci, on trouve&nbsp;: les
 aggrégats de statistiques, les instructions VALUE sur plusieurs lignes, UPDATE
-RETURNING et les aggrégats mutli-colonnes.
+RETURNING et les aggrégats multi-colonnes.
 </p>
 
 <p>
@@ -85,8 +85,9 @@ Les fonctionnalités de bases de données avancées, présentes dans PostgreSQL 
 avant tout autre système de bases de données majeur, incluent&nbsp;:
 </p>
 
-<p><b>Index inversés généralisés&nbsp;:</b> supporte une manière plus extensible
-et programmable d'indexer les données textuelles pleines et semi-structurées.
+<p><b>Les index inversés généralisés&nbsp;:</b> supportent une manière plus extensible
+et programmable d'indexer les données textuelles pleines et
+semi-structurées&nbsp;;
 </p>
 
 <p><b>DTrace&nbsp;:</b>  PostgreSQL a également été instrumenté pour le DTrace
@@ -113,7 +114,7 @@ partir de <a href="/download">la page de téléchargement.</a></p>
 <p><b>À propos de PostgreSQL&nbsp;:</b> PostgreSQL est un travail collaboratif
 de plusieurs centaines de développeurs. Il repose sur 21 années de
 développement, commencé à l'University of California, Berkeley. Fort de son
-support continu d'un ensemble de fonctionnalités de niveau entreprise, telles
+support continu d'un ensemble de fonctionnalités de niveau entreprise, tels
 que les transactions, les fonctions, les déclencheurs et les sous-requêtes,
 PostgreSQL est utilisé par des agences gouvernementales et des entreprises parmi
 les plus exigeantes.
@@ -122,35 +123,36 @@ les plus exigeantes.
 <a name="additional_features"></a><h2>Fonctionnalités additionnelles dans cette
 version</h2>
 <p>
-En plus des fonctionnalités majeurs listées dans le communiqué de presse, il y a
+En plus des fonctionnalités majeures listées dans le communiqué de presse, il y a
 plus de 200 nouvelles fonctionnalités et améliorations apportées par plusieurs
 dizaines de développeurs pour la version 8.2. Parmi celles-ci, on trouve&nbsp;:
 <ul>
-<li>Verrous consultatifs&nbsp;: autorise le contrôle des objets de la base au
-niveau applicatif à l'aide du moteur de verrouillage rapide de PostgreSQL.</li>
+<li>Les verrous consultatifs&nbsp;: autorisent le contrôle des objets de la base au
+niveau applicatif à l'aide du moteur de verrouillage rapide de
+PostgreSQL&nbsp;;</li>
 <li>pg_dump sélectif&nbsp;: permet d'écrire des sauvegardes d'ensembles de
 relations cohérentes au niveau transactionnel en sélectionnant leur
-inclusion/exclusion à l'aide d'expressions rationelles.</li>
+inclusion/exclusion à l'aide d'expressions rationelles&nbsp;;</li>
 <li>Instructions préparées&nbsp;: nouvelles interfaces d'administration et
-améliorations des performances.</li>
+améliorations des performances&nbsp;;</li>
 <li>ISN/ISBN&nbsp;: ce module, qui contient les types de données nécessaires
 à la gestion des localisateurs ISN de produits pour les inventaires et les
 systèmes de vente au détail, a été mis à jour pour tenir compte des derniers
-standard internationaux.</li>
+standard internationaux&nbsp;;</li>
 <li>Chiffrement&nbsp;: le module pgcrypto, qui permet le chiffrement au sein de
-la base, a été mis à jour avec les derniers algorithmes.</li>
+la base, a été mis à jour avec les derniers algorithmes&nbsp;;</li>
 <li>Améliorations SQL&nbsp;: introduction de nouvelles syntaxes, dont 
 UPDATE RETURNING, DROP IF EXISTS, ON COMMIT et de nouvelles commandes de gestion
 des droits et appartenances. Cela facilite la gestion des objets en ligne de
-commande.</li>
-<li>PSQL sélection par lots&nbsp;: autorise le retour de lignes vers la console
-par lots plutôt qu'en une fois.</li>
+commande&nbsp;;</li>
+<li>Sélection par lots avec <i>psql</i>&nbsp;: autorise le retour de lignes vers la console
+par lots plutôt qu'en une fois&nbsp;;</li>
 <li>Réécriture ECPG&nbsp;: l'interface C embarqué a été entièrement réécrite et
-de nouvelles interfaces ont été ajoutées.</li>
-<li>Améliorations majeurs à TSearch2&nbsp;: support de l'UTF-8, thesaurus,
-support de réécriture des requêtes et indexation GIN.</li>
+de nouvelles interfaces ont été ajoutées&nbsp;;</li>
+<li>Améliorations majeures à TSearch2&nbsp;: support de l'UTF-8, thesaurus,
+support de réécriture des requêtes et indexation GIN&nbsp;;</li>
 <li>PL/Python&nbsp;: supporte maintenant les paramètres nommés et les ensembles
-retoournant des fonctions.</li>
+retournant des fonctions.</li>
 </ul>
 </p>
 <p>L'architecture extensible de PostgreSQL a abouti à une large communauté
@@ -162,13 +164,14 @@ PostgreSQL.</a>
 Parmi les projets communautaires qui ont été significativement améliorés pendant le
 cycle de rélisation de la verions 8.2 on trouve&nbsp;:
 <ul>
-<li>Unions complètes&nbsp;: grâce au Google Summer of Code, PostgreSQL est le
+<li>Les unions complètes&nbsp;: grâce au Google Summer of Code, PostgreSQL est le
 premier système de gestion de base de données à posséder une implémentation de
-cet algorithme de jointure résolument nouveau.</li>
+cet algorithme de jointure résolument nouveau&nbsp;;</li>
 <li>PGPoolII&nbsp;: PGPool, sous le mécénat du gouvernement japonais, a ajouté
-de nouveau fonctionnalités de de répartition de charge et de partitionnement.</li>
-<li>PL/Java&NBSP;: un de nos deux langages procéduraux Java a atteint le statut
-d'utilisabilité pleine en production, ce qui permet une pleine utilisation de
+de nouvelles fonctionnalités de de répartition de charge et de
+partitionnement&nbsp;;</li>
+<li>PL/Java&nbsp;: un de nos deux langages procéduraux Java a atteint le statut
+d'utilisabilité pleine en production, ce qui permet une utilisation entière de
 Java au sein de la base.</li>
 </ul>
 </p>
@@ -178,7 +181,7 @@ par la version 8.2 dans les <a href="/docs/current/static/release.html">notes de
 version.</a>
 </p>
 
-<a name="download"></a><h2>Où télécharger ?</h2>
+<a name="download"></a><h2>Où la télécharger ?</h2>
 
 <ul>
 <li><a href="/ftp/latest/">List des mirroirs FTP</a></li>
@@ -205,7 +208,7 @@ que le maintien dans le code sous licence des informations de copyright et de
 licence. Cette 
 <a href="http://www.opensource.org/licenses/bsd-license.php">licence certifiée
 OSI</a> est unanimement considérée comme commercialement tolérante, puisqu'elle
-ne restraint pas l'utilisation de PostgreSQL avec des appllications commerciales
+ne restreint pas l'utilisation de PostgreSQL avec des applications commerciales
 et propriétaires. Associé au support de multiples compagnies et à une possession
 publique du code, la licence BSD rend PostgreSQL très populaire auprès des
 vendeurs qui souhaitent embarquer la base dans leurs propres produit sans
@@ -242,12 +245,12 @@ technologies OpenSource. Unisys souhaite continuer à assister activement la
 communauté à porter PostgreSQL plus loin dans l'entreprise.&nbsp;&raquo;
 </p>
 <p><b>À propos d'Unisys:</b> <a href="http://www.unisys.com/">Unisys</a> est une
-société de services et de solutions technologiques mondiale. Nos consultants
+société mondiale de services et de solutions technologiques. Nos consultants
 appliquent l'expertise Unisys dans le conseil, l'intégration de systèmes,
 l'externalisation, l'infrastructure et les technologies serveurs pour aider nos
 clients à effectuer des opérations commerciales sécurisées. Nous créons des
 organisations plus sécurisées en apportant de la visibilité dans les opérations
-commerciales de nos clients. par l'amplification apportée par Unisys 3D Visible
+commerciales de nos clients. Par l'amplification apportée par Unisys 3D Visible
 Enterprise, nous rendons visibles l'impact de leurs décisions - au-delà des
 investissements, des opportunités et des risques. 
 <a href="mailto:brian.daly@unisys.com">Contacter Brian Daly</a> pour toute
@@ -274,8 +277,8 @@ Contacter 877-887-3031 ou info@omniti.com (En anglais uniquement).</p>
 
 <p>
 PostgreSQL bénéficie du support de nombreuses sociétés qui, financent des
-développeurs, fournissent des ressources pour l'hébergement et nous fournissent
-du support financier. Les mécènes les plus fidèles sont listés sur notre
+développeurs, fournissent des ressources pour l'hébergement et
+du support financier. Les mécènes les plus fidèles sont listés sur la
 <a href="/about/sponsors">page des mécènes de développement.</a>
 </p>
 <p>
