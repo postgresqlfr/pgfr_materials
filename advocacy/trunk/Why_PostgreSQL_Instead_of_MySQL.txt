@@ -1,0 +1,131 @@
+Why PostgreSQL Instead of MySQL: Comparing Reliability and Speed in 2007
+
+Introduction
+
+For years, the common industry perception has been that MySQL is faster and easier to use than PostgreSQL. PostgreSQL is perceived as more powerful, more focused on data integrity, and stricter at complying with SQL specifications, but correspondingly slower and more complicated to use.
+
+Like many perceptions formed in the past, these things aren't as true with the current generation of releases as they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
+
+    * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential features for some classes of database deployments.
+    * PostgreSQL 8.1 (November 2005) featured major performance improvements, particularly in scalability. Focusing on improving performance has been central to all the 8.X releases up to the current 8.2.
+
+As innovation on these databases has progressed, each development community has actively made changes to address their respective sets of perceived disadvantages. The result that it has gotten more difficult to objectively determine which database is likely to be better suited for a given application. This document aims to clarify what situations PostgreSQL would be more appropriate for than MySQL, attempting to fairly compare the current production versions of each and discuss their strengths and weaknesses. The main areas covered here are the fundamental data integrity and speed issues of the core database software. Since it's often the case that you can trade-off performance against reliability, both these topics need to be considered together in order to get an accurate view of the landscape.
+
+The position of this paper is that when the two are compared using the high level of data integrity demanded by a serious transactional database application, the current generation PostgreSQL performs similarly or better than MySQL (particularly under heavy user loads and with complex queries), while retaining its lead in the areas of SQL standards compliance and a rich feature set. It is also hoped that by exploring the differences between the two systems, you might come to appreciate how the fundamental approach of the PostgreSQL design team pervasively prioritizes reliable and predictable behavior. Similar portions of the MySQL implementation have some seams resulting from how features like transactional support and strict mode were added onto the software well into its design lifecycle rather than being integral from the start.
+Compared Versions, Feature Sets, and Focus
+
+The current production-ready versions as this is written in August of 2007 are PostgreSQL 8.2 and MySQL 5.0, and those are what's being compared here. Since both PostgreSQL 8.1 and 8.2 are currently supported versions with good performance, some comments here may refer to them collectively. 8.2 is moderately faster (perhaps as much as 30% so on some workloads), but deploying 8.1 is still a completely viable option right now, particularly because more operating systems vendors bundle and support it than the relatively new 8.2.
+
+Both systems have newer versions in testing (PostgreSQL 8.3 and MySQL 5.1) at this time that offer incremental improvements to some areas this document addresses, but there are no fundamental differences so large in either new version that it's believed the general guidelines here would be invalidated. The official release of the MySQL Falcon engine in the future is one likely disruptive point on the horizon. The Asynchronous Commit feature in PostgreSQL 8.3 is another upcoming event that will shift the reliability/performance trade-off options available significantly.
+
+What is specifically not addressed here are the feature sets of the two products in areas outside of these fundamentals. Because the scale of the changes in PostgreSQL 8.1 and MySQL 5.0, many of the documents covering this topic are too out of date to recommend. Some pages that may be helpful include:
+
+    * Open Source Database Feature Comparison Matrix
+    * MySQL vs. PostgreSQL
+    * MySQL Development Roadmap
+    * PostgreSQL Feature Matrix
+
+While feature checklists are useful, some system behaviors require a fairly deep understanding of the respective systems to appreciate. For instance, the internals of how PostgreSQL compresses TOAST data are invisible to the user, but can result in a startling improvement in system performance with certain types of data.
+
+Another area outside of the scope of this document is that more applications support MySQL as the database of choice than PostgreSQL, and certainly that is an important factor for deciding which of these databases is better suited for a particular situation. Work on adding PostgreSQL support to some popular applications can be tracked at Software Ports. One thing you should evaluate when considering how applications use MySQL is that if they were initially targeted at versions before 5.0, they may not be compatible with newer features like the strict mode introduced in that version. If that's the case, such applications may be limited to the capabilities of the older version they were written against, and it may require a sort of porting effort to take advantage of the modern MySQL features.
+Reliability
+Data Integrity
+Before version 5.0, MySQL well deserved its reputation for allowing inconsistent data to be inserted into the database. Guaranteeing Data Integrity with MySQL 5.0 explains the issues with older MySQL versions, and how they may be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to change its own SQL Mode to override this, with the result that these validation constraints are still not necessarily enforced by the server.
+
+PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is no way for a client to bypass those checks.
+Transactions and the Database Engine Core
+The database core that gave MySQL its original reputation for speed is MyISAM. This engine has excellent read performance and its parser is very efficient for straightforward queries, which combine to make it very fast in read-intensive applications like web applications involving simple SELECTs. However, it is commonly known that MyISAM is more vulnerable to data corruption than most serious database applications would tolerate, and after a crash there may be a substantial delay while it rebuilds its indexes before the server can restart. Furthermore, it does not support foreign keys or transactions that would allow the database to have ACID properties. MyISAM also has issues dealing with concurrent reads and updates, since it only provides table level locking.
+
+The integration of the InnoDB Storage Engine to MySQL greatly improved over MyISAM in terms of data integrity, adding a more robust log replaying mechanism for crash recovery and enabling ACID compliant transactions. However, this new approach comes with much more overhead, and InnoDB tables are not as fast as MyISAM ones for pure read loads. In addition, the internal MySQL metadata tables are still stored using MyISAM, which means they remain vulnerable to the traditional corruption issues associated with that storage engine. This issue is worked around using some complicated locking methods that have the potential to make a table alteration block for some time.
+
+PostgreSQL has always focused on data integrity at the transaction level, keeping locking issues to a minimum, and barring hardware failure or grossly improper configuration it is difficult to corrupt a database.
+
+It is worth observing that the database engine is part of the core of PostgreSQL, whereas InnoDB is a dual-licensed product presently licensed from Oracle Corporation. It is uncertain how Oracle may alter InnoDB in the future as they act in competition with MySQL AB, whereas PostgreSQL has no such conflict of interests. MySQL AB has been working on a new database engine core called Falcon in order to free themselves from this situation, but historically developing a database core engine that is both fast and reliable has required many years of work and testing before a mature product suitable for production use is available. Initial benchmarks suggest Falcon has plenty of rough edges that need to be addressed.
+Foreign Keys
+
+Proper implementation of design techniques like Database Normalization rely on the ability of the database to use Foreign keys to map relationships between tables. In MySQL, foreign keys are only supported with InnoDB. One problem with their implementation is that it is limited and will silently ignore some standard syntax. For example, when creating a table, even in the upcoming 5.1 release of MySQL "the CHECK clause is parsed but ignored by all storage engines". The basic design philosophy of PostgreSQL is to produce errors or warnings in similar situations where an operation is ambiguous or unsupported.
+Transactional DDL
+
+In PostgreSQL, when you are inside a transaction almost any operation can be undone. There are some irreversible operations (like creating or destroying a database or tablespace), but normal table modifications can be backed out by issuing a ROLLBACK via its Write-Ahead Log design. That supports backing out even large changes to DDL like table creation.
+
+MySQL doesn't support any sort of rollback when using MyISAM. With InnoDB, the server has an implicit commit that occurs even if the normal auto-commit behavior is turned off. This means that any single table alteration or similar change is immediately committed.
+
+Experienced PostgreSQL DBA's know to take advantage of its features here to protect themselves when doing complicated work like schema upgrades. If you put all such changes into a transaction block, you can make sure they all apply atomically or not at all. This drastically lowers the possibility that the database will be corrupted by a typo or other such error in the schema change, which is particularly important when you're modifying multiple related tables where a mistake might destroy the relational key. There is no way to similar way to safely adjust multiple schema sections with MySQL.
+
+See Transactional DDL in PostgreSQL: A Competitive Analysis for detailed examples demonstrating these differences.
+Speed
+Default configuration
+Historically, the initial PostgreSQL configuration was designed to support older flavors of UNIX where allocating large amounts of memory wasn't necessarily possible. The result was that its use of memory for caching results was, by default, very pessimistic. On modern systems that have lots of memory available, this severely hinders untuned PostgreSQL performance.
+
+The defaults have gotten much less pessimistic in recent releases. System configuration is now examined at database initialization time and more memory allocated if it is possible to do so. As a result, the untuned default configurations on recent PostgreSQL versions perform significantly better than older versions. In addition, changes in cache management in versions 8.1 and 8.2 allow even modest amounts of cache to be used more effectively than they used to be.
+
+The primary tunable for both database systems works similarly, by allocating a block of shared memory dedicated to the database. MySQL tunes this with key_buffer_size when using MyISAM, and with innodb_buffer_pool_size when using InnoDB (note that you still need some MyISAM space for system tables even when InnoDB is the main storage engine for regular tables). PostgreSQL sizes its main memory space with shared_buffers.
+
+The MySQL key_buffer_size defaults to using 8MB of memory. Earlier PostgreSQL configurations would also allocate 8MB of memory for the shared_buffers cache if possible. On a server like a current generation Linux system, it's expected the recent PostgreSQL releases would set shared_buffers to at least 24MB by default when the database cluster is created.
+
+It is still worthwhile to go through the configuration files to tune them to match the available memory on a database server, as all these defaults are dramatically undersized compared to the amount of RAM in current systems. For a modern dedicated server, the rule of thumb for both PostgreSQL and MySQL is to size the dedicated memory to at least 1/4 of the total RAM in the machine, perhaps increasing to as much of 1/2 of RAM on the high side of normal. It's not out of the question to push this percentage even higher when using systems with very large amounts of RAM; MySQL InnoDB guidelines suggest even 80% isn't unreasonable. Performance comparisons using the defaults with either database are completely unrealistic of how a real system would be configured. Initial guidelines in this area can be found at 5-Minute Introduction to PostgreSQL Performance, Optimizing the mysqld variables and Optimizing the MySQL Server.
+Benchmarks
+
+Benchmarks are very difficult to do well; creating truly comparable benchmarks is a complex art. Many of the older performance benchmarks that have shown MySQL to be much faster than PostgreSQL have suffered from a number of problem areas:
+
+    * Configuration: It's not unheard of to see a a tuned MySQL compared to an untuned PostgreSQL instance. As mentioned above, untuned PostgreSQL used to be particularly pessimistic about what resources it had available. A truly fair comparison would match the amount of memory used by each system.
+
+    * Transaction support: MyISAM benchmarks involve "transactions" that provide none of the ACID guarantees that PostgreSQL offers. This would frequently mean that apples were being compared to oranges.
+
+    * Transaction grouping: Related to the above, PostgreSQL would sometimes be hindered in naive benchmarks that don't properly group transactions the way a real application would. That can add the overhead of not just one transaction, but perhaps hundreds of thousands, to the cost of doing updates.
+
+    * Serial versus concurrent behaviour: A number of the behaviors of MyISAM are tuned for having a single user accessing the database. For example, its use of table locks to control access to tables means that under heavy user loads, it will slow dramatically. PostgreSQL degrades more gracefully with large numbers of simultaneous connections. Beware of naive benchmarks that involve a simple stream of database requests across a single connection.
+
+Sun Microsystems 2007 jAppServer2004 Benchmark Results
+
+Sun Microsystems, a neutral vendor selling hardware that runs many database types, has recently submitted test results on the well regulated SPECjAppServer2004 using both PostgreSQL and MySQL. There are just enough hardware differences between the two systems that it isn't fair to directly compare the two results. But the fact that both scores are close to one another and the configuration is similar does suggest that while there may be performance differences between the two database systems, the magnitude of that difference is not particularly large with this application type.
+
+For comparison sake, an Oracle on HP result offers a similar magnitude of performance on less impressive hardware, suggesting both open-source databases still lag the best of the commercial products in absolute performance efficiency. Some suggest Oracle's lead is even larger if you pick examples to put it in a better light, but be sure to read Benchmark Brou-Ha-Ha for some comments on actual pricing here (and to pick up some comments on a second PostgreSQL result using a smaller server). Note that Josh Berkus is a Sun employee whose role there includes being a member of the PostgreSQL Core Team, and his commentary should be evaluated accordingly.
+
+If you do a fair comparison that includes software licensing costs, the performance per dollar figures for both PostgreSQL and MySQL are both similar to one another and very good relative to the average for the database industry. It would however be untrue to say that these open-source solutions are always a better choice than commercial offerings like Oracle just based on that; certainly the feature sets and absolute performance of each solution need to be considered as well.
+Transaction Locking and Scalability
+
+PostgreSQL uses a robust locking model called
+MVCC that limits situations where individual clients interfere with each other. A short summary of the main benefit of MVCC would be "readers are never blocked by writers". MVCC is used to implement a pessimistic implementation of the four SQL standard transaction isolation levels: "when you select the level Read Uncommitted you really get Read Committed, and when you select Repeatable Read you really get Serializable, so the actual isolation level may be stricter than what you select." The default transaction isolation level is "read committed".
+
+MySQL's InnoDB implements MVCC using a rollback segment, inspired by Oracle's design; their new Falcon engine works similarly. InnoDB databases supports all four SQL standard transaction isolation levels, with the default being "repeatable read".
+
+When comparing the two models, PostgreSQL enforces client separation where the data operated on is always consistent under all circumstances; as the MVCC documentation states, "the reason that PostgreSQL only provides two isolation levels is that this is the only sensible way to map the standard isolation levels to the multiversion concurrency control architecture." MySQL allows configurations where client code that doesn't commit transactions properly can result in a data view that would be considered inconsistent by PostgreSQL's stricter standards. However, in situations where it's acceptable for data being read to have small inconsistencies, being able to use a less strict locking could be a performance advantage for MySQL.
+
+Even when both systems are configured to one of the strict levels of transaction locking, the differences between the two implementations are subtle enough that which implementation will work better for a particular application is hard to state definitively. Recommended reading to understand this complicated topic is
+"Transactional Information Systems: Theory, Algorithms, and the Practice of Concurrency Control" by Weikum & Vossen. Speaking in the terminology used there, PostgreSQL uses multi-version timestamp ordering (MVTO) while InnoDB and Oracle use multi-version read consistency (MVRC). The main difference is that PostgreSQL is with-REDO/no-UNDO because it stores every row version in the main table, while Oracle/InnoDB implements with-REDO/with-UNDO where they reconstruct a block and/or row image from the log to provide read consistency. If you're willing to consider a third architecture, that of IBM's DB2, as a comparison point additional good references on this topic are A not-so-very technical discussion of Multi Version Concurrency Control and Leverage your PostgreSQL V8.1 skills to learn DB2. IBM is clearly not a fan of the MVCC approach.
+
+Partially because the PostgreSQL locking implementation is very mature (it's always active and performance of the associated code is accordingly critical), even in situations where MySQL initially appears faster PostgreSQL can pull ahead and scale to higher throughput when the number of simultaneous users becomes large. A good example of such a situation is demonstrated in the tweakers.net database test.
+Counting rows in a table
+
+One operation that PostgreSQL is known to be slow performing is doing a full count of rows in a table, typically using this SQL:
+
+SELECT COUNT(*) FROM table
+
+The reason why this is slow is related to the MVCC implementation in PostgreSQL. The fact that multiple transactions can see different states of the data means that there can be no straightforward way for "COUNT(*)" to summarize data across the whole table; PostgreSQL must walk through all rows, in some sense. This normally results in a sequential scan reading information about every row in the table.
+
+Some DBMSes provide the ability for "COUNT(*)" queries to work via consulting an index. Unfortunately, in PostgreSQL, this strategy does not work, as MVCC visibility information is not stored at the index level. It is necessary to actually examine the rows themselves to determine if they are visible to the transaction or not.
+
+In MySQL, MyISAM tables cache the row count information, making this type of count operation almost instant. That is the reason why there exists so much MySQL code that uses this construct assuming it's a trivial operation. But if you're using InnoDB instead, this is no longer the case. See
+COUNT(*) for Innodb Tables and COUNT(*) vs COUNT(col) for notes on the limitations of MySQL in this area. MySQL designs that may be deployed on InnoDB can't assume that a full row count will be fast, and therefore are hampered by similar limitations to those present in PostgreSQL.
+
+It is worth observing that it is only this precise form of aggregate that must be so pessimistic; if augmented with a "WHERE" clause like
+
+SELECT COUNT(*) FROM table WHERE status = 'something'
+
+PostgreSQL, MySQL, and most other database implementations will take advantage of available indexes against the restricted field(s) to limit how many records must be counted, which can greatly accelerate such queries. PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems many only need to reference the index in this situation.
+
+One popular approach for applications that need a row count but can tolerate it not including transactions that are in the middle of being committed is to use a trigger-based mechanism to count the rows in the table. In PostgreSQL, another alternative when only an approximate count is needed is to use the reltuples field from the pg_class catalog table.
+Join Complexity
+PostgreSQL uses cost-based query optimization methods in order to get good performance for many different types of joins. Query costs are assessed based on planner statistics collected when tables are analyzed combined with adjustable planner costs, and advanced features such as the Genetic Query Optimizer allow optimizing even very complicated joins efficiently.
+
+MySQL doesn't have this level of sophistication in its planner, and the tunables for Controlling Query Optimizer Performance are crude. Developers instead do things like explicitly provide index hints to make sure joins are executed correctly. To make this task easier, MySQL provides a Query Profiler that is easier to work with than typical EXPLAIN data. Regardless of hinting, subselect optimization is a known weak spot in MySQL. There is also a fairly serious subquery null handling bug in MySQL 5.0 (which at this time appears to be still present in 5.1).
+
+Finding order in execution provides several comparisons of how the two databases handle queries differently. Because of its more robust automatic optimization, PostgreSQL usually does a better job of handling complicated joins than MySQL--but only if the planner is properly configured (setting the effective_cache_size tunable too small is one common mistake) and statistics about the tables are kept up to date (typically via auto-vacuum). The fact that you must give the PostgreSQL optimizer correct information to work with, and can't explicitly control which join it uses, is a somewhat controversial design decision. The core PostgreSQL developers feel that it's more important to focus on improving the optimizer so it works correctly in all cases instead of just allowing queries to hint at a plan as a workaround for problems.
+
+There are some add-on tools some find useful for exploring the PostgreSQL planner. pgAdmin includes an explain plan viewer (sample). Another option is Visual Explain, originally a RedHat component that has been kept current and improved by Enterprise DB. It comes bundled with the EnterpriseDB Advanced Server package and can be built to run against other PostgreSQL installations using the source code to their Developer Studio package.
+Credits and Feedback
+
+This document was written by Greg Smith with substantial contributions by Christopher Browne, Lukas Kahwe Smith, and other members of the PostgreSQL Advocacy mailing list. Some of the references linked to by this document point to articles also written by these authors.
+
+Corrections, suggestions, flames, and similar feedback should be addressed to Greg, an independent consultant whose only affiliation with The PostgreSQL Global Development Group consists of submitting patches to improve the upcoming 8.3 release. He feels that PostgreSQL stands on its own merits and comparisons with MySQL should be as factual as possible, and feedback will be treated accordingly.
