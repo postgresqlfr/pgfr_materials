@@ -1,10 +1,18 @@
-Why PostgreSQL Instead of MySQL: Comparing Reliability and Speed in 2007
+//Why PostgreSQL Instead of MySQL: Comparing Reliability and Speed in 2007
+Pourquoi PostgreSQL plutôt que MySQL : Comparaison de la fiablité et rapidité en 2007
 
 Introduction
 
-For years, the common industry perception has been that MySQL is faster and easier to use than PostgreSQL. PostgreSQL is perceived as more powerful, more focused on data integrity, and stricter at complying with SQL specifications, but correspondingly slower and more complicated to use.
+//For years, the common industry perception has been that MySQL is faster and easier to use than PostgreSQL. 
+//PostgreSQL is perceived as more powerful, more focused on data integrity, and stricter at complying with 
+//SQL specifications, but correspondingly slower and more complicated to use.
+Pendant des années, la perception du marché était que MySQL était plus rapide et facile à utiliser que PostgreSQL.
+PostgreSQL est perçu comme étant plus puissant, focaliser sur l'intégrité des données, et plus respecteux des normes
+SQL, mais également plus lent et plus compliqué à utiliser.
 
-Like many perceptions formed in the past, these things aren't as true with the current generation of releases as they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
+//Like many perceptions formed in the past, these things aren't as true with the current generation of releases as 
+//they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
+
 
     * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential features for some classes of database deployments.
     * PostgreSQL 8.1 (November 2005) featured major performance improvements, particularly in scalability. Focusing on improving performance has been central to all the 8.X releases up to the current 8.2.
