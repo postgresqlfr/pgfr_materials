@@ -12,15 +12,49 @@ SQL, mais également plus lent et plus compliqué à utiliser.
 
 //Like many perceptions formed in the past, these things aren't as true with the current generation of releases as 
 //they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
+Comme beaucoup d'images du passé, celà n'est plus aussi vrai avec les générations actuelle que celà ne l'a été dans le 
+passé. Plusieurs versions des deux systèmes ont marqué leur évolution, ce qui rend leur comparaison beaucoup plus 
+compliquée.
 
+//    * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec 
+// compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential 
+// features for some classes of database deployments.
+	* MySQL 5.0 (Octobre 2005) a finalement ajouté un "strict mode" pour réduire l'écart en terme d'intégrité des 
+	données et de conformité aux specs. Le support des procédures stockées, vues, déclencheurs et curseurs, tous 
+	considérés comme des fonctionnalités essentielles dans plusieurs cas de déploiement de base de données, ont 
+	aussi été ajoutés.
+//    * PostgreSQL 8.1 (November 2005) featured major performance improvements, particularly in scalability. Focusing 
+// on improving performance has been central to all the 8.X releases up to the current 8.2.
+	* PostgreSQL 8.1 (Novembre 2005) apporte d'importantes améliorations de performance, particulièrement en terme 
+	d'évolutivité. L'attention a principalement été portée sur l'amélioration des performances pour toutes les 
+	versions 8.X et jusqu'à l'actuelle 8.2.
 
-    * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential features for some classes of database deployments.
-    * PostgreSQL 8.1 (November 2005) featured major performance improvements, particularly in scalability. Focusing on improving performance has been central to all the 8.X releases up to the current 8.2.
+// As innovation on these databases has progressed, each development community has actively made changes to address 
+// their respective sets of perceived disadvantages. The result that it has gotten more difficult to objectively 
+// determine which database is likely to be better suited for a given application. This document aims to clarify what 
+// situations PostgreSQL would be more appropriate for than MySQL, attempting to fairly compare the current production
+// versions of each and discuss their strengths and weaknesses. The main areas covered here are the fundamental data 
+// integrity and speed issues of the core database software. Since it's often the case that you can trade-off 
+// performance against reliability, both these topics need to be considered together in order to get an accurate view 
+// of the landscape.
+Alors que l'innovation sur ces deux bases a progressé, chacune des communautés de développement ont travaillé 
+activement à réduire leur liste de désavantages perçus. Le résultat est qu'il est devenu plus difficile de déterminer 
+objectivement quel base de données est susceptible de convenir à une application donnée. Ce document vise à clarifier 
+dans quelles situations PostgreSQL est plus approprié que MySQL, en essayant de comparer équitablement les versions de
+production courante de chacune et d'en discuter les forces et faiblesses. Les domaines principaux étudiés ici 
+concernent les questions fondamentales de l'intégrité des données et la vitesse du noyau logiciel de la base de donnée.
+Puisqu'il est souvent question de faire un choix entre la performance ou la fiabilité, ces deux sujets doivent être 
+considérés ensemble afin d'avoir une vision précise de l'ensemble.
 
-As innovation on these databases has progressed, each development community has actively made changes to address their respective sets of perceived disadvantages. The result that it has gotten more difficult to objectively determine which database is likely to be better suited for a given application. This document aims to clarify what situations PostgreSQL would be more appropriate for than MySQL, attempting to fairly compare the current production versions of each and discuss their strengths and weaknesses. The main areas covered here are the fundamental data integrity and speed issues of the core database software. Since it's often the case that you can trade-off performance against reliability, both these topics need to be considered together in order to get an accurate view of the landscape.
-
-The position of this paper is that when the two are compared using the high level of data integrity demanded by a serious transactional database application, the current generation PostgreSQL performs similarly or better than MySQL (particularly under heavy user loads and with complex queries), while retaining its lead in the areas of SQL standards compliance and a rich feature set. It is also hoped that by exploring the differences between the two systems, you might come to appreciate how the fundamental approach of the PostgreSQL design team pervasively prioritizes reliable and predictable behavior. Similar portions of the MySQL implementation have some seams resulting from how features like transactional support and strict mode were added onto the software well into its design lifecycle rather than being integral from the start.
-Compared Versions, Feature Sets, and Focus
+// The position of this paper is that when the two are compared using the high level of data integrity demanded by a 
+// serious transactional database application, the current generation PostgreSQL performs similarly or better than 
+// MySQL (particularly under heavy user loads and with complex queries), while retaining its lead in the areas of SQL 
+// standards compliance and a rich feature set. It is also hoped that by exploring the differences between the two 
+// systems, you might come to appreciate how the fundamental approach of the PostgreSQL design team pervasively 
+// prioritizes reliable and predictable behavior. Similar portions of the MySQL implementation have some seams 
+// resulting from how features like transactional support and strict mode were added onto the software well into its 
+// design lifecycle rather than being integral from the start.
+// Compared Versions, Feature Sets, and Focus
 
 The current production-ready versions as this is written in August of 2007 are PostgreSQL 8.2 and MySQL 5.0, and those are what's being compared here. Since both PostgreSQL 8.1 and 8.2 are currently supported versions with good performance, some comments here may refer to them collectively. 8.2 is moderately faster (perhaps as much as 30% so on some workloads), but deploying 8.1 is still a completely viable option right now, particularly because more operating systems vendors bundle and support it than the relatively new 8.2.
 
