@@ -37,14 +37,14 @@ compliquée.
 // integrity and speed issues of the core database software. Since it's often the case that you can trade-off 
 // performance against reliability, both these topics need to be considered together in order to get an accurate view 
 // of the landscape.
-Alors que l'innovation sur ces deux bases a progressé, chacune des communautés de développement ont travaillé 
+Alors que l'innovation sur ces deux bases a progressé, chacune des communautés de développement ont travaillés 
 activement à réduire leur liste de désavantages perçus. Le résultat est qu'il est devenu plus difficile de déterminer 
-objectivement quel base de données est susceptible de convenir à une application donnée. Ce document vise à clarifier 
+objectivement quelle base de données est susceptible de convenir à une application donnée. Ce document vise à clarifier 
 dans quelles situations PostgreSQL est plus approprié que MySQL, en essayant de comparer équitablement les versions de
-production courante de chacune et d'en discuter les forces et faiblesses. Les domaines principaux étudiés ici 
-concernent les questions fondamentales de l'intégrité des données et la vitesse du noyau logiciel de la base de donnée.
+production courante de chacune et d'en discuter les forces et faiblesses. Les domaines principalement étudiés ici 
+concernent les questions fondamentales de l'intégrité des données et la rapidité du noyau logiciel de la base de donnée.
 Puisqu'il est souvent question de faire un choix entre la performance ou la fiabilité, ces deux sujets doivent être 
-considérés ensemble afin d'avoir une vision précise de l'ensemble.
+considérés conjointement afin d'avoir une vision précise de l'ensemble.
 
 // The position of this paper is that when the two are compared using the high level of data integrity demanded by a 
 // serious transactional database application, the current generation PostgreSQL performs similarly or better than 
@@ -153,21 +153,79 @@ COUNT(*) for Innodb Tables and COUNT(*) vs COUNT(col) for notes on the limitatio
 
 It is worth observing that it is only this precise form of aggregate that must be so pessimistic; if augmented with a "WHERE" clause like
 
-SELECT COUNT(*) FROM table WHERE status = 'something'
+// SELECT COUNT(*) FROM table WHERE status = 'something'
+SELECT COUNT(*) FROM table WHERE status = 'quelque chose'
 
-PostgreSQL, MySQL, and most other database implementations will take advantage of available indexes against the restricted field(s) to limit how many records must be counted, which can greatly accelerate such queries. PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems many only need to reference the index in this situation.
+//PostgreSQL, MySQL, and most other database implementations will take advantage of available indexes against 
+//the restricted field(s) to limit how many records must be counted, which can greatly accelerate such queries. 
+//PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems 
+//many only need to reference the index in this situation.
+PostgreSQL, MySQL, et beaucoup d'autres implémentations de base de données tireront profil de la disponibilités des
+indexes pour le champs restreint afin de limiter le nombre d'enregistrement devant être comptés, ce qui accelère
+grandement de telles requêtes.
 
-One popular approach for applications that need a row count but can tolerate it not including transactions that are in the middle of being committed is to use a trigger-based mechanism to count the rows in the table. In PostgreSQL, another alternative when only an approximate count is needed is to use the reltuples field from the pg_class catalog table.
-Join Complexity
-PostgreSQL uses cost-based query optimization methods in order to get good performance for many different types of joins. Query costs are assessed based on planner statistics collected when tables are analyzed combined with adjustable planner costs, and advanced features such as the Genetic Query Optimizer allow optimizing even very complicated joins efficiently.
+//One popular approach for applications that need a row count but can tolerate it not including transactions that are 
+//in the middle of being committed is to use a trigger-based mechanism to count the rows in the table. In PostgreSQL, 
+//another alternative when only an approximate count is needed is to use the reltuples field from the pg_class catalog table.
+Une approche apprécié pour les applications qui ont besoin de compter les lignes mais ...
 
-MySQL doesn't have this level of sophistication in its planner, and the tunables for Controlling Query Optimizer Performance are crude. Developers instead do things like explicitly provide index hints to make sure joins are executed correctly. To make this task easier, MySQL provides a Query Profiler that is easier to work with than typical EXPLAIN data. Regardless of hinting, subselect optimization is a known weak spot in MySQL. There is also a fairly serious subquery null handling bug in MySQL 5.0 (which at this time appears to be still present in 5.1).
+//Join Complexity
+Jointure complèxe
 
-Finding order in execution provides several comparisons of how the two databases handle queries differently. Because of its more robust automatic optimization, PostgreSQL usually does a better job of handling complicated joins than MySQL--but only if the planner is properly configured (setting the effective_cache_size tunable too small is one common mistake) and statistics about the tables are kept up to date (typically via auto-vacuum). The fact that you must give the PostgreSQL optimizer correct information to work with, and can't explicitly control which join it uses, is a somewhat controversial design decision. The core PostgreSQL developers feel that it's more important to focus on improving the optimizer so it works correctly in all cases instead of just allowing queries to hint at a plan as a workaround for problems.
+//PostgreSQL uses cost-based query optimization methods in order to get good performance for many different types of 
+//joins. Query costs are assessed based on planner statistics collected when tables are analyzed combined 
+//with adjustable planner costs, and advanced features such as the Genetic Query Optimizer allow optimizing 
+//even very complicated joins efficiently.
+PostgreSQL utilise une méthode économique d'optimisation des requêtes afin d'obtenir de bonne performances pour les 
+différents types de jointures. 
+Les requêtes coûteuses sont évalués et basé sur des statistiques du planificateur recueillies quand les tables
+sont analysées et combiner avec l'ajustements des coûts du planificateur, et les fonctionnalités avancées tel que le
+"Genetix Query Optimizer" permettant l'optimisation efficace de jointûres très compliqués.
 
-There are some add-on tools some find useful for exploring the PostgreSQL planner. pgAdmin includes an explain plan viewer (sample). Another option is Visual Explain, originally a RedHat component that has been kept current and improved by Enterprise DB. It comes bundled with the EnterpriseDB Advanced Server package and can be built to run against other PostgreSQL installations using the source code to their Developer Studio package.
-Credits and Feedback
+//MySQL doesn't have this level of sophistication in its planner, and the tunables for Controlling Query Optimizer 
+//Performance are crude. Developers instead do things like explicitly provide index hints to make sure joins 
+//are executed correctly. To make this task easier, MySQL provides a Query Profiler that is easier to work with than 
+//typical EXPLAIN data. Regardless of hinting, subselect optimization is a known weak spot in MySQL. 
+//There is also a fairly serious subquery null handling bug in MySQL 5.0 
+//(which at this time appears to be still present in 5.1).
 
-This document was written by Greg Smith with substantial contributions by Christopher Browne, Lukas Kahwe Smith, and other members of the PostgreSQL Advocacy mailing list. Some of the references linked to by this document point to articles also written by these authors.
 
-Corrections, suggestions, flames, and similar feedback should be addressed to Greg, an independent consultant whose only affiliation with The PostgreSQL Global Development Group consists of submitting patches to improve the upcoming 8.3 release. He feels that PostgreSQL stands on its own merits and comparisons with MySQL should be as factual as possible, and feedback will be treated accordingly.
+
+//Finding order in execution provides several comparisons of how the two databases handle queries differently. 
+//Because of its more robust automatic optimization, PostgreSQL usually does a better job of handling complicated 
+//joins than MySQL--but only if the planner is properly configured (setting the effective_cache_size tunable too small 
+//is one common mistake) and statistics about the tables are kept up to date (typically via auto-vacuum). 
+//The fact that you must give the PostgreSQL optimizer correct information to work with, and can't explicitly control 
+//which join it uses, is a somewhat controversial design decision. The core PostgreSQL developers feel that it's more 
+//important to focus on improving the optimizer so it works correctly in all cases instead of just allowing queries 
+//to hint at a plan as a workaround for problems.
+
+
+
+// There are some add-on tools some find useful for exploring the PostgreSQL planner. pgAdmin includes an explain plan 
+// viewer (sample). Another option is Visual Explain, originally a RedHat component that has been kept current and 
+// improved by Enterprise DB. It comes bundled with the EnterpriseDB Advanced Server package and can be built to run 
+// against other PostgreSQL installations using the source code to their Developer Studio package.
+Il y'a quelque outils complémentaires pour explorer le planificateur de PostgreSQL. pgAdmin inclus une visionneuse 
+de plan d'exécution. Une autre option est "Visual Explain", à l'origine un composant de RedHat qui est maintenant
+maintenu par Enterprise DB. Il est inclus dans l'offre EnterpriseDB Advanced Server et peut être compiler avec une 
+installation de PostgreSQL en utilisant le code source du paquet "Developer Studio".
+
+
+//Credits and Feedback
+Remerciements et Remarques
+
+// This document was written by Greg Smith with substantial contributions by Christopher Browne, Lukas Kahwe Smith, 
+// and other members of the PostgreSQL Advocacy mailing list. Some of the references linked to by this document 
+// point to articles also written by these authors.
+Ce document à été écrit par Greg Smith incluant de pertinante contribution de Christopher Browne, Lukas Kahwe Smith,
+et beaucoup d'autres membres de la liste de diffusion Advocacy. Quelques unes de ces références citées dans ce document
+proviennent d'articles qui ont été écrit par ces mêmes auteur.
+
+// Corrections, suggestions, flames, and similar feedback should be addressed to Greg, an independent consultant 
+// whose only affiliation with The PostgreSQL Global Development Group consists of submitting patches to improve 
+// the upcoming 8.3 release. He feels that PostgreSQL stands on its own merits and comparisons with MySQL should be 
+// as factual as possible, and feedback will be treated accordingly.
+Corrections, suggestions, coup de gueule, et autres remarques peuvent être adresser à Greg, un consultant indépendant
+dont le seul lien avec l'équipe de développement mondial consiste à soumettre des patchs pour améliorer la future 
+version 8.3
