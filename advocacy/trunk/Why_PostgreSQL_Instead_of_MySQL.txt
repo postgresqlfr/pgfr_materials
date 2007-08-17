@@ -7,22 +7,20 @@ Introduction
 //PostgreSQL is perceived as more powerful, more focused on data integrity, and stricter at complying with 
 //SQL specifications, but correspondingly slower and more complicated to use.
 Pendant des années, la perception du marché était que MySQL était plus rapide et facile à utiliser que PostgreSQL.
-PostgreSQL est perçu comme étant plus puissant, focaliser sur l'intégrité des données, et plus respecteux des normes
+PostgreSQL est perçu comme étant plus puissant, focalisé sur l'intégrité des données, et plus respecteux des normes
 SQL, mais également plus lent et plus compliqué à utiliser.
 
 //Like many perceptions formed in the past, these things aren't as true with the current generation of releases as 
 //they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
-Comme beaucoup d'images du passé, celà n'est plus aussi vrai avec les générations actuelle que celà ne l'a été dans le 
-passé. Plusieurs versions des deux systèmes ont marqué leur évolution, ce qui rend leur comparaison beaucoup plus 
-compliquée.
+Puisque beaucoup de ces perceptions sont apparues dans le passé, ces choses ne sont plus aussi vraies avec les versions actuelles que celà n'a été. Les deux systèmes ont évolué avec des versions notables qui rendent leur comparaison beaucoup plus compliquée.
 
 //    * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec 
 // compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential 
 // features for some classes of database deployments.
 	* MySQL 5.0 (Octobre 2005) a finalement ajouté un "strict mode" pour réduire l'écart en terme d'intégrité des 
 	données et de conformité aux specs. Le support des procédures stockées, vues, déclencheurs et curseurs, tous 
-	considérés comme des fonctionnalités essentielles dans plusieurs cas de déploiement de base de données, ont 
-	aussi été ajoutés.
+	considérés comme des fonctionnalités essentielles dans plusieurs cas de déploiement de base de données, a 
+	aussi été ajouté.
 //    * PostgreSQL 8.1 (November 2005) featured major performance improvements, particularly in scalability. Focusing 
 // on improving performance has been central to all the 8.X releases up to the current 8.2.
 	* PostgreSQL 8.1 (Novembre 2005) apporte d'importantes améliorations de performance, particulièrement en terme 
@@ -37,12 +35,12 @@ compliquée.
 // integrity and speed issues of the core database software. Since it's often the case that you can trade-off 
 // performance against reliability, both these topics need to be considered together in order to get an accurate view 
 // of the landscape.
-Alors que l'innovation sur ces deux bases a progressé, chacune des communautés de développement ont travaillés 
+Alors que l'innovation sur ces deux bases a progressé, chacune des communautés de développement a travaillé
 activement à réduire leur liste de désavantages perçus. Le résultat est qu'il est devenu plus difficile de déterminer 
 objectivement quelle base de données est susceptible de convenir à une application donnée. Ce document vise à clarifier 
 dans quelles situations PostgreSQL est plus approprié que MySQL, en essayant de comparer équitablement les versions de
-production courante de chacune et d'en discuter les forces et faiblesses. Les domaines principalement étudiés ici 
-concernent les questions fondamentales de l'intégrité des données et la rapidité du noyau logiciel de la base de donnée.
+production courantes de chacune et d'en discuter les forces et faiblesses. Les domaines principalement étudiés ici 
+concernent les questions fondamentales de l'intégrité des données et la rapidité du noyau logiciel de la base de données.
 Puisqu'il est souvent question de faire un choix entre la performance ou la fiabilité, ces deux sujets doivent être 
 considérés conjointement afin d'avoir une vision précise de l'ensemble.
 
