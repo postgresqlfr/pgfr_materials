@@ -136,27 +136,58 @@ fonctionnalités modernes de MySQL.
 Fiabilité
 
 // Data Integrity
-Intégrité des données
+Intégrité des Données
 
 // Before version 5.0, MySQL well deserved its reputation for allowing inconsistent data to be inserted into the
 // database. Guaranteeing Data Integrity with MySQL 5.0 explains the issues with older MySQL versions, and how they may
 // be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to
 // change its own SQL Mode to override this, with the result that these validation constraints are still not 
 // necessarily enforced by the server.
+Avant la version 5.0, MySQL méritait clairement sa réputation autorisant l'insertion de données inconsistantes dans la
+base de données. "Guaranteeing Data Integrity with MySQL 5.0" explique les problèmes avec les plus vieilles versions de
+MySQL, et comment ils pourraient être évité en utilisant le "Mode SQL" strict disponnible dans la version actuelle.
+Bien entendu, tout client MySQL à la possibilité de changer son mode SQL et contourner ainsi ce comportement,
+avec comme résultat que ces validations de contraintes ne soit plus forcément assurée coté serveur.
 
 // PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is
 // no way for a client to bypass those checks.
+PostgreSQL a toujours été strict sur la validation des données avant de les insérer dans la base de données, et il 
+n'existe aucune alternative au client pour contourner ces vérifications.
 
 // Transactions and the Database Engine Core
+Les Transactions et le Moteur Interne de la Base de Donnée
 
-The database core that gave MySQL its original reputation for speed is MyISAM. This engine has excellent read performance and its parser is very efficient for straightforward queries, which combine to make it very fast in read-intensive applications like web applications involving simple SELECTs. However, it is commonly known that MyISAM is more vulnerable to data corruption than most serious database applications would tolerate, and after a crash there may be a substantial delay while it rebuilds its indexes before the server can restart. Furthermore, it does not support foreign keys or transactions that would allow the database to have ACID properties. MyISAM also has issues dealing with concurrent reads and updates, since it only provides table level locking.
+/* en cours de trad par ioguix
+// The database core that gave MySQL its original reputation for speed is MyISAM. This engine has excellent read
+// performance and its parser is very efficient for straightforward queries, which combine to make it very fast in
+// read-intensive applications like web applications involving simple SELECTs. However, it is commonly known that
+// MyISAM is more vulnerable to data corruption than most serious database applications would tolerate, and after a
+// crash there may be a substantial delay while it rebuilds its indexes before the server can restart. Furthermore,
+// it does not support foreign keys or transactions that would allow the database to have ACID properties. MyISAM
+// also has issues dealing with concurrent reads and updates, since it only provides table level locking.
 
-The integration of the InnoDB Storage Engine to MySQL greatly improved over MyISAM in terms of data integrity, adding a more robust log replaying mechanism for crash recovery and enabling ACID compliant transactions. However, this new approach comes with much more overhead, and InnoDB tables are not as fast as MyISAM ones for pure read loads. In addition, the internal MySQL metadata tables are still stored using MyISAM, which means they remain vulnerable to the traditional corruption issues associated with that storage engine. This issue is worked around using some complicated locking methods that have the potential to make a table alteration block for some time.
 
-PostgreSQL has always focused on data integrity at the transaction level, keeping locking issues to a minimum, and barring hardware failure or grossly improper configuration it is difficult to corrupt a database.
+// The integration of the InnoDB Storage Engine to MySQL greatly improved over MyISAM in terms of data integrity,
+// adding a more robust log replaying mechanism for crash recovery and enabling ACID compliant transactions. However,
+// this new approach comes with much more overhead, and InnoDB tables are not as fast as MyISAM ones for pure read
+// loads. In addition, the internal MySQL metadata tables are still stored using MyISAM, which means they remain
+// vulnerable to the traditional corruption issues associated with that storage engine. This issue is worked around
+// using some complicated locking methods that have the potential to make a table alteration block for some time.
 
-It is worth observing that the database engine is part of the core of PostgreSQL, whereas InnoDB is a dual-licensed product presently licensed from Oracle Corporation. It is uncertain how Oracle may alter InnoDB in the future as they act in competition with MySQL AB, whereas PostgreSQL has no such conflict of interests. MySQL AB has been working on a new database engine core called Falcon in order to free themselves from this situation, but historically developing a database core engine that is both fast and reliable has required many years of work and testing before a mature product suitable for production use is available. Initial benchmarks suggest Falcon has plenty of rough edges that need to be addressed.
-Foreign Keys
+// PostgreSQL has always focused on data integrity at the transaction level, keeping locking issues to a minimum, and
+// barring hardware failure or grossly improper configuration it is difficult to corrupt a database.
+
+// It is worth observing that the database engine is part of the core of PostgreSQL, whereas InnoDB is a
+// dual-licensed product presently licensed from Oracle Corporation. It is uncertain how Oracle may alter InnoDB in the
+// future as they act in competition with MySQL AB, whereas PostgreSQL has no such conflict of interests. MySQL AB has
+// been working on a new database engine core called Falcon in order to free themselves from this situation, but
+// historically developing a database core engine that is both fast and reliable has required many years of work and
+// testing before a mature product suitable for production use is available. Initial benchmarks suggest Falcon has
+// plenty of rough edges that need to be addressed.
+*/
+
+// Foreign Keys
+Clés Étrangère
 
 Proper implementation of design techniques like Database Normalization rely on the ability of the database to use Foreign keys to map relationships between tables. In MySQL, foreign keys are only supported with InnoDB. One problem with their implementation is that it is limited and will silently ignore some standard syntax. For example, when creating a table, even in the upcoming 5.1 release of MySQL "the CHECK clause is parsed but ignored by all storage engines". The basic design philosophy of PostgreSQL is to produce errors or warnings in similar situations where an operation is ambiguous or unsupported.
 Transactional DDL
