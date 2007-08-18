@@ -122,16 +122,33 @@ drastique des performances systèmes sur certains types de donnée.
 // introduced in that version. If that's the case, such applications may be limited to the capabilities of the older
 // version they were written against, and it may require a sort of porting effort to take advantage of the modern MySQL
 // features.
+Un autre sujet qui sort du cadre de ce document est qu'un nombre plus important d'applications choisissent MySQL comme
+base de données plutôt que PostgreSQL, et ceci est certainement un facteur d'influence important sur le choix de la
+base la plus adaptée à une situation particulière. Le travail pour ajouter un support PostgreSQL à plusieurs 
+applications populaires peut-être mené en adaptant les logiciels. Une chose que vous devez considérer lorsque vous
+étudiez comment les applications utilisent MySQL est si elles sont initialement destinées aux versions antérieures à
+5.0, elles pourraient alors ne plus être compatibles avec les nouvelles fonctionnalités comme le mode strict ajouté
+dans cette version. Si cela est le cas, de telles applications pourraient être limitées aux capacités des plus vieilles
+versions pour lesquelles elles ont été écrites et pourraient demander un effort d'adaptation pour profiter des
+fonctionnalités modernes de MySQL.
+
 // Reliability
+Fiabilité
+
 // Data Integrity
+Intégrité des données
+
 // Before version 5.0, MySQL well deserved its reputation for allowing inconsistent data to be inserted into the
 // database. Guaranteeing Data Integrity with MySQL 5.0 explains the issues with older MySQL versions, and how they may
 // be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to
 // change its own SQL Mode to override this, with the result that these validation constraints are still not 
 // necessarily enforced by the server.
 
-PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is no way for a client to bypass those checks.
-Transactions and the Database Engine Core
+// PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is
+// no way for a client to bypass those checks.
+
+// Transactions and the Database Engine Core
+
 The database core that gave MySQL its original reputation for speed is MyISAM. This engine has excellent read performance and its parser is very efficient for straightforward queries, which combine to make it very fast in read-intensive applications like web applications involving simple SELECTs. However, it is commonly known that MyISAM is more vulnerable to data corruption than most serious database applications would tolerate, and after a crash there may be a substantial delay while it rebuilds its indexes before the server can restart. Furthermore, it does not support foreign keys or transactions that would allow the database to have ACID properties. MyISAM also has issues dealing with concurrent reads and updates, since it only provides table level locking.
 
 The integration of the InnoDB Storage Engine to MySQL greatly improved over MyISAM in terms of data integrity, adding a more robust log replaying mechanism for crash recovery and enabling ACID compliant transactions. However, this new approach comes with much more overhead, and InnoDB tables are not as fast as MyISAM ones for pure read loads. In addition, the internal MySQL metadata tables are still stored using MyISAM, which means they remain vulnerable to the traditional corruption issues associated with that storage engine. This issue is worked around using some complicated locking methods that have the potential to make a table alteration block for some time.
