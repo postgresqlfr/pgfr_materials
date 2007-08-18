@@ -40,9 +40,9 @@ activement à réduire leur liste de désavantages perçus. Le résultat est qu'il es
 objectivement quelle base de données est susceptible de convenir à une application donnée. Ce document vise à clarifier 
 dans quelles situations PostgreSQL est plus approprié que MySQL, en essayant de comparer équitablement les versions de
 production courantes de chacune et d'en discuter les forces et faiblesses. Les domaines principalement étudiés ici 
-concernent les questions fondamentales de l'intégrité des données et la rapidité du noyau logiciel de la base de données.
-Puisqu'il est souvent question de faire un choix entre la performance ou la fiabilité, ces deux sujets doivent être 
-considérés conjointement afin d'avoir une vision précise de l'ensemble.
+concernent les questions fondamentales de l'intégrité des données et la rapidité du noyau logiciel de la base de
+données. Puisqu'il est souvent question de faire un choix entre la performance ou la fiabilité, ces deux sujets
+doivent être considérés conjointement afin d'avoir une vision précise de l'ensemble.
 
 // The position of this paper is that when the two are compared using the high level of data integrity demanded by a 
 // serious transactional database application, the current generation PostgreSQL performs similarly or better than 
@@ -53,24 +53,82 @@ considérés conjointement afin d'avoir une vision précise de l'ensemble.
 // resulting from how features like transactional support and strict mode were added onto the software well into its 
 // design lifecycle rather than being integral from the start.
 // Compared Versions, Feature Sets, and Focus
+La position de ce document est que lorsque nous comparons les deux pour une application sérieuse exigeant un haut 
+degré d'intégrité des données dans une base transactionnelle, la génération actuelle de PostgreSQL s'exécutera aussi
+bien ou mieux que MySQL (particulièrement avec une charge importante d'utilisateur et de requêtes complexes), tout 
+en conservant son avance dans sa conformité aux standards SQL et sa richesse de fonctionnalité. Il est aussi espéré 
+qu'en explorant les différences entre les deux systèmes, vous arriviez à apprécier l'approche fondamentale de l'équipe
+de conception de PostgreSQL qui s'évertue à prioriser un comportement fiable et prévisible. Les portions similaires de
+l'implémentation de MySQL ont quelques rapiècements résultant de la façon dont les fonctionnalités comme le support
+des transactions et le mode stricte ont été ajoutés au logiciel au court de son cycle de vie plutôt qu'intégralement
+dès le début.
 
-The current production-ready versions as this is written in August of 2007 are PostgreSQL 8.2 and MySQL 5.0, and those are what's being compared here. Since both PostgreSQL 8.1 and 8.2 are currently supported versions with good performance, some comments here may refer to them collectively. 8.2 is moderately faster (perhaps as much as 30% so on some workloads), but deploying 8.1 is still a completely viable option right now, particularly because more operating systems vendors bundle and support it than the relatively new 8.2.
+Comparaison des Versions, Ensemble de Fonctionnalités et Détails
 
-Both systems have newer versions in testing (PostgreSQL 8.3 and MySQL 5.1) at this time that offer incremental improvements to some areas this document addresses, but there are no fundamental differences so large in either new version that it's believed the general guidelines here would be invalidated. The official release of the MySQL Falcon engine in the future is one likely disruptive point on the horizon. The Asynchronous Commit feature in PostgreSQL 8.3 is another upcoming event that will shift the reliability/performance trade-off options available significantly.
+// The current production-ready versions as this is written in August of 2007 are PostgreSQL 8.2 and MySQL 5.0, and 
+// those are what's being compared here. Since both PostgreSQL 8.1 and 8.2 are currently supported versions with good 
+// performance, some comments here may refer to them collectively. 8.2 is moderately faster (perhaps as much as 30% so
+// on some workloads), but deploying 8.1 is still a completely viable option right now, particularly because more 
+// operating systems vendors bundle and support it than the relatively new 8.2.
+Les versions actuelles prêtes à la production en ce mois d'août 2007 sont PostgreSQL 8.2 et MySQL 5.0, et feront donc 
+ici l'objet de notre comparaison. Comme PostgreSQL 8.1 et 8.2 sont toutes deux actuellement des versions supportées 
+avec de bonnes performances, certains des commentaires suivant pourront y faire références indistinctement. 8.2 est 
+sensiblement plus rapide (peut-être pas moins de 30% sur certaines tâches), mais déployer 8.1 reste une option tout à 
+fait viable pour le moment, particulièrement dû au fait que les vendeurs de système d'exploitation la distribuent 
+et la prennent en charge plus souvent que la 8.2 encore relativement récente.
 
-What is specifically not addressed here are the feature sets of the two products in areas outside of these fundamentals. Because the scale of the changes in PostgreSQL 8.1 and MySQL 5.0, many of the documents covering this topic are too out of date to recommend. Some pages that may be helpful include:
+// Both systems have newer versions in testing (PostgreSQL 8.3 and MySQL 5.1) at this time that offer incremental 
+// improvements to some areas this document addresses, but there are no fundamental differences so large in either new
+// version that it's believed the general guidelines here would be invalidated. The official release of the MySQL 
+// Falcon engine in the future is one likely disruptive point on the horizon. The Asynchronous Commit feature in 
+// PostgreSQL 8.3 is another upcoming event that will shift the reliability/performance trade-off options available 
+// significantly.
+Les deux systèmes ont de nouvelles versions en phase de tests (PostgreSQL 8.3 et MySQL 5.1) en ce moment qui offrent de
+nouvelles améliorations dans plusieurs domaines traités ici, mais aucune des deux n'apporte de différences
+fondamentales si importantes qu'elles laisseraient penser que les principales orientations de ce document en seraient
+infirmées. La sortie officielle du moteur Falcon de MySQL est probablement l'un des futur points perturbateur à 
+l'horizon. La fonctionnalité d'Execution Asynchrone dans PostgreSQL 8.3 est un autre évènement prochain qui étendra
+significativement les différentes options disponibles pour affiner la configuration entre fiabilité et performance.
 
-    * Open Source Database Feature Comparison Matrix
-    * MySQL vs. PostgreSQL
-    * MySQL Development Roadmap
-    * PostgreSQL Feature Matrix
+// What is specifically not addressed here are the feature sets of the two products in areas outside of these
+// fundamentals. Because the scale of the changes in PostgreSQL 8.1 and MySQL 5.0, many of the documents covering this 
+// topic are too out of date to recommend. Some pages that may be helpful include:
+Ce qui ne sera pas spécifiquement abordé ici seront les fonctionnalités des deux produits dans des domaines extérieurs 
+à ces fondamentaux. A cause de l'importance des changements dans PostgreSQL 8.1 and MySQL 5.0, beaucoup des documents
+concernant ce sujet sont trop vieux pour être recommandés. Incluant certaines pages qui auraient pû être utiles :
 
-While feature checklists are useful, some system behaviors require a fairly deep understanding of the respective systems to appreciate. For instance, the internals of how PostgreSQL compresses TOAST data are invisible to the user, but can result in a startling improvement in system performance with certain types of data.
+//    * Open Source Database Feature Comparison Matrix
+	* Matrice de comparaison des fonctionnalités des bases de données Open Source
+//    * MySQL vs. PostgreSQL
+	* MySQL contre PostgreSQL
+//    * MySQL Development Roadmap
+	* Prévision de développement de MySQL
+//    * PostgreSQL Feature Matrix
+	* Matrice des fonctionnalités de PostgreSQL
 
-Another area outside of the scope of this document is that more applications support MySQL as the database of choice than PostgreSQL, and certainly that is an important factor for deciding which of these databases is better suited for a particular situation. Work on adding PostgreSQL support to some popular applications can be tracked at Software Ports. One thing you should evaluate when considering how applications use MySQL is that if they were initially targeted at versions before 5.0, they may not be compatible with newer features like the strict mode introduced in that version. If that's the case, such applications may be limited to the capabilities of the older version they were written against, and it may require a sort of porting effort to take advantage of the modern MySQL features.
-Reliability
-Data Integrity
-Before version 5.0, MySQL well deserved its reputation for allowing inconsistent data to be inserted into the database. Guaranteeing Data Integrity with MySQL 5.0 explains the issues with older MySQL versions, and how they may be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to change its own SQL Mode to override this, with the result that these validation constraints are still not necessarily enforced by the server.
+// While feature checklists are useful, some system behaviors require a fairly deep understanding of the respective 
+// systems to appreciate. For instance, the internals of how PostgreSQL compresses TOAST data are invisible to the 
+// user, but can result in a startling improvement in system performance with certain types of data.
+Alors que les listes des fonctionnalités sont utiles, certains comportements internes nécessitent une compréhension
+profonde des systèmes respectifs pour bien les saisir. Par exemple, les mécanismes internes concernant la façon
+dont PostgreSQL compresse les données TOAST sont invisibles aux utilisateurs, mais peuvent mener à une amélioration 
+drastique des performances systèmes sur certains types de donnée.
+
+// Another area outside of the scope of this document is that more applications support MySQL as the database of 
+// choice than PostgreSQL, and certainly that is an important factor for deciding which of these databases is better 
+// suited for a particular situation. Work on adding PostgreSQL support to some popular applications can be tracked at
+// Software Ports. One thing you should evaluate when considering how applications use MySQL is that if they were
+// initially targeted at versions before 5.0, they may not be compatible with newer features like the strict mode
+// introduced in that version. If that's the case, such applications may be limited to the capabilities of the older
+// version they were written against, and it may require a sort of porting effort to take advantage of the modern MySQL
+// features.
+// Reliability
+// Data Integrity
+// Before version 5.0, MySQL well deserved its reputation for allowing inconsistent data to be inserted into the
+// database. Guaranteeing Data Integrity with MySQL 5.0 explains the issues with older MySQL versions, and how they may
+// be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to
+// change its own SQL Mode to override this, with the result that these validation constraints are still not 
+// necessarily enforced by the server.
 
 PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is no way for a client to bypass those checks.
 Transactions and the Database Engine Core
