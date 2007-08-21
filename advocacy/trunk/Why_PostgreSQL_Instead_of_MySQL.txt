@@ -143,11 +143,11 @@ Intégrité des Données
 // be addressed using the strict SQL Mode available in the current version. Of course, any MySQL client is allowed to
 // change its own SQL Mode to override this, with the result that these validation constraints are still not 
 // necessarily enforced by the server.
-Avant la version 5.0, MySQL méritait clairement sa réputation autorisant l'insertion de données inconsistantes dans la
-base de données. "Guaranteeing Data Integrity with MySQL 5.0" explique les problèmes avec les plus vieilles versions de
-MySQL, et comment ils pourraient être évité en utilisant le "Mode SQL" strict disponnible dans la version actuelle.
-Bien entendu, tout client MySQL à la possibilité de changer son mode SQL et contourner ainsi ce comportement,
-avec comme résultat que ces validations de contraintes ne soit plus forcément assurée coté serveur.
+Avant la version 5.0, MySQL méritait clairement sa réputation à propos d'insertion de données inconsistantes dans la
+base de données. "Guaranteeing Data Integrity with MySQL 5.0" explique les problèmes avec ces plus vieilles versions de
+MySQL, et comment ils pourraient être évités en utilisant le "Mode SQL" strict disponnible dans la version actuelle.
+Bien entendu, tout client MySQL a la possibilité de changer son mode SQL et contourner ainsi ce comportement, avec
+comme conséquences que ces validations de contraintes ne soient plus forcément assurées coté serveur.
 
 // PostgreSQL has always been strict about making sure data is valid before allowing it into the database, and there is
 // no way for a client to bypass those checks.
@@ -157,7 +157,6 @@ n'existe aucune alternative au client pour contourner ces vérifications.
 // Transactions and the Database Engine Core
 Les Transactions et le Moteur Interne de la Base de Donnée
 
-/* en cours de trad par ioguix
 // The database core that gave MySQL its original reputation for speed is MyISAM. This engine has excellent read
 // performance and its parser is very efficient for straightforward queries, which combine to make it very fast in
 // read-intensive applications like web applications involving simple SELECTs. However, it is commonly known that
@@ -165,7 +164,14 @@ Les Transactions et le Moteur Interne de la Base de Donnée
 // crash there may be a substantial delay while it rebuilds its indexes before the server can restart. Furthermore,
 // it does not support foreign keys or transactions that would allow the database to have ACID properties. MyISAM
 // also has issues dealing with concurrent reads and updates, since it only provides table level locking.
-
+MyISAM est le composant interne de MySQL à l'origine de sa réputation de rapidité. Ce moteur a d'excellentes
+performances en lecture et son analyseur est vraiment très efficace pour les requêtes simples, ce qui le rendent
+trés rapide pour les applications en lecture intensive comme les applications web qui emploient de simple SELECTs.
+Cependant, il est communément connu que MyISAM est plus vulnérable aux corruptions de données que la plupart des
+bases de données sérieuses ne sauraient tolérer, et en cas d'incident, il peut s'écouler un temps non négligeable
+durant lequel il reconstruit ses indexes avant que le serveur ne puisse redémarrer. En outre, il ne supporte pas les
+clés étrangères ou les transactions qui auraient permis à la base d'avoir des propriétés ACID. MyISAM a aussi un
+problème avec les accès concurrents en lecture et mise à jour car ne supporte que les verrous de niveau table.
 
 // The integration of the InnoDB Storage Engine to MySQL greatly improved over MyISAM in terms of data integrity,
 // adding a more robust log replaying mechanism for crash recovery and enabling ACID compliant transactions. However,
@@ -173,9 +179,19 @@ Les Transactions et le Moteur Interne de la Base de Donnée
 // loads. In addition, the internal MySQL metadata tables are still stored using MyISAM, which means they remain
 // vulnerable to the traditional corruption issues associated with that storage engine. This issue is worked around
 // using some complicated locking methods that have the potential to make a table alteration block for some time.
+L'intégration du moteur de stockage InnoDB à MySQL a grandement surpassé MyISAM en terme d'intégrité des données,
+ajoutant un mécanisme de ré-exécution des journaux plus robuste pour la restauration après incident et supportant des
+transactions ACID. Cependant, cette nouvelle approche apporte aussi beaucoup plus de charge, et les tables InnoDB ne
+sont pas aussi rapides que les MyISAM pour les accès en lecture pure. De plus, les tables des métadonnées internes à
+MySQL sont toujours stockées en MyISAM, ce qui signifie qu'elles restent vulnérables aux traditionnels problèmes de
+corruption associés à ce moteur de stockage. Ce problème peut-être contourné en utilisant plusieurs méthodes de
+verrous compliqués qui peuvent potentiellement bloquer l'édition d'une table pendant un certain temps.
 
 // PostgreSQL has always focused on data integrity at the transaction level, keeping locking issues to a minimum, and
 // barring hardware failure or grossly improper configuration it is difficult to corrupt a database.
+PostgreSQL a toujours porté attention à l'intégrité des données au niveau transactionnel, se gardant ainsi des
+problèmes de verrou au minimum, et empêchant une erreur matériel ou une configuration extrêmement mauvaise de corrompre
+la base de données.
 
 // It is worth observing that the database engine is part of the core of PostgreSQL, whereas InnoDB is a
 // dual-licensed product presently licensed from Oracle Corporation. It is uncertain how Oracle may alter InnoDB in the
@@ -184,7 +200,13 @@ Les Transactions et le Moteur Interne de la Base de Donnée
 // historically developing a database core engine that is both fast and reliable has required many years of work and
 // testing before a mature product suitable for production use is available. Initial benchmarks suggest Falcon has
 // plenty of rough edges that need to be addressed.
-*/
+Il est intéressant de souligner que PostgreSQL intègre entièrement son moteur de base de donnée, alors que InnoDB
+est un produit sous licence double actuellement détenu par la société Oracle. L'histoire ne dit pas comment Oracle
+modifiera InnoDB dans le futur sachant qu'ils sont eux-même en concurrence avec MySQL AB, alors que PostgreSQL n'a
+aucun conflit d'intérêts de la sorte. MySQL AB développe un nouveau moteur de base de données interne appelé Falcon
+afin de se libérer de cette situation, mais historiquement, développer un de moteur de base rapide et fiable nécessite
+de nombreuses d'années de travail et de tests avant d'obtenir un produit mûr convenant à la production. Les premières 
+évaluations suggèrent que Falcon a énormément de points d'approximations qui ont besoins d'être corrigés.
 
 // Foreign Keys
 Clés Étrangère
