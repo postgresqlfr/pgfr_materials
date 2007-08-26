@@ -211,7 +211,20 @@ de nombreuses d'années de travail et de tests avant d'obtenir un produit mûr con
 // Foreign Keys
 Clés Étrangère
 
-Proper implementation of design techniques like Database Normalization rely on the ability of the database to use Foreign keys to map relationships between tables. In MySQL, foreign keys are only supported with InnoDB. One problem with their implementation is that it is limited and will silently ignore some standard syntax. For example, when creating a table, even in the upcoming 5.1 release of MySQL "the CHECK clause is parsed but ignored by all storage engines". The basic design philosophy of PostgreSQL is to produce errors or warnings in similar situations where an operation is ambiguous or unsupported.
+// Proper implementation of design techniques like Database Normalization rely on the ability of the database to use
+// Foreign keys to map relationships between tables. In MySQL, foreign keys are only supported with InnoDB. One problem 
+// with their implementation is that it is limited and will silently ignore some standard syntax. For example, when
+// creating a table, even in the upcoming 5.1 release of MySQL "the CHECK clause is parsed but ignored by all storage 
+// engines". The basic design philosophy of PostgreSQL is to produce errors or warnings in similar situations where an 
+// operation is ambiguous or unsupported.
+L'implémentation correcte des techniques de conception comme les formes normales repose sur la capacité de la base de 
+données à utiliser les Clés Étrangères pour représenter les relations entre les tables. Avec MySQL, seul InnoDB supporte
+les clés étrangères. Un problème avec de leur implémentation est qu'elle est limitée et ignorera silencieusement
+plusieurs syntaxes standard. Par exemple, lors de la création d'une table, même avec la prochaine version 5.1 de MySQL
+"la clause CHECK est analysée mais ignorée par tous les moteurs de stockages". À l'origine de PostgreSQL, la philosophie
+de conception à été de produire des erreurs ou des avertissements dans les situations similaires où une opération est
+ambiguë ou non supportée.
+
 Transactional DDL
 
 In PostgreSQL, when you are inside a transaction almost any operation can be undone. There are some irreversible operations (like creating or destroying a database or tablespace), but normal table modifications can be backed out by issuing a ROLLBACK via its Write-Ahead Log design. That supports backing out even large changes to DDL like table creation.
