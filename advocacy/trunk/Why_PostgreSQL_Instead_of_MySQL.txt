@@ -12,7 +12,9 @@ SQL, mais également plus lent et plus compliqué à utiliser.
 
 //Like many perceptions formed in the past, these things aren't as true with the current generation of releases as 
 //they used to be. Both systems have evolved with landmark releases that make comparing the two a lot more complicated.
-Puisque beaucoup de ces perceptions sont apparues dans le passé, ces choses ne sont plus aussi vraies avec les versions actuelles que celà n'a été. Les deux systèmes ont évolué avec des versions notables qui rendent leur comparaison beaucoup plus compliquée.
+Puisque beaucoup de ces perceptions sont apparues dans le passé, ces choses ne sont plus aussi vraies avec les versions
+actuelles que celà n'a été. Les deux systèmes ont évolué avec des versions notables qui rendent leur comparaison
+beaucoup plus compliquée.
 
 //    * MySQL 5.0 (October 2005) finally added a "strict mode" to narrow the gap in terms of data integrity and spec 
 // compliance. It also added support for stored procedures, views, triggers, and cursors, all considered essential 
@@ -218,24 +220,55 @@ Clés Étrangère
 // engines". The basic design philosophy of PostgreSQL is to produce errors or warnings in similar situations where an 
 // operation is ambiguous or unsupported.
 L'implémentation correcte des techniques de conception comme les formes normales repose sur la capacité de la base de 
-données à utiliser les Clés Étrangères pour représenter les relations entre les tables. Avec MySQL, seul InnoDB supporte
-les clés étrangères. Un problème avec de leur implémentation est qu'elle est limitée et ignorera silencieusement
-plusieurs syntaxes standard. Par exemple, lors de la création d'une table, même avec la prochaine version 5.1 de MySQL
-"la clause CHECK est analysée mais ignorée par tous les moteurs de stockages". À l'origine de PostgreSQL, la philosophie
-de conception à été de produire des erreurs ou des avertissements dans les situations similaires où une opération est
-ambiguë ou non supportée.
+données à utiliser les Clés Étrangères pour représenter les relations entre les tables. Avec MySQL, seul InnoDB
+supporte les clés étrangères. Un problème avec de leur implémentation est qu'elle est limitée et ignorera
+silencieusement plusieurs syntaxes standard. Par exemple, lors de la création d'une table, même avec la prochaine
+version 5.1 de MySQL "la clause CHECK est analysée mais ignorée par tous les moteurs de stockages". La philosophie de
+conception à la base de PostgreSQL est de produire des erreurs ou des avertissements dans les situations similaires où
+une opération est ambiguë ou non supportée.
 
-Transactional DDL
+// Transactional DDL
+DDL Transactionnel
 
-In PostgreSQL, when you are inside a transaction almost any operation can be undone. There are some irreversible operations (like creating or destroying a database or tablespace), but normal table modifications can be backed out by issuing a ROLLBACK via its Write-Ahead Log design. That supports backing out even large changes to DDL like table creation.
+// In PostgreSQL, when you are inside a transaction almost any operation can be undone. There are some irreversible 
+// operations (like creating or destroying a database or tablespace), but normal table modifications can be backed out 
+// by issuing a ROLLBACK via its Write-Ahead Log design. That supports backing out even large changes to DDL like table 
+// creation.
+Avec PostgreSQL, lorsque vous êtes à l'interieur d'une transaction presque toute opération peut être annulée. Il existe
+quelque opérations irréversibles (comme créer ou détruire une base ou un talbespace), mais les modifications classiques
+de table peuvent être défaites en executant un ROLLBACK grâce aux mécanismes de Write-Ahead Log. Celà s'applique
+aussi aux importantes modifications du DDL comme la création de tables.
 
-MySQL doesn't support any sort of rollback when using MyISAM. With InnoDB, the server has an implicit commit that occurs even if the normal auto-commit behavior is turned off. This means that any single table alteration or similar change is immediately committed.
+// MySQL doesn't support any sort of rollback when using MyISAM. With InnoDB, the server has an implicit commit that 
+// occurs even if the normal auto-commit behavior is turned off. This means that any single table alteration or similar
+// change is immediately committed.
+MySQL ne supporte aucun type d'annulation en utilisant MyISAM. Avec InnoDB, le serveur déclenche une validation
+implicite même si le comportement normal d'auto-commit est désactivé. Celà signifie qu'une unique modification de
+table ou changement similaire est immediatement validé.
 
-Experienced PostgreSQL DBA's know to take advantage of its features here to protect themselves when doing complicated work like schema upgrades. If you put all such changes into a transaction block, you can make sure they all apply atomically or not at all. This drastically lowers the possibility that the database will be corrupted by a typo or other such error in the schema change, which is particularly important when you're modifying multiple related tables where a mistake might destroy the relational key. There is no way to similar way to safely adjust multiple schema sections with MySQL.
+// Experienced PostgreSQL DBA's know to take advantage of its features here to protect themselves when doing complicated
+// work like schema upgrades. If you put all such changes into a transaction block, you can make sure they all apply
+// atomically or not at all. This drastically lowers the possibility that the database will be corrupted by a typo or 
+// other such error in the schema change, which is particularly important when you're modifying multiple related tables
+// where a mistake might destroy the relational key. There is no way to similar way to safely adjust multiple schema 
+// sections with MySQL.
+Les DBA PostgreSQL expérimenté savent tirer parti de ces fonctionnalités pour s'assurer lors de travaux compliqués
+comme la mise à jour d'un schema. Si vous placez tous ces changements dans une transaction, vous pouvez être certain
+qu'elles seront toutes appliquées de façon atomique ou pas du tout. Cela abaisse drastiquement la possibilité de
+corruption de la base de données par une erreur de frappe ou tout autre erreur de ce genre dans les modifications du
+schéma, ce qui est particulièrement important lorsque vous modifiez plusieurs tables en relations où une erreur peut 
+détruire la clé relationnelle. Il n'existe aucune méthode similaire pour ajuster sûrement plusieurs sections d'un
+schéma avec MySQL.
 
-See Transactional DDL in PostgreSQL: A Competitive Analysis for detailed examples demonstrating these differences.
-Speed
-Default configuration
+// See Transactional DDL in PostgreSQL: A Competitive Analysis for detailed examples demonstrating these differences.
+Voir "Transactional DDL in PostgreSQL: A Competitive Analysis" pour des exemples détaillés démontrant ces différences.
+
+// Speed
+Rapidité
+
+// Default configuration
+Configuration par défaut
+
 Historically, the initial PostgreSQL configuration was designed to support older flavors of UNIX where allocating large amounts of memory wasn't necessarily possible. The result was that its use of memory for caching results was, by default, very pessimistic. On modern systems that have lots of memory available, this severely hinders untuned PostgreSQL performance.
 
 The defaults have gotten much less pessimistic in recent releases. System configuration is now examined at database initialization time and more memory allocated if it is possible to do so. As a result, the untuned default configurations on recent PostgreSQL versions perform significantly better than older versions. In addition, changes in cache management in versions 8.1 and 8.2 allow even modest amounts of cache to be used more effectively than they used to be.
