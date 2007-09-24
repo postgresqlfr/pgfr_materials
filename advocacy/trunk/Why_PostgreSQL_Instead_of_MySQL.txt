@@ -269,16 +269,64 @@ Rapidité
 // Default configuration
 Configuration par défaut
 
-Historically, the initial PostgreSQL configuration was designed to support older flavors of UNIX where allocating large amounts of memory wasn't necessarily possible. The result was that its use of memory for caching results was, by default, very pessimistic. On modern systems that have lots of memory available, this severely hinders untuned PostgreSQL performance.
+// Historically, the initial PostgreSQL configuration was designed to support older flavors of UNIX where allocating
+// large amounts of memory wasn't necessarily possible. The result was that its use of memory for caching results was,
+// by default, very pessimistic. On modern systems that have lots of memory available, this severely hinders untuned
+// PostgreSQL performance.
+Historiquement, la configuration initiale de PostgreSQL était dimensionnée pour supporter les plus vieilles variantes
+d'UNIX où l'allocation de grande quantité de mémoire n'était pas nécessairement possible. Le résultat fût que son
+utilisation de la mémoire cache pour les résultats était, par défaut, très pessimiste. Sur les systèmes modernes qui
+possèdent beaucoup de mémoire libre, cela handicap fortement les performances d'un PostgreSQL non configuré.
 
-The defaults have gotten much less pessimistic in recent releases. System configuration is now examined at database initialization time and more memory allocated if it is possible to do so. As a result, the untuned default configurations on recent PostgreSQL versions perform significantly better than older versions. In addition, changes in cache management in versions 8.1 and 8.2 allow even modest amounts of cache to be used more effectively than they used to be.
+// The defaults have gotten much less pessimistic in recent releases. System configuration is now examined at database
+// initialization time and more memory allocated if it is possible to do so. As a result, the untuned default
+// configurations on recent PostgreSQL versions perform significantly better than older versions. In addition, changes
+// in cache management in versions 8.1 and 8.2 allow even modest amounts of cache to be used more effectively than
+// they used to be.
+Les valeurs par défaut sont beaucoup moins pessimistes dans les versions récentes. Désormais la configuration système
+est examinée au moment de l'initialisation de la base de la données et plus de mémoire sera allouée s'il est possible
+de le faire. Le résultat, c'est qu'une configuration par défaut non réglée d'une version récente de PostgreSQL
+s'exécutera significativement mieux qu'une version plus ancienne. De plus, des changements dans la gestion du cache
+dans les versions 8.1 et 8.2 permettent même une utilisation plus efficace du cache en quantités modestes.
 
-The primary tunable for both database systems works similarly, by allocating a block of shared memory dedicated to the database. MySQL tunes this with key_buffer_size when using MyISAM, and with innodb_buffer_pool_size when using InnoDB (note that you still need some MyISAM space for system tables even when InnoDB is the main storage engine for regular tables). PostgreSQL sizes its main memory space with shared_buffers.
+// The primary tunable for both database systems works similarly, by allocating a block of shared memory dedicated to
+// the database. MySQL tunes this with key_buffer_size when using MyISAM, and with innodb_buffer_pool_size when using 
+// InnoDB (note that you still need some MyISAM space for system tables even when InnoDB is the main storage engine
+// for regular tables). PostgreSQL sizes its main memory space with shared_buffers.
+Le premier des réglages sur les deux systèmes fonctionne de façon similaire, en allouant un bloc de mémoire partagée
+dédiée à la base de données. MySQL règle cela avec key_buffer_size en utilisant MyISAM, et innodb_buffer_pool_siz
+e avec InnoDB (notez que vous aurez toujours besoin d'un espace MyISAM pour les tables systèmes même lorsque InnoDB
+est le moteur de stockage principal de vos tables normales). PostgreSQL taille son espace mémoire principal avec
+shared_buffers.
 
-The MySQL key_buffer_size defaults to using 8MB of memory. Earlier PostgreSQL configurations would also allocate 8MB of memory for the shared_buffers cache if possible. On a server like a current generation Linux system, it's expected the recent PostgreSQL releases would set shared_buffers to at least 24MB by default when the database cluster is created.
+// The MySQL key_buffer_size defaults to using 8MB of memory. Earlier PostgreSQL configurations would also allocate
+// 8MB of memory for the shared_buffers cache if possible. On a server like a current generation Linux system, it's
+// expected the recent PostgreSQL releases would set shared_buffers to at least 24MB by default when the database
+// cluster is created.
+Dans MySQL, key_buffer_size utilise par défaut 8MB de mémoire. Les premières configurations de PostgreSQL
+alloueraient aussi 8MB de mémoire pour le cache shared_buffers si possible. Sur un serveur de type linux de
+génération actuelle, il est admis qu'une version récente de PostgreSQL assigne au moins 24MB par défaut à
+shared_buffers lors de la création du cluster.
 
-It is still worthwhile to go through the configuration files to tune them to match the available memory on a database server, as all these defaults are dramatically undersized compared to the amount of RAM in current systems. For a modern dedicated server, the rule of thumb for both PostgreSQL and MySQL is to size the dedicated memory to at least 1/4 of the total RAM in the machine, perhaps increasing to as much of 1/2 of RAM on the high side of normal. It's not out of the question to push this percentage even higher when using systems with very large amounts of RAM; MySQL InnoDB guidelines suggest even 80% isn't unreasonable. Performance comparisons using the defaults with either database are completely unrealistic of how a real system would be configured. Initial guidelines in this area can be found at 5-Minute Introduction to PostgreSQL Performance, Optimizing the mysqld variables and Optimizing the MySQL Server.
-Benchmarks
+// It is still worthwhile to go through the configuration files to tune them to match the available memory on a
+// database server, as all these defaults are dramatically undersized compared to the amount of RAM in current
+// systems. For a modern dedicated server, the rule of thumb for both PostgreSQL and MySQL is to size the dedicated
+// memory to at least 1/4 of the total RAM in the machine, perhaps increasing to as much of 1/2 of RAM on the high
+// side of normal. It's not out of the question to push this percentage even higher when using systems with very large
+// amounts of RAM; MySQL InnoDB guidelines suggest even 80% isn't unreasonable. Performance comparisons using the
+// defaults with either database are completely unrealistic of how a real system would be configured. Initial
+// guidelines in this area can be found at 5-Minute Introduction to PostgreSQL Performance, Optimizing the mysqld
+// variables and Optimizing the MySQL Server.
+Il est toujours possible de parcourir les fichiers de configuration afin de les adapter à la mémoire libre du serveur
+de la base de données, comme toutes ces valeurs par défaut sont dramatiquement sous-dimensionnées comparé à la
+quantité de RAM sur les systèmes actuels. Pour un serveur moderne dédié, le principe de base pour PostgreSQL et MySQL
+est de dimensionner la mémoire dédiée à au moins 1/4 de la mémoire totale de la machine, pouvant grimper à 1/2 de la
+RAM pour des quantités supérieures à la normale. Il n'est cependant pas hors de question de pousser ce pourcentage
+encore plus haut sur des systèmes avec une quantité vraiment grande de RAM; Le guide de MySQL InnoDB suggère même que
+80% ne soit pas irrésonnable. Les directives initiales dans ce domaine peuvent être trouvées dans
+"5-Minute Introduction to PostgreSQL Performance", "Optimizing the mysqld variables and Optimizing the MySQL Server".
+
+// Benchmarks
 
 Benchmarks are very difficult to do well; creating truly comparable benchmarks is a complex art. Many of the older performance benchmarks that have shown MySQL to be much faster than PostgreSQL have suffered from a number of problem areas:
 
@@ -290,14 +338,15 @@ Benchmarks are very difficult to do well; creating truly comparable benchmarks i
 
     * Serial versus concurrent behaviour: A number of the behaviors of MyISAM are tuned for having a single user accessing the database. For example, its use of table locks to control access to tables means that under heavy user loads, it will slow dramatically. PostgreSQL degrades more gracefully with large numbers of simultaneous connections. Beware of naive benchmarks that involve a simple stream of database requests across a single connection.
 
-Sun Microsystems 2007 jAppServer2004 Benchmark Results
+// Sun Microsystems 2007 jAppServer2004 Benchmark Results
 
 Sun Microsystems, a neutral vendor selling hardware that runs many database types, has recently submitted test results on the well regulated SPECjAppServer2004 using both PostgreSQL and MySQL. There are just enough hardware differences between the two systems that it isn't fair to directly compare the two results. But the fact that both scores are close to one another and the configuration is similar does suggest that while there may be performance differences between the two database systems, the magnitude of that difference is not particularly large with this application type.
 
 For comparison sake, an Oracle on HP result offers a similar magnitude of performance on less impressive hardware, suggesting both open-source databases still lag the best of the commercial products in absolute performance efficiency. Some suggest Oracle's lead is even larger if you pick examples to put it in a better light, but be sure to read Benchmark Brou-Ha-Ha for some comments on actual pricing here (and to pick up some comments on a second PostgreSQL result using a smaller server). Note that Josh Berkus is a Sun employee whose role there includes being a member of the PostgreSQL Core Team, and his commentary should be evaluated accordingly.
 
 If you do a fair comparison that includes software licensing costs, the performance per dollar figures for both PostgreSQL and MySQL are both similar to one another and very good relative to the average for the database industry. It would however be untrue to say that these open-source solutions are always a better choice than commercial offerings like Oracle just based on that; certainly the feature sets and absolute performance of each solution need to be considered as well.
-Transaction Locking and Scalability
+
+// Transaction Locking and Scalability
 
 PostgreSQL uses a robust locking model called
 MVCC that limits situations where individual clients interfere with each other. A short summary of the main benefit of MVCC would be "readers are never blocked by writers". MVCC is used to implement a pessimistic implementation of the four SQL standard transaction isolation levels: "when you select the level Read Uncommitted you really get Read Committed, and when you select Repeatable Read you really get Serializable, so the actual isolation level may be stricter than what you select." The default transaction isolation level is "read committed".
@@ -310,7 +359,8 @@ Even when both systems are configured to one of the strict levels of transaction
 "Transactional Information Systems: Theory, Algorithms, and the Practice of Concurrency Control" by Weikum & Vossen. Speaking in the terminology used there, PostgreSQL uses multi-version timestamp ordering (MVTO) while InnoDB and Oracle use multi-version read consistency (MVRC). The main difference is that PostgreSQL is with-REDO/no-UNDO because it stores every row version in the main table, while Oracle/InnoDB implements with-REDO/with-UNDO where they reconstruct a block and/or row image from the log to provide read consistency. If you're willing to consider a third architecture, that of IBM's DB2, as a comparison point additional good references on this topic are A not-so-very technical discussion of Multi Version Concurrency Control and Leverage your PostgreSQL V8.1 skills to learn DB2. IBM is clearly not a fan of the MVCC approach.
 
 Partially because the PostgreSQL locking implementation is very mature (it's always active and performance of the associated code is accordingly critical), even in situations where MySQL initially appears faster PostgreSQL can pull ahead and scale to higher throughput when the number of simultaneous users becomes large. A good example of such a situation is demonstrated in the tweakers.net database test.
-Counting rows in a table
+
+// Counting rows in a table
 
 One operation that PostgreSQL is known to be slow performing is doing a full count of rows in a table, typically using this SQL:
 
