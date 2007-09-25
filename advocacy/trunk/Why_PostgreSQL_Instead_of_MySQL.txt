@@ -327,16 +327,45 @@ encore plus haut sur des systèmes avec une quantité vraiment grande de RAM; Le g
 "5-Minute Introduction to PostgreSQL Performance", "Optimizing the mysqld variables and Optimizing the MySQL Server".
 
 // Benchmarks
+Tests de performances
 
-Benchmarks are very difficult to do well; creating truly comparable benchmarks is a complex art. Many of the older performance benchmarks that have shown MySQL to be much faster than PostgreSQL have suffered from a number of problem areas:
+// Benchmarks are very difficult to do well; creating truly comparable benchmarks is a complex art. Many of the older
+// performance benchmarks that have shown MySQL to be much faster than PostgreSQL have suffered from a number of
+// problem areas:
+Les tests de performances sont vraiment compliqués à réaliser correctement; créer des tests vraiment comparables est
+un art complexe. Beaucoup des tests de performances qui ont présenté MySQL comme plus rapide que PostgreSQL ont
+souffert de nombreuses zones de problèmes :
 
-    * Configuration: It's not unheard of to see a a tuned MySQL compared to an untuned PostgreSQL instance. As mentioned above, untuned PostgreSQL used to be particularly pessimistic about what resources it had available. A truly fair comparison would match the amount of memory used by each system.
+//    * Configuration: It's not unheard of to see a a tuned MySQL compared to an untuned PostgreSQL instance. As 
+// mentioned above, untuned PostgreSQL used to be particularly pessimistic about what resources it had available. A
+// truly fair comparison would match the amount of memory used by each system.
+    * Configuration : il n'est pas impossible de voir un MySQL configuré comparé à une instance de PostgreSQL qui ne
+	l'est pas. Comme indiqué plus haut, un PostgreSQL non configuré a une utilisation particulièrement péssimiste des
+	ressources qu'il a à sa disponnibilité. Une comparaison réellement juste utiliserait la même quantité de
+	mémoire	sur les deux systèmes.
 
-    * Transaction support: MyISAM benchmarks involve "transactions" that provide none of the ACID guarantees that PostgreSQL offers. This would frequently mean that apples were being compared to oranges.
+//    * Transaction support: MyISAM benchmarks involve "transactions" that provide none of the ACID guarantees that
+// PostgreSQL offers. This would frequently mean that apples were being compared to oranges.
+    * Support des transactions : les tests de MyISAM impliquent des "transactions" qui ne fournissent aucune des 
+	guaranties ACID que PostgreSQL offre. Cela revient généralement à comparer des pommes à des oranges.
 
-    * Transaction grouping: Related to the above, PostgreSQL would sometimes be hindered in naive benchmarks that don't properly group transactions the way a real application would. That can add the overhead of not just one transaction, but perhaps hundreds of thousands, to the cost of doing updates.
+//    * Transaction grouping: Related to the above, PostgreSQL would sometimes be hindered in naive benchmarks that
+// don't properly group transactions the way a real application would. That can add the overhead of not just one
+// transaction, but perhaps hundreds of thousands, to the cost of doing updates.
+    * groupement de transactions : relatif au point précédent, PostgreSQL serait parfois affecté par des tests simplets
+	qui ne groupent pas correctement les transactions comme les applications le feraient. Cela n'ajoutera pas seulement le
+	coût d'une transaction, mais peut-être de centaines de milliers, au coût total de la réalisation des modifications.
 
-    * Serial versus concurrent behaviour: A number of the behaviors of MyISAM are tuned for having a single user accessing the database. For example, its use of table locks to control access to tables means that under heavy user loads, it will slow dramatically. PostgreSQL degrades more gracefully with large numbers of simultaneous connections. Beware of naive benchmarks that involve a simple stream of database requests across a single connection.
+//    * Serial versus concurrent behaviour: A number of the behaviors of MyISAM are tuned for having a single user
+// accessing the database. For example, its use of table locks to control access to tables means that under heavy user
+// loads, it will slow dramatically. PostgreSQL degrades more gracefully with large numbers of simultaneous
+// connections. Beware of naive benchmarks that involve a simple stream of database requests across a single
+// connection.
+    * Comportements en série ou en parallèle : un certain nombre de comportement de MyISAM sont ajustés pour n'avoir
+	qu'un seul utilisateur accèdant à la base. Par exemple, son utilisation de vérrous de table lors d'accès à
+	celles-ci implique qu'avec de nombreux accès utilisateurs, MyISAM ralentira dramatiquement. Les performances de
+	PostgreSQL se dégradent plus harmonieusement avec de grande quantité de connection simultannées. Méfiez vous des
+	tests qui n'impliquent qu'un simple flot de requêtes sur la base à travers une unique connection.
 
 // Sun Microsystems 2007 jAppServer2004 Benchmark Results
 
