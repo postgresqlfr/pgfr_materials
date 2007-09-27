@@ -389,12 +389,25 @@ grande avec ce type d'application.
 // to read Benchmark Brou-Ha-Ha for some comments on actual pricing here (and to pick up some comments on a second
 // PostgreSQL result using a smaller server). Note that Josh Berkus is a Sun employee whose role there includes being
 // a member of the PostgreSQL Core Team, and his commentary should be evaluated accordingly.
+Par comparaison, un Oracle sur HP offre des résultats comparable en performance sur du matériel moins impréssionnant,
+suggérant ainsi que les deux bases de données open-source ont toujours du retard sur le meilleur des produits
+commerciaux en terme d'efficacité des performances. Certains prétendent que la supériorité d'Oracle est encore plus
+grande en choisissant des exemples qui le mettent plus en valeur, mais assurez-vous de bien lire le Brou-Ha-Ha du
+test à la recherche de commentaires à propos du tarif en cour (et de relever quelques commentaires sur des résultats
+secondaires utilisant un serveur plus petit avec PostgreSQL). Notez que Josh Berkus est un employé de Sun dont le
+rôle inclut aussi d'être un des membres de l'équipe du noyau de PostgreSQL, et son commentaire devrait être évalué en
+conséquence.
 
 // If you do a fair comparison that includes software licensing costs, the performance per dollar figures for both
 // PostgreSQL and MySQL are both similar to one another and very good relative to the average for the database
 // industry. It would however be untrue to say that these open-source solutions are always a better choice than
 // commercial offerings like Oracle just based on that; certainly the feature sets and absolute performance of each
 // solution need to be considered as well.
+Si vous faites une comparaison équitable en incluant le coût des licences, la performance par dollar apparaît être
+semblable pour PostgreSQL et MySQL et très bon relativement à la moyenne dans l'industrie de base de données. Il
+serait cependant faux de dire que ces solutions open-source sont toujours un meilleur choix que les offres
+commerciales comme Oracle en se basant seulement là dessus; les fonctionnalités et performances absolues de chacune
+des solutions doivent certainement être pris en compte aussi.
 
 // Transaction Locking and Scalability
 
