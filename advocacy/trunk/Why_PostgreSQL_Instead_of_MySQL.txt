@@ -353,8 +353,9 @@ souffert de nombreuses zones de problèmes :
 // don't properly group transactions the way a real application would. That can add the overhead of not just one
 // transaction, but perhaps hundreds of thousands, to the cost of doing updates.
     * groupement de transactions : relatif au point précédent, PostgreSQL serait parfois affecté par des tests simplets
-	qui ne groupent pas correctement les transactions comme les applications le feraient. Cela n'ajoutera pas seulement le
-	coût d'une transaction, mais peut-être de centaines de milliers, au coût total de la réalisation des modifications.
+	qui ne groupent pas correctement les transactions comme les applications le feraient. Cela n'ajoute pas seulement
+	le coût d'une transaction, mais peut-être celui de centaines de milliers, au coût total de la réalisation des
+	modifications.
 
 //    * Serial versus concurrent behaviour: A number of the behaviors of MyISAM are tuned for having a single user
 // accessing the database. For example, its use of table locks to control access to tables means that under heavy user
@@ -380,8 +381,8 @@ Sun Microsystems, un constructeur neutre vendant du matériel qui supporte beauco
 récement publié les résultats de ses tests sur le trés réglementé SPECjAppServer2004 en utilisant PostgreSQL et MySQL.
 Le peu de différences matériels entre les deux systèmes suffit pour ne pas comparer les deux résultats directement.
 Mais le fait que les deux résultats soient assé proches avec une configuration similaire suggère que malgrès que les
-performances puissent être différentes entre les deux bases, l'importance de cette différence n'est pas particulièrement
-grande avec ce type d'application.
+performances puissent être différentes entre les deux bases, l'importance de cette différence n'est pas
+particulièrement grande avec ce type d'application.
 
 // For comparison sake, an Oracle on HP result offers a similar magnitude of performance on less impressive hardware,
 // suggesting both open-source databases still lag the best of the commercial products in absolute performance
@@ -462,10 +463,18 @@ SELECT COUNT(*) FROM table
 // transactions can see different states of the data means that there can be no straightforward way for "COUNT(*)" to
 // summarize data across the whole table; PostgreSQL must walk through all rows, in some sense. This normally results
 // in a sequential scan reading information about every row in the table.
+La raison de cette lenteur vient de l'implémentation MVCC de PostgreSQL. Le fait que plusieurs transactions puissent
+voir différents états de données implique qu'il ne peut y avoir de méthode simple pour "COUNT(*)" pour résumer les
+données sur l'ensemble de la table ; dans un sens, PostgreSQL doit parcourir toutes les lignes. Cela abouti
+normalement sur un scan sequentiel lisant les informations de chaque ligne de la table.
 
 // Some DBMSes provide the ability for "COUNT(*)" queries to work via consulting an index. Unfortunately, in
 // PostgreSQL, this strategy does not work, as MVCC visibility information is not stored at the index level. It is
 // necessary to actually examine the rows themselves to determine if they are visible to the transaction or not.
+Certains SGBD fournissent aux requêtes "COUNT(*)" la capacité de fonctionner en consultant un index. Malheureusement,
+dans PostgreSQL, cette strategie ne fonctionne pas, car l'information de visibilité MVCC n'est pas présent au niveau
+de l'index. Il est nécessaire d'examiner les lignes elles-même pour déterminer si elles sont visible pour la
+transaction ou pas.
 
 // In MySQL, MyISAM tables cache the row count information, making this type of count operation almost instant. That
 // is the reason why there exists so much MySQL code that uses this construct assuming it's a trivial operation. But
@@ -473,9 +482,17 @@ SELECT COUNT(*) FROM table
 // "COUNT(*) vs COUNT(col)" for notes on the limitations of MySQL in this area. MySQL designs that may be deployed 
 // on InnoDB can't assume that a full row count will be fast, and therefore are hampered by similar limitations to 
 // those present in PostgreSQL.
+Dans MySQL, les tables MyISAM concervent en cache l'information sur le nombre de ligne, faisant de ce type de
+dénombrement des opérations presque instantannées. C'est la raison pour laquelle tant de codes MySQL utilisent cette
+construction présumant que c'est une opération triviale. Mais si vous utilisez InnoDB, ce ne sera plus le cas. Voir
+"COUNT(*) for Innodb Tables" et "COUNT(*) vs COUNT(col)" pour les notes sur les limitations de MySQL dans ce domaine.
+MySQL conçoit que déployé sur InnoDB, il ne peut assurer qu'un dénombrement de toutes les lignes soit rapide, et qu'ils
+sont donc prisonnier des mêmes limitations que celles présentes dans PostgreSQL.
 
 // It is worth observing that it is only this precise form of aggregate that must be so pessimistic; if augmented with
 // a "WHERE" clause like
+Il est utile de préciser que seule cette forme précise d'aggrégat doit être si pessimiste ; si elle est complétée avec
+une clause "WHERE" comme :
 
 // SELECT COUNT(*) FROM table WHERE status = 'something'
 SELECT COUNT(*) FROM table WHERE status = 'quelque chose'
@@ -484,14 +501,18 @@ SELECT COUNT(*) FROM table WHERE status = 'quelque chose'
 //the restricted field(s) to limit how many records must be counted, which can greatly accelerate such queries. 
 //PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems 
 //many only need to reference the index in this situation.
-PostgreSQL, MySQL, et beaucoup d'autres implémentations de base de données tireront profil de la disponibilités des
-index pour le champs restreint afin de limiter le nombre d'enregistrementq devant être comptés, ce qui accelère
+PostgreSQL, MySQL, et beaucoup d'autres implémentations de base de données tireront profit de la disponibilités des
+index pour le champs restreint afin de limiter le nombre d'enregistrements devant être comptés, ce qui accelère
 grandement de telles requêtes.
 
 //One popular approach for applications that need a row count but can tolerate it not including transactions that are 
 //in the middle of being committed is to use a trigger-based mechanism to count the rows in the table. In PostgreSQL, 
-//another alternative when only an approximate count is needed is to use the reltuples field from the pg_class catalog table.
-Une approche apprécié pour les applications qui ont besoin de compter les lignes mais ...
+//another alternative when only an approximate count is needed is to use the reltuples field from the pg_class catalog
+//table.
+Une approche appréciée pour les applications qui ont besoin de compter les lignes et qui peuvent tolérer de ne pas
+inclure les transactions en cours de réalisation, est d'utiliser un mécanisme à base de trigger pour compter les lignes
+de la table. Dans PostgreSQL, une autre alternative est d'utiliser le champs reltuples de la table pg_class du
+catalogue lorsque seul une valeur approximative est nécessaire.
 
 //Join Complexity
 Jointure complèxe
