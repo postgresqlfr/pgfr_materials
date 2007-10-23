@@ -171,7 +171,7 @@ performances en lecture et son analyseur est vraiment très efficace pour les req
 trés rapide pour les applications en lecture intensive comme les applications web qui emploient de simple SELECTs.
 Cependant, il est communément connu que MyISAM est plus vulnérable aux corruptions de données que la plupart des
 bases de données sérieuses ne sauraient tolérer, et en cas d'incident, il peut s'écouler un temps non négligeable
-durant lequel il reconstruit ses indexes avant que le serveur ne puisse redémarrer. En outre, il ne supporte pas les
+durant lequel il reconstruit ses index avant que le serveur ne puisse redémarrer. En outre, il ne supporte pas les
 clés étrangères ou les transactions qui auraient permis à la base d'avoir des propriétés ACID. MyISAM a aussi un
 problème avec les accès concurrents en lecture et mise à jour car ne supporte que les verrous de niveau table.
 
@@ -452,6 +452,8 @@ Compter les lignes d'une table
 
 // One operation that PostgreSQL is known to be slow performing is doing a full count of rows in a table, typically
 // using this SQL:
+Une opération sur laquelle PostgreSQL est connu pour être lent est de compter la totalité des lignes d'une table,
+typiquement en utilisant cette requête :
 
 // SELECT COUNT(*) FROM table
 SELECT COUNT(*) FROM table
@@ -483,7 +485,7 @@ SELECT COUNT(*) FROM table WHERE status = 'quelque chose'
 //PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems 
 //many only need to reference the index in this situation.
 PostgreSQL, MySQL, et beaucoup d'autres implémentations de base de données tireront profil de la disponibilités des
-indexes pour le champs restreint afin de limiter le nombre d'enregistrement devant être comptés, ce qui accelère
+index pour le champs restreint afin de limiter le nombre d'enregistrement devant être comptés, ce qui accelère
 grandement de telles requêtes.
 
 //One popular approach for applications that need a row count but can tolerate it not including transactions that are 
@@ -510,9 +512,9 @@ sont analysées et combiner avec l'ajustements des coûts du planificateur, et les
 //typical EXPLAIN data. Regardless of hinting, subselect optimization is a known weak spot in MySQL. 
 //There is also a fairly serious subquery null handling bug in MySQL 5.0 
 //(which at this time appears to be still present in 5.1).
-Le plannificateur de MySQL n'a pas ce niveau de sophistication, et les options de réglage pour le
+Le planificateur de MySQL n'a pas ce niveau de sophistication, et les options de réglage pour le
 "Controlling Query Optimizer Performance" sont grossières. Les développeurs contournent celà en fournissant par
-exemple des astuces sur les indexes afin de s'assurer que les jointures se fassent correctement. Pour faciliter cette
+exemple des astuces sur les index afin de s'assurer que les jointures se fassent correctement. Pour faciliter cette
 tâche, MySQL fournit un "Query Profiler" qui facilite le travail typiquement sur ces données EXPLAIN. En dehors de ces
 astuces, l'optimisation des sous-selection est une faiblesse connue de MySQL. Il existe aussi un bug plutôt sérieux à
 propos des sous-requêtes nulles dans MySQL 5.0 (qui semble toujours être présent dans MySQL 5.1 pour le moment).
