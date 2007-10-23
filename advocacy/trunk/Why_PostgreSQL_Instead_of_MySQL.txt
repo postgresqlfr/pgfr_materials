@@ -418,10 +418,20 @@ des solutions doivent certainement être pris en compte aussi.
 // select the level Read Uncommitted you really get Read Committed, and when you select Repeatable Read you really 
 // get Serializable, so the actual isolation level may be stricter than what you select." The default transaction 
 // isolation level is "read committed".
+PostgreSQL utilise un modèle de verrous robuste appelé MVCC qui limite les situations où les clients interfèrent les uns
+avec les autres. Un court résumé du principal bénéfice du MVCC serait "les lecteurs ne sont jamais bloqués par les
+écritures". MVCC est utilisé pour implémenter une vision pessimiste des quatre niveaux d'isolation standards de SQL :
+« lorsque vous sélectionnez le niveau "Read Uncommited" (Lecture de données non validées) vous avez en réalité
+"Read Committed" (Lecture de données validées), et quand vous sélectionnez "Repeatable Read" (Lecture répétée) vous
+aurez en réalité "Serializable" (Sérialisable), donc le niveau d'isolation actuel pourrait être plus strict que ce que
+vous sélectionnez ». Le niveau d'isolation des transactions par défaut est "read commited".
 
 // MySQL's InnoDB implements MVCC using a rollback segment, inspired by Oracle's design; their new Falcon engine works
 // similarly. InnoDB databases supports all four SQL standard transaction isolation levels, with the default being
 // "repeatable read".
+InnoDB de MySQL implémente MVCC en utilisant un espace d'annulation (rollback segment), inspiré par la conception
+d'Oracle ; leur nouveau moteur Falcon fonctionne de la même manière. Les bases de données InnoDB supportent les quatre 
+standards d'isolation de transaction SQL, celui par défaut étant "Repeatable Read".
 
 // When comparing the two models, PostgreSQL enforces client separation where the data operated on is always consistent
 // under all circumstances; as the MVCC documentation states, "the reason that PostgreSQL only provides two isolation 
@@ -430,6 +440,14 @@ des solutions doivent certainement être pris en compte aussi.
 // result in a data view that would be considered inconsistent by PostgreSQL's stricter standards. However, in 
 // situations where it's acceptable for data being read to have small inconsistencies, being able to use a less strict 
 // locking could be a performance advantage for MySQL.
+Lorsque l'on compare les deux modèles, PostgreSQL assure une séparation des clients tel que les données traitées soient
+toujours consistantes dans toutes les circonstances ; comme la documentation MVCC l'établit, « La raison pour laquelle
+PostgreSQL fournit seulement deux niveaux d'isolation est qu'il s'agit de la seule façon raisonnable de faire
+correspondre les niveaux d'isolation standards avec l'architecture de contrôle des accès simultanés multiversion ».
+MySQL autorise des configurations où le code d'un client qui ne valide pas correctement ses transactions peu aboutir à
+une vue des données qui serait considérée inconsistante par les standards strictes de PostgreSQL. Cependant, dans les 
+situations où il est acceptable d'avoir des lectures avec de petites inconsistances, avoir la possibilité d'utiliser des
+verrous moins strictes peut être un avantage en terme de performances dans MySQL.
 
 // Even when both systems are configured to one of the strict levels of transaction locking, the differences between 
 // the two implementations are subtle enough that which implementation will work better for a particular application
@@ -442,11 +460,26 @@ des solutions doivent certainement être pris en compte aussi.
 // architecture, that of IBM's DB2, as a comparison point additional good references on this topic are A not-so-very 
 // technical discussion of Multi Version Concurrency Control and Leverage your PostgreSQL V8.1 skills to learn DB2. IBM
 // is clearly not a fan of the MVCC approach.
+Même lorsque les deux systèmes sont configurés avec l'un des niveaux strict des verrous de transaction, les différences
+entre les deux implémentations sont suffisamment subtiles qu'il soit difficile de définir clairement uelle sera la plus
+appropriée pour une application particulière. Une lecture recommandée pour comprendre ce sujet compliqué est 
+"Transactional Information Systems: Theory, Algorithms, and the Practice of Concurrency Control" de Weikum & Vossen. En
+utilisant les termes qui y sont employés, PostgreSQL utilise un tri daté multiversion (multi-version timestamp ordering)
+(MVTO) tandis que InnoDB et Oracle utilisent la consistance des lectures multiversions (multi-version read consistency)
+(MVRC). La principale différence est que PostgreSQL est avec-REFAIT/sans-ANNULE (with-REDO/no-UNDO) car il stock chaque
+version des lignes dans la table principale, alors que Oracle/InnoDB implémente avec-REFAIT/avec-ANNULE
+(with-REDO/with-UNDO) où ils reconstruisent un bloc et/ou l'image d'une ligne depuis les journaux afin de proposer une
+lecture consistante. Si vous êtes prêt à aborder une troisième architecture, celle de DB2 d'IBM, d'autres bonnes références sur le propos pour comparaisons sont "A not-so-very technical discussion of Multi Version Concurrency Control" et
+"Leverage your PostgreSQL V8.1 skills to learn DB2". IBM n'est clairement pas fan de l'approche MVCC.
 
 // Partially because the PostgreSQL locking implementation is very mature (it's always active and performance of the 
 // associated code is accordingly critical), even in situations where MySQL initially appears faster PostgreSQL can 
 // pull ahead and scale to higher throughput when the number of simultaneous users becomes large. A good example of
 // such a situation is demonstrated in the tweakers.net database test.
+En parti à cause de l'implémentation très mature des verrous dans PostgreSQL (elle est toujours active et les
+performances du code associé est par conséquence critique), même dans les situations où MySQL paraît initialement plus
+rapide PostgreSQL peut aller plus loin et arriver à un débit plus élevé lorsque le nombre d'utilisateurs simultanés
+devient important. Un bon exemple de ce type de situation est démontré dans le test de base de données de tweakers.net.
 
 // Counting rows in a table
 Compter les lignes d'une table
