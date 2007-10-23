@@ -522,10 +522,10 @@ Jointure complèxe
 //with adjustable planner costs, and advanced features such as the Genetic Query Optimizer allow optimizing 
 //even very complicated joins efficiently.
 PostgreSQL utilise une méthode économique d'optimisation des requêtes afin d'obtenir de bonne performances pour les 
-différents types de jointures. 
-Les requêtes coûteuses sont évalués et basé sur des statistiques du planificateur recueillies quand les tables
-sont analysées et combiner avec l'ajustements des coûts du planificateur, et les fonctionnalités avancées tel que le
-"Genetix Query Optimizer" permettant l'optimisation efficace de jointûres très compliqués.
+différents types de jointures. Les requêtes coûteuses sont évalués et basé sur des statistiques du planificateur
+recueillies quand les tables sont analysées et combiner avec l'ajustements des coûts du planificateur, et les 
+fonctionnalités avancées tel que le "Genetix Query Optimizer" permettant l'optimisation efficace de jointûres très
+compliqués.
 
 //MySQL doesn't have this level of sophistication in its planner, and the tunables for Controlling Query Optimizer 
 //Performance are crude. Developers instead do things like explicitly provide index hints to make sure joins 
@@ -551,8 +551,14 @@ voir : http://dev.mysql.com/doc/refman/5.0/en/open-bugs.html http://dev.mysql.co
 //which join it uses, is a somewhat controversial design decision. The core PostgreSQL developers feel that it's more 
 //important to focus on improving the optimizer so it works correctly in all cases instead of just allowing queries 
 //to hint at a plan as a workaround for problems.
-
-
+La définition de l'ordre d'exécution fourni plusieurs comparaisons entre différences de traîtement des requêtes par les
+deux bases de données. Comme son optimisation automatique est plus robuste, PostgreSQL réalise généralement un meilleur
+travail avec les jointures compliquées que MySQL -- Mais seulement si le planificateur est configuré correctement
+(définir une valeur trop petite pour effective_cache_size est une erreur commune) et que les statistiques sur les
+tables sont maintenues à jour (typiquement via auto-vacuum). Le fait que vous deviez donner à l'optimiseur de PostgreSQL
+des informations correctes sur lesquelles travailler, est quelque chose de controversé dans le choix de conception.
+Les développeurs principaux de PostgreSQL estiment qu'il est plus important de se concentrer sur l'amélioration de
+l'optimiseur pour qu'il fonctionne correctement dans tous les cas plutôt que d'autoriser les requêtes à introduire des modification dans le plan comme contournement aux problèmes.
 
 // There are some add-on tools some find useful for exploring the PostgreSQL planner. pgAdmin includes an explain plan 
 // viewer (sample). Another option is Visual Explain, originally a RedHat component that has been kept current and 
