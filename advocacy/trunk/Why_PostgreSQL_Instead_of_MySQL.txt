@@ -510,8 +510,15 @@ sont analysées et combiner avec l'ajustements des coûts du planificateur, et les
 //typical EXPLAIN data. Regardless of hinting, subselect optimization is a known weak spot in MySQL. 
 //There is also a fairly serious subquery null handling bug in MySQL 5.0 
 //(which at this time appears to be still present in 5.1).
+Le plannificateur de MySQL n'a pas ce niveau de sophistication, et les options de réglage pour le
+"Controlling Query Optimizer Performance" sont grossières. Les développeurs contournent celà en fournissant par
+exemple des astuces sur les indexes afin de s'assurer que les jointures se fassent correctement. Pour faciliter cette
+tâche, MySQL fournit un "Query Profiler" qui facilite le travail typiquement sur ces données EXPLAIN. En dehors de ces
+astuces, l'optimisation des sous-selection est une faiblesse connue de MySQL. Il existe aussi un bug plutôt sérieux à
+propos des sous-requêtes nulles dans MySQL 5.0 (qui semble toujours être présent dans MySQL 5.1 pour le moment).
 
-
+/* ndt : vérifier que le bug "subquery null handling bug" soit toujours d'actualité. les liens donnés ne sont plus correcte,
+voir : http://dev.mysql.com/doc/refman/5.0/en/open-bugs.html http://dev.mysql.com/doc/refman/5.1/en/open-bugs.html ? */
 
 //Finding order in execution provides several comparisons of how the two databases handle queries differently. 
 //Because of its more robust automatic optimization, PostgreSQL usually does a better job of handling complicated 
