@@ -168,7 +168,7 @@ Les Transactions et le Moteur Interne de la Base de Donnée
 // also has issues dealing with concurrent reads and updates, since it only provides table level locking.
 MyISAM est le composant interne de MySQL à l'origine de sa réputation de rapidité. Ce moteur a d'excellentes
 performances en lecture et son analyseur est vraiment très efficace pour les requêtes simples, ce qui le rendent
-trés rapide pour les applications en lecture intensive comme les applications web qui emploient de simple SELECTs.
+trés rapide pour les applications en lecture intensive comme les applications web qui emploient de simples SELECTs.
 Cependant, il est communément connu que MyISAM est plus vulnérable aux corruptions de données que la plupart des
 bases de données sérieuses ne sauraient tolérer, et en cas d'incident, il peut s'écouler un temps non négligeable
 durant lequel il reconstruit ses index avant que le serveur ne puisse redémarrer. En outre, il ne supporte pas les
@@ -485,7 +485,7 @@ SELECT COUNT(*) FROM table WHERE status = 'quelque chose'
 //PostgreSQL will still need to read the resulting rows to verify that they exist; other database systems 
 //many only need to reference the index in this situation.
 PostgreSQL, MySQL, et beaucoup d'autres implémentations de base de données tireront profil de la disponibilités des
-index pour le champs restreint afin de limiter le nombre d'enregistrement devant être comptés, ce qui accelère
+index pour le champs restreint afin de limiter le nombre d'enregistrementq devant être comptés, ce qui accelère
 grandement de telles requêtes.
 
 //One popular approach for applications that need a row count but can tolerate it not including transactions that are 
