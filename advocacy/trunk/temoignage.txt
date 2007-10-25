@@ -1,0 +1,73 @@
+    * Êtes vous d'accord pour que vos nom, prénom, courriel, nom
+      d'organisation et fonction soient connus du public ?
+
+    * S'agit-il d'une organisation à but lucratif, associatif ou
+      gouvernementale ?
+
+    * Quelle est la taille de votre organisation en nombre de collaborateurs ?
+
+    * Quelles sont les utilisations de la (des) base(s) de données utilisées dans
+      votre organisation ?
+
+    * Ces bases de données sont-elles critiques pour votre
+      organisation ?
+
+    * Quel est le nombre de bases de données sous PostgreSQL
+      par rapport au nombre total de bases de données (tous SGBD confondus) ?
+
+    * Quel est le nombre minimum/maximum/moyen de tables par base de données ?
+    
+    * Quelle est la taille minimum/max/moyenne des bases gérées (en Mo) ?
+      Il est facile d'obtenir cette information avec la commande suivante, sous
+      un système de type GNU/Linux ou Unix :
+      $ du -sh $PGDATA
+    
+    * PostgreSQL est-il utilisée dans un contexte transactionnel ou plutôt de type
+      datamining/datawarehouse ?
+    
+    * Quelle est la version utilisée ?
+    
+    * Le serveur sur lequel est installé PostgreSQL est de quel type ?
+    
+    * Quelle est la part des logiciels libres dans votre organisation ? Au
+      niveau des serveurs ? Et au niveau des postes clients ?
+    
+    * Quel est le nombre de serveurs en technologies libres par rapport au
+      nombre de serveurs au total ?
+    
+    * Depuis combien de temps PostgreSQL est-il utilisé, depuis quelle version ?
+    
+    * PostgreSQL est-il venu en remplacement de technologies propriétaires, si oui, lesquelles ?
+    
+	* Quelles étaient les principales raisons de ce remplacement ?
+    
+	* D'autres solutions libres ont-elles été envisagées (MySQL, Firebird, Ingres...) ?
+    
+	    * Pourquoi PostgreSQL a-t-il été choisi ?
+    
+    * Utilisez-vous des projets annexes à PostgreSQL (Slony-I, PgPool, Skytools...) ?
+
+**** À présent, donnez des notes de 1 à 5 et commentez ****
+1 = mauvais, 2 = passable, 3 = moyen, 4 = bon, 5 = très bon
+
+    * Quel est votre ressenti sur PostgreSQL en terme
+    
+	* de fiabilité ?
+    
+	* de robustesse ?
+    
+	* d'administration ?
+
+	* de facilité d'utilisation ?
+    
+	* de performances ?
+
+	* d'extensibilité ?
+
+	* de « scalabilité » ?
+
+	* de « tuning » ?
+
+	* d'outils annexes ?"
+
+    * Le support de la communauté PostgreSQL vous paraît-il efficace ?
