@@ -1,4 +1,4 @@
-## Décembre 2007, New-York, Y : Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+## Décembre 2007, New-York, NY : Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
 
 « L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer, » déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 
@@ -27,7 +27,7 @@ Bien évidemment, une version PostgreSQL se doit d'apporter de nombreuses foncti
 
 En plus des nombreuses fonctionnalités de bases ajoutées, quelques nouveaux composants optionnels ont mûri et atteint la version 1.0 lors du cycle de publication de PostgreSQL 8.3. Parmi ceux-ci, on trouve le support SNMP, des possibilités d'extensibilité horizontale telles que PL/Proxy, PgPool-II et Bucardo, un débogueur graphique de procédures stockées et un concentrateur de connexion appelé pgBouncer. Tout cela s'ajoute aux très nombreux accessoires déjà disponibles.
 
-La version 8.3 apporte de très nombreuses améliorations et fonctionnalités additionnelles qui contribuent à rendre PostgreSQL encore plus performant. Pour les détails, on peut se reporter au cahier de presse : http://www.postgresql.org/about/press/presskit83
+La version 8.3 apporte de très nombreuses améliorations et fonctionnalités additionnelles qui contribuent à rendre PostgreSQL encore plus performant. Pour les détails, on peut se reporter au dossier de presse : http://www.postgresql.org/about/press/presskit83
 
 PostgreSQL est téléchargeable à partir de : http://www.postgresql.org/download
 
