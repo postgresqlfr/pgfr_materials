@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                         "../../tools/dtd/4.5/docbookx.dtd" >
+                      
+<article>
+
+  <articleinfo>
+
+	  <title>Pourquoi préférer PostgreSQL à MySQL</title>
+	  <subtitle>comparatif de fiabilité et de rapidité en 2007</subtitle>
+	
+	  <authorgroup>
+	
+		  <author>
+		    <honorific>Mr</honorific>
+		    <firstname>Guillaume</firstname>
+		    <surname>de Rorthais</surname>
+		  </author>
+	
+		  <author>
+		    <honorific>Mr</honorific>
+		    <firstname>Christophe</firstname>
+		    <surname>Chauvet</surname>
+		  </author>
+
+		  <othercredit>
+		    <firstname>Greg</firstname>
+		    <surname>Smith</surname>
+		    <contrib>Original contribution in English</contrib>
+		  </othercredit>		  
+
+	  </authorgroup>
+
+  </articleinfo>
+  
+  <sect1>
+  
+    <title>Introduction</title>
+    
+    <para>
+      Pendant des années, le marché considérait <productname>MySQL</productname> comme plus rapide et plus facile à utiliser que <productname>PostgreSQL</productname>.
+      <productname>PostgreSQL</productname> avait la réputation d'être plus puissant, focalisé sur l'intégrité des données, et plus respectueux 
+      des normes SQL, mais également plus lent et plus compliqué à utiliser.    
+    </para>
+    
+    <para>
+      Ces perceptions appartiennent au passé, et avec les versions actuelles, les choses ne sont plus aussi tranchées 
+      qu'auparavant. Les deux systèmes ont évolué avec des versions notables qui rendent leur comparaison beaucoup 
+      plus compliquée.
+      
+      <itemizedlist>
+        <listitem>
+          <para>
+           <productname>MySQL</productname> 5.0 (Octobre 2005) a finalement ajouté un « strict mode » pour réduire l'écart en terme d'intégrité 
+           des données et de conformité aux spécifications. Le support des procédures stockées, des vues, 
+           des déclencheurs et des curseurs, fonctionnalités essentielles dans de nombreux cas de déploiement 
+           de base de données, a aussi été ajouté.
+          </para>
+        </listitem>
+        <listitem>
+          <para>        
+           <productname>PostgreSQL</productname> 8.1 (Novembre 2005) améliore considérablement les performances, particulièrement en terme 
+           d'évolutivité. Une attention particulière a été portée sur l'amélioration des performances pour toutes 
+           les versions 8.X, dont l'actuelle 8.2.
+          </para>
+        </listitem>          
+      </itemizedlist>
+    </para>
+    
+    <para>
+     Alors que l'innovation sur ces deux SGBD a progressé, chacune des communautés de développement a travaillé 
+     activement à réduire la liste de ses désavantages perçus. Le résultat est qu'il est devenu plus difficile 
+     de déterminer objectivement la base de données la plus adaptée à une application donnée.
+    </para>
+    
+    <para>
+     Ce document vise à présenter les situations dans lesquelles <productname>PostgreSQL</productname> est plus approprié que <productname>MySQL</productname>, 
+     en essayant de comparer équitablement les versions de production actuelles et d'en discuter les forces 
+     et faiblesses. Les domaines principalement étudiés ici concernent les questions fondamentales de l'intégrité 
+     des données et la rapidité du noyau logiciel de la base de données. 
+     Puisqu'il est souvent question de faire un choix entre performance et fiabilité, ces deux sujets doivent 
+     être considérés conjointement afin d'avoir une vision précise de l'ensemble.
+    </para>
+    
+    <para>
+     En résumé, ce document apporte les éléments permettant d'affirmer que la génération actuelle de <productname>PostgreSQL</productname> 
+     répond aussi bien, voire mieux, que <productname>MySQL</productname> lorsque les deux SGBD sont envisagés dans une application exigeant 
+     un haut degré d'intégrité des données au sein d'une base de données transactionnelle, en particulier 
+     si l'on considère un nombre important d'utilisateurs et des requêtes complexes. 
+     <productname>PostgreSQL</productname> conserve, de plus, son avance dans la conformité aux standards SQL et dans la richesse 
+     de ses fonctionnalités.
+     Ce document tente également de mettre en avant l'approche fondamentale qui prévaut depuis les origines 
+     de <productname>PostgreSQL</productname>, la priorité est d'obtenir un comprotement fiable et prévisible. 
+     À l'inverse, le développement de <productname>MySQL</productname> résulte plus de rapiècements visant à ajouter des fonctionnalités 
+     (support des transactions et « strict mode », par exemple) qui n'étaient même pas envisagées au début.
+    </para>
+    
+  </sect1>
+  
+  <sect1>
+  
+    <title>Comparaison des versions, ensemble de fonctionnalités et détails</title>
+    
+    <para>
+     Les versions actuelles recommandées en production en ce mois d'Août 2007 sont <productname>PostgreSQL</productname> 8.2 et <productname>MySQL</productname> 5.0, et feront donc ici l'objet de notre comparaison. <productname>PostgreSQL</productname> 8.1 et 8.2 sont aujourd'hui les deux versions supportées avec de bonnes performances, certains des commentaires suivant pourront y faire références indistinctement. 8.2 est sensiblement plus rapide (peut-être pas moins de 30% sur certaines tâches), mais déployer 8.1 reste une option tout à fait viable pour le moment, particulièrement dû au fait que les vendeurs de système d'exploitation la distribuent et la prennent en charge plus souvent que la 8.2 encore relativement récente.
+    </para>
+    
+    <para>
+     Les deux systèmes ont en ce moment des versions en phase de tests (<productname>PostgreSQL</productname> 8.3 et <productname>MySQL</productname> 5.1) qui offrent de nouvelles améliorations dans plusieurs domaines traités ici, mais aucune des deux n'apporte de différences fondamentales si importantes qu'elles laisseraient penser que les principales orientations de ce document en seraient infirmées. La sortie officielle du moteur Falcon de <productname>MySQL</productname> est probablement l'un des futur points perturbateur à l'horizon. La fonctionnalité de <ulink url="http://docs.postgresqlfr.org/8.3/wal-async-commit.html">Validation Asynchrone</ulink> (Asynchronous Commit) dans <productname>PostgreSQL</productname> 8.3 est un autre évènement prochain qui étendra significativement les différentes options disponibles pour affiner la configuration entre fiabilité et performance.
+    </para>
+    
+    <para>
+     Ce qui ne sera pas spécifiquement abordé ici, seront les fonctionnalités des deux produits dans des domaines 
+     extérieurs à ces fondamentaux. À cause de l'importance des changements dans <productname>PostgreSQL</productname> 8.1 and <productname>MySQL</productname> 5.0, 
+     beaucoup des documents concernant ce sujet sont trop vieux pour être recommandés. 
+     Incluant certaines pages qui auraient pû être utiles :
+      <itemizedlist>
+        <listitem>
+          <para>
+           <ulink url="http://www.devx.com/dbzone/Article/29480">Matrice de comparaison des fonctionnalités des bases de données Open Source</ulink>
+          </para>     
+        </listitem>
+        <listitem>
+          <para>
+           <ulink url="http://monstera.man.poznan.pl/wiki/index.php/Mysql_vs_postgres"><productname>MySQL</productname> contre <productname>PostgreSQL</productname></ulink>
+          </para>     
+        </listitem>
+        <listitem>
+          <para>
+           <ulink url="http://dev.mysql.com/doc/refman/5.1/en/roadmap.html">Prévision de développement de <productname>MySQL</productname></ulink>
+          </para>     
+        </listitem>        
+        <listitem>
+          <para>
+           <ulink url="http://developer.postgresql.org/index.php/Feature_Matrix">Matrice des fonctionnalités de <productname>PostgreSQL</productname></ulink>
+          </para>     
+        </listitem>
+      </itemizedlist>
+    </para>
+
+    <para>
+     Alors que les listes des fonctionnalités sont utiles, certains comportements internes nécessitent une compréhension profonde des systèmes respectifs pour bien les saisir. Par exemple, les mécanismes internes concernant la façon dont PostgreSQL compresse les données TOAST sont invisibles aux utilisateurs, mais peuvent mener à une amélioration drastique des performances système sur certains types de donnée.
+    </para>
+
+    <para>
+     Un autre sujet qui sort du cadre de ce document est qu'un nombre plus important d'applications choisissent MySQL comme base de données plutôt que PostgreSQL, et ceci est certainement un facteur d'influence important sur le choix de la base la plus adaptée à une situation particulière. Le travail pour ajouter un support PostgreSQL à plusieurs <ulink url="http://developer.postgresql.org/index.php/Category:Software_Ports">applications populaires</ulink> peut-être mené en adaptant les logiciels. Une chose que vous devez considérer lorsque vous étudiez comment les applications utilisent MySQL est que si elles sont initialement destinées aux versions antérieures à 5.0, elles pourraient alors ne plus être compatibles avec les nouvelles fonctionnalités comme le mode strict ajouté dans cette version. Si cela est le cas, de telles applications pourraient être limitées aux capacités des plus vieilles versions pour lesquelles elles ont été écrites et pourraient demander un effort d'adaptation pour profiter des fonctionnalités modernes de MySQL.
+    </para>    
+  </sect1>
+  
+  <!-- TODO -->
+
+</article>
