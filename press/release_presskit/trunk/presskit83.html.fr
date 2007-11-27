@@ -29,7 +29,7 @@ La version 8.3 fournit une meilleure harmonisation des performances que les vers
 <p>Les améliorations majeures incluent&nbsp;: 
 </p>
 <ul>
-<li>le Heap Organized Tuples (HOT) ou Tuples Organisés en mémoire, qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
+<li>le «&nbsp;Heap Only Tuples&nbsp;» (HOT) ou «&nbsp;Tuples en mémoire seule&nbsp;», qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
 <li>la répartition de charge des points de vérification (checkpoints), ce qui abaisse l'activité de vérification lors des pointes de charge&nbsp;;</li>
 <li>l'auto-optimisation du scripteur d'arrière-plan (background writer).</li>
 </ul><p>
