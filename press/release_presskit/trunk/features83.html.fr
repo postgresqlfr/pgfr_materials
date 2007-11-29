@@ -73,7 +73,7 @@ Liste des fonctionnalités de PostgreSQL 8.3
 <p>Bien que PostgreSQL dépasse déjà les SGBD propriétaires en terme de facilité d'administration, il reste de la place pour les améliorations. C'est pour cela que quelques fonctionnalités ont été ajoutées à la version 8.3 pour faciliter l'administration des serveurs et fournir plus d'informations aux administrateurs&nbsp;:</p>
 <dl>
 <dt>Sortie des journaux au format CSV</dt>
-<dd>Les journaux sont enregistrés dans un fichier exploitable par la base de données, ce qui permet de créer aisément des outils adaptés d'audit et d'analyse des performances.</dd>
+<dd>Les journaux sont enregistrés dans un fichier qui peut être importé dans une base de données, ce qui permet de créer aisément des outils adaptés d'audit et d'analyse des performances.</dd>
 <dt>Support SSPI et GSSAPI Support</dt>
 <dd>L'authentification Kerberos sur PostgreSQL supporte désormais les API sécurisées de niveau industriel&nbsp;: SSPI sur Windows et GSSAPI sur UNIX et Linux. L'intégration sur les réseaux d'entreprise étendus en est grandement facilitée.</dd>
 <dt>Paramétrage par fonction</dt>
