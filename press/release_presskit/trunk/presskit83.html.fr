@@ -119,7 +119,7 @@ Tél&nbsp;: +33 9 53 69 97 12
 
 <a name="additional_software"></a><h2>Liens</h2>
 <p>
-Le projet PostgreSQL principal est enrichi de plus de 100 sous-projets actifs qui apportent des solutions de niveau industriel en matière de réplication, de migration, de compatibilité, d'intéropérabilité, de conception et d'outils d'administration graphiques. La majorité ces modules optionnels est indexée sur <a href="http://www.pgfoundry.org">pgFoundry</a> ou sur <a href="/download">la page de téléchargments.</a> 
+Le projet PostgreSQL principal est enrichi de plus de 100 sous-projets actifs qui apportent des solutions de niveau industriel en matière de réplication, de migration, de compatibilité, d'intéropérabilité, de conception et d'outils d'administration graphiques. La majorité ces modules optionnels est indexée sur <a href="http://www.pgfoundry.org">pgFoundry</a> ou sur <a href="/download">la page de téléchargement.</a> 
 </p><p>
 Ci-dessous se trouvent les liens vers les outils mentionnés dans ce document&nbsp;:
 </p>
