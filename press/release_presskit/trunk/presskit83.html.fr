@@ -37,7 +37,7 @@ Ces changements accélèrent également de manière significative le débit de t
 </p><p>
 «&nbsp;PostgreSQL est simplement devenu plus intelligent,&nbsp;» annonce Bruce Momjian, membre du PostgreSQL Core Team.
 </p><p>
-PostgreSQL est le premier SGBD OpenSource à implanter le parcours synchrone (Synchronized Scan), qui réduit fortement les E/S lors d'explorations des données (data mining). L'équipe Windows a ajouté la possibilité de compiler PostgreSQL avec Visual C++, en a amélioré la stabilité et les performances sur Windows tout en facilitant l'accès au projet pour les contributeurs Windows. De nouvelles possibilités de traçage ont été ajoutées et le temps-système nécessaire au collecteur de statistiques a été diminué pour faciliter la supervision des serveurs.
+PostgreSQL est le premier SGBD OpenSource à mettre en œuvre le parcours synchrone (Synchronized Scan), qui réduit fortement les E/S lors d'explorations des données (data mining). L'équipe Windows a ajouté la possibilité de compiler PostgreSQL avec Visual C++, en a amélioré la stabilité et les performances sur Windows tout en facilitant l'accès au projet pour les contributeurs Windows. De nouvelles possibilités de traçage ont été ajoutées et le temps-système nécessaire au collecteur de statistiques a été diminué pour faciliter la supervision des serveurs.
 </p><p>
 Bien évidemment, une version PostgreSQL se doit d'apporter de nombreuses fonctionnalités nouvelles pour les développeurs. Celles-ci incluent&nbsp;:
 </p><ul>
