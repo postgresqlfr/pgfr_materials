@@ -33,7 +33,7 @@ La version 8.3 fournit une meilleure harmonisation des performances que les vers
 <li>la répartition de charge des points de vérification (checkpoints), ce qui abaisse l'activité de vérification lors des pointes de charge&nbsp;;</li>
 <li>l'auto-optimisation du scripteur d'arrière-plan (background writer).</li>
 </ul><p>
-Ces changements accélère également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
+Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
 </p><p>
 «&nbsp;PostgreSQL est simplement devenu plus intelligent,&nbsp;» annonce Bruce Momjian, membre du PostgreSQL Core Team.
 </p><p>
