@@ -24,22 +24,26 @@ Dossier de presse PostgreSQL 8.3
 </p><p>
 «&nbsp;L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer,&nbsp;» déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 </p><p>
-La version 8.3 fournit une meilleure harmonisation des performances que les versions précédentes. De ce fait, tous les utilisateurs bénéficient des mêmes performances pour chaque transaction, qu'il y ait ou non un pic d'activité, et ce 7 jours sur 7, 52 semaines par an. Cela a d'ailleurs été prouvé par de récents tests de performance.
+La version 8.3 fournit une meilleure harmonisation des performances que les versions précédentes. De ce fait, tous les utilisateurs bénéficient des mêmes performances pour chaque transaction, qu'il y ait ou non un pic d'activité, et ce 7 jours sur 7, 52 semaines par an. Cela a notamment été prouvé par de récents tests de performance.
 </p>
 <p>Les améliorations majeures incluent&nbsp;: 
 </p>
 <ul>
 <li>le «&nbsp;Heap Only Tuples&nbsp;» (HOT) ou «&nbsp;Tuples en mémoire seule&nbsp;», qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
 <li>la répartition de charge des points de vérification (checkpoints), ce qui abaisse l'activité de vérification lors des pointes de charge&nbsp;;</li>
-<li>l'auto-optimisation du scripteur d'arrière-plan (background writer).</li>
+<li>l'auto-optimisation du démon d'acriture sur disque (background writer).</li>
 </ul><p>
 Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
 </p><p>
 «&nbsp;PostgreSQL est simplement devenu plus intelligent,&nbsp;» annonce Bruce Momjian, membre du PostgreSQL Core Team.
 </p><p>
-PostgreSQL est le premier SGBD OpenSource à mettre en œuvre le parcours synchrone (Synchronized Scan), qui réduit fortement les E/S lors d'explorations des données (data mining). L'équipe Windows a ajouté la possibilité de compiler PostgreSQL avec Visual C++, en a amélioré la stabilité et les performances sur Windows tout en facilitant l'accès au projet pour les contributeurs Windows. De nouvelles possibilités de traçage ont été ajoutées et le temps-système nécessaire au collecteur de statistiques a été diminué pour faciliter la supervision des serveurs.
+PostgreSQL est le premier SGBD OpenSource à mettre en œuvre le parcours synchrone (Synchronized Scan), qui réduit fortement les E/S lors d'explorations des données (data mining). 
 </p><p>
-Bien évidemment, une version PostgreSQL se doit d'apporter de nombreuses fonctionnalités nouvelles pour les développeurs. Celles-ci incluent&nbsp;:
+L'équipe Windows a ajouté la possibilité de compiler PostgreSQL avec Visual C++, en a amélioré la stabilité et les performances tout en facilitant l'accès au projet pour les contributeurs.
+</p><p>
+De nouvelles possibilités de traçage ont été ajoutées et le temps-système nécessaire au collecteur de statistiques a été diminué pour faciliter la supervision des serveurs.
+</p><p>
+Bien évidemment, une version PostgreSQL se doit d'apporter de nouvelles fonctionnalités pour les développeurs. Celles-ci incluent&nbsp;:
 </p><ul>
 <li>le support du SQL/XML selon le standard ANSI, ce qui comprend l'export XML&nbsp;;</li>
 <li>la recherche textuelle : l'outil de recherche en texte intégral, TSearch2, a été ajouté à la distribution de base, avec une meilleure gestion, de nouveaux langages et de nouveaux dictionnaires&nbsp;;</li>
