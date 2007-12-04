@@ -24,7 +24,7 @@ Liste des fonctionnalités de PostgreSQL 8.3
 <dt>Points de vérifications à charge distribuée («&nbsp;Load Distributed Checkpoints&nbsp;»)</dt>
 <dd>Auto-optimisation des point de vérification&nbsp;: les points de vérification sont retardés et répartis lorsque le système est fortement chargé, ce qui diminue l'impact des points de vérification sur les temps de réponse.</dd>
 <dt>Stratégie d'écriture d'arrière-plan en juste-à-temps («&nbsp;Just-in-time background writing strategy&nbsp;»)</dt>
-<dd>L'auto-optimisation du scripteur d'arrière-plan estime le nombre de tampons qu'il peut recycler en fonction des statistiques d'activité récente.</dd>
+<dd>L'auto-optimisation du démon d'écriture sur disque estime le nombre de tampons qu'il peut recycler en fonction des statistiques d'activité récente.</dd>
 </dl>
 
 <h3>Améliorations de la vitesse</h3>
