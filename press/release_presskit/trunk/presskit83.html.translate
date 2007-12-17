@@ -20,14 +20,14 @@ PostgreSQL 8.3 Press Kit
 
 <a name="original_release"></a><h2>Original Press Release</h2>
 
-<p><b>## December 2007, New York, NY:</b>  The PostgreSQL Global Development Group today announced the release of version 8.3 of the high-performance object-relational database management system.  This release includes a record number of new and improved features which will greatly enhance PostgreSQL for application designers, database administrators, and users, with more than 280 patches by dozens of PostgreSQL contributors from 18 countries.
+<p><b>## January 2008, New York, NY:</b>  The PostgreSQL Global Development Group today announced the release of version 8.3 of the high-performance object-relational database management system.  This release includes a record number of new and improved features which will greatly enhance PostgreSQL for application designers, database administrators, and users, with more than 280 patches by dozens of PostgreSQL contributors from 18 countries.
 </p><p>
 "The continued evolution of the open source PostgreSQL database gives users the option of deploying a non-proprietary database, allowing them to save money, improve performance and increase productivity.  PostgreSQL 8.3 is an impressive new release and we encourage customers around the world to explore it," said Rich Green, executive vice president of software at Sun Microsystems.
 </p><p>
 Version 8.3 provides greater consistency of performance than previous versions, ensuring that every user can depend on the same high performance demonstrated in recent benchmarks for every transaction, whether in peak hours or not, seven days a week, 52 weeks per year.  Major performance enhancements include:
 </p><ul>
-<li>Heap Organized Tuples (HOT), which eliminate up to 3/4 of the maintenance overhead of frequently updated tables</li>
-<li>Load distributed checkpoints, which decrease checkpoint activity at peak load times</li>
+<li>Heap Only Tuples (HOT), which eliminate up to 3/4 of the maintenance overhead of frequently updated tables</li>
+<li>Spread checkpoints, which reduce the impact of checkpoints on response times</li>
 <li>Automated self-tuning of the background writer</li>
 </ul><p>
 These changes also significantly accelerate transaction processing throughput, between 5% and 30%, depending on the workload.
@@ -85,7 +85,7 @@ PostgreSQL uses the <a href="/about/licence">BSD license</a>, which only require
 
 <p><a href="http://www.postgresql.org">PostgreSQL home page</a></p>
 
-<p>Press Inquiries:<br />
+<p>Press Inquiries</p>
 YOUR REGIONAL CONTACT INFORMATION HERE
 
 <p>For contacts in specific regions, see <a href="/about/press/contact">our international contact list.</a></p>
@@ -94,11 +94,11 @@ YOUR REGIONAL CONTACT INFORMATION HERE
 <p>
 "The continued evolution of the open source PostgreSQL database gives users the option of deploying a non proprietary database, allowing them to save money, improve performance and increase productivity. Sun is committed to the success of PostgreSQL on OpenSolaris -  running on all of our x64 and Sun SPARC servers, as well as on Dell, HP and IBM hardware - and we offer a variety of education and support offerings for customers seeking to deploy PostgreSQL. PostgreSQL 8.3 is an impressive new release and we encourage customers around the world to explore it," said Rich Green, executive vice president of software at Sun Microsystems.
 </p><p>
-<b>Contact Sun Microsystems</b> (English): Terri Molini, 01-408-404-4976, terri.molini@sun.com
+<b>Contact Sun Microsystems</b>: Terri Molini, 01-408-404-4976, terri.molini@sun.com (English only)
 </p><p>
 "We process over 18,000 queries per second on over 300GB of user data on our PostgreSQL servers, and those numbers go up every month," said Gavin Roy, CTO of social networking site MyYearbook.com. "We're very excited about HOT, shared buffer scan improvements and integrated tsearch indexing.  Preliminary testing shows that 8.3 will improve our database load profile while decreasing response times.  We're really looking forward to it."
 </p><p>
-<b>About MyYearbook.com</b>: myYearbook.com is one of the largest U.S. teen-focused media properties on the Internet. Boasting 500 percent growth in page views and members over the last five months, myYearbook has grown from a single high school to more than 4.7 million members, and is now adding one million new members every two months.  Contact press@myyearbook.com (English).
+<b>About MyYearbook.com</b>: myYearbook.com is one of the largest U.S. teen-focused media properties on the Internet. Boasting 500 percent growth in page views and members over the last five months, myYearbook has grown from a single high school to more than 4.7 million members, and is now adding one million new members every two months.  Contact press@myyearbook.com (English only).
 </p>
 
 <a name="companies"></a><h2>Corporate Support</h2>
