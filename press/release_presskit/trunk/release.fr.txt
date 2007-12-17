@@ -1,4 +1,4 @@
-## Décembre 2007, New-York, NY : Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+## Janvier 2008, New-York, NY : Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
 
 « L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer, » déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 
@@ -7,7 +7,7 @@ La version 8.3 fournit une meilleure harmonisation des performances que les vers
 Les améliorations majeures incluent :
 
 * le Heap Oonly Tuples (HOT) ou Tuples en mémoire seule, qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées ;
-* la répartition de charge des points de vérification (checkpoints), qui abaisse l'activité de vérification lors des pointes de charge ;
+* l'étalement des points de vérification (checkpoints), qui réduit leur impact sur les temps de réponse ;
 * l'auto-optimisation du démon d'écriture sur disque (background writer).
 
 Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.

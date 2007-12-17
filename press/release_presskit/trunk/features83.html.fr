@@ -21,8 +21,8 @@ Liste des fonctionnalités de PostgreSQL 8.3
 <dd>Le Heap Only Tuple (HOT) (ce qui peut se traduire par «&nbsp;tuple en mémoire seule&nbsp;») réduit considérablement les soucis de maintenance associés aux données fréquemment modifiées en diminuant le besoin de compactage («&nbsp;vacuum&nbsp;») et en améliorant sensiblement le débit de certaines applications.</dd>
 <dt>Validation asynchrone («&nbsp;Asynchronous Commit&nbsp;»)</dt>
 <dd>La validation asynchrone autorise COMMIT à rendre le contrôle sans attendre l'écriture physique sur le disque. Les temps de réponse sont ainsi meilleurs, au prix toutefois d'une possible perte de transactions en cas de panne système.</dd>
-<dt>Points de vérifications à charge distribuée («&nbsp;Load Distributed Checkpoints&nbsp;»)</dt>
-<dd>Auto-optimisation des point de vérification&nbsp;: les points de vérification sont retardés et répartis lorsque le système est fortement chargé, ce qui diminue l'impact des points de vérification sur les temps de réponse.</dd>
+<dt>Dispersion des points de vérifications («&nbsp;Spread Checkpoints&nbsp;»)</dt>
+<dd>Auto-optimisation des point de vérification&nbsp;: les points de vérification sont retardés et répartis, ce qui diminue leur impact sur les temps de réponse.</dd>
 <dt>Stratégie d'écriture d'arrière-plan en juste-à-temps («&nbsp;Just-in-time background writing strategy&nbsp;»)</dt>
 <dd>L'auto-optimisation du démon d'écriture sur disque estime le nombre de tampons qu'il peut recycler en fonction des statistiques d'activité récente.</dd>
 </dl>

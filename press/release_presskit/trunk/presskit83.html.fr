@@ -20,7 +20,7 @@ Dossier de presse PostgreSQL 8.3
 
 <a name="original_release"></a><h2>Version courte</h2>
 
-<p><b>## Décembre 2007, New-York, NY&nbsp;:</b>Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+<p><b>## Janvier 2008, New-York, NY&nbsp;:</b>Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
 </p><p>
 «&nbsp;L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer,&nbsp;» déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 </p><p>
@@ -30,8 +30,8 @@ La version 8.3 fournit une meilleure harmonisation des performances que les vers
 </p>
 <ul>
 <li>le «&nbsp;Heap Only Tuples&nbsp;» (HOT) ou «&nbsp;Tuples en mémoire seule&nbsp;», qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
-<li>la répartition de charge des points de vérification (checkpoints), ce qui abaisse l'activité de vérification lors des pointes de charge&nbsp;;</li>
-<li>l'auto-optimisation du démon d'acriture sur disque (background writer).</li>
+<li>l'étalement des points de vérification (checkpoints), qui réduit l'impact des points de vérification sur les temps de réponse&nbsp;;</li>
+<li>l'auto-optimisation du démon d'écriture sur disque (background writer).</li>
 </ul><p>
 Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
 </p><p>
@@ -94,7 +94,7 @@ PostgreSQL utilise la <a href="/about/licence">licence BSD</a>, qui n'impose que
 
 <p><a href="http://www.postgresql.org">Page d'acceil PostgreSQL</a></p>
 
-<p>Contact Presse&nbsp;:<br />
+<p>Contact Presse<br />
 Stéphane SCHILDKNECHT
 Contact pour les pays francophones
 fr@postgresql.org
@@ -106,11 +106,11 @@ Tél&nbsp;: +33 9 53 69 97 12
 <p>
 «&nbsp;L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. Sun est engagé dans le succès de PostgreSQL sur Solaris - qui tourne sur tous nos serveurs x64 et Sun SPARC, ainsi que sur les matériels Dell, HP et IBM - et nous proposons une offre variée de support et de formation pour les clients qui veulent déployer PostgreSQL. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer,&nbsp;» déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 </p><p>
-<b>Contact Sun Microsystems</b> (Anglais)&nbsp;: Terri Molini, 01-408-404-4976, terri.molini@sun.com
+<b>Contact Sun Microsystems</b>&nbsp;: Terri Molini, 01-408-404-4976, terri.molini@sun.com (En anglais uniquement).
 </p><p>
 «&nbsp;Nous exécutons plus de 18&nbsp;000 requêtes par seconde sur plus de 300 Go de données utilisateur sur nos serveurs PostgreSQL, et ces nombres grossissent chaque mois,&nbsp;» déclare Gavin Roy, CTO du site de réseau social MyYearbook.com. «&nbsp;Nous sommes pressés de disposer du HOT, de l'amélioration des parcours de tampons partagés et de l'intégration de tsearch, l'indexeur en texte intégral. Les premiers tests indiquent que la version 8.3 va améliorer le niveau de charge de notre base et abaisser les temps de réponse. Nous l'attendons avec impatience.&nbsp;»
 </p><p>
-<b>À propos de MyYearbook.com&nbsp;:</b> myYearbook.com est l'un des plus importants sites internet des États-Unis à destination des adolescents. Avec une progression de plus de 500% en nombre de pages vues et de membres sur les 5 derniers mois, myYearbook, parti d'un collège pour atteindre 4,7 milions de membres, gagne un million de nouveaux membres tous les deux mois. <!-- is one of the largest U.S. teen-focused media properties on the Internet. Boasting 500 percent growth in page views and members over the last five months, myYearbook has grown from a single high school to more than 4.7 million members, and is now adding one million new members every two months. --> Contacter press@myyearbook.com (En anglais).
+<b>À propos de MyYearbook.com&nbsp;:</b> myYearbook.com est l'un des plus importants sites internet des États-Unis à destination des adolescents. Avec une progression de plus de 500% en nombre de pages vues et de membres sur les 5 derniers mois, myYearbook, parti d'un collège pour atteindre 4,7 milions de membres, gagne un million de nouveaux membres tous les deux mois. <!-- is one of the largest U.S. teen-focused media properties on the Internet. Boasting 500 percent growth in page views and members over the last five months, myYearbook has grown from a single high school to more than 4.7 million members, and is now adding one million new members every two months. --> Contacter press@myyearbook.com (En anglais uniquement).
 </p>
 
 <a name="companies"></a><h2>Support commercial</h2>
