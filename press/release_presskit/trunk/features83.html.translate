@@ -21,8 +21,8 @@ PostgreSQL 8.3 Feature List
 <dd>Heap Only Tuple (HOT) dramatically reduces the database maintenance issues associated with frequently updated data, reducing the need to vacuum and giving substantial throughput improvements for some applications.</dd>
 <dt>Asynchronous Commit</dt>
 <dd>Allows the ability for COMMIT to return control without waiting for a physical disk write.  This gives better response time at the expense of potentially losing a set amount of transactions in the event of system failure.</dd>
-<dt>Load Distributed Checkpoints</dt>
-<dd>Checkpoint autotuning: delays and spreads out checkpoints when the system is under heavy load, thus reducing the impact of checkpoints on response times.</dd>
+<dt>Spread Checkpoints</dt>
+<dd>Checkpoint autotuning: delays and spreads out checkpoints, reducing the impact of checkpoints on response times.</dd>
 <dt>Just-in-time background writing strategy</dt>
 <dd>Auto-tuning for the Background Writer estimates how many buffers it should try to clean based on statistics about recent activity.</dd>
 </dl>
@@ -79,7 +79,7 @@ PostgreSQL 8.3 Feature List
 <dt>Per Function GUC Settings</dt>
 <dd>Allows for functions to have GUC settings embedded at function creation time. Especially helpful for things like defining the search path of a function at creation time, which tightens security.</dd>
 <dt>Multiple Autovacuum Workers</dt>
-<dd>Enables configurable parallelism for the PostgreSQL maintenance daemon, making autovacuum feasable for applications with thousands of tables.</dd>
+<dd>Enables configurable parallelism for the PostgreSQL maintenance daemon, making autovacuum feasible for applications with thousands of tables.</dd>
 <dt>pg_standby</dt>
 <dd>An administrative tool which makes configuration of Warm Standby servers much easier. </dd>
 <dt>ORDER BY Nulls First/Last</dt>
@@ -104,7 +104,7 @@ PostgreSQL 8.3 Feature List
 
 <dl>
 <dt>XML Support</dt>
-<dd>New XML data type fully supports the SQL/XML specification of ANSI SQL:2003, including well-formedness checks, type-safe operations, SQL/XML publishing and XPath queries.  Version 8.3 also includes additional functions for XML data export:</dd>
+<dd>New XML data type fully supports the SQL/XML specification of ANSI SQL:2003, including well-formedness checks, type-safe operations, SQL/XML publishing and XPath queries.  Version 8.3 also includes additional functions for XML data export.</dd>
 <dt>UUID</dt>
 <dd>This new 128 bit type is compatible with most common GUID and UUID generators, supporting distributed application design.</dd>
 <dt>Arrays of Compound Types</dt>
