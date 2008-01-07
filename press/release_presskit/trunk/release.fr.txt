@@ -8,7 +8,8 @@ Les améliorations majeures incluent :
 
 * le Heap Oonly Tuples (HOT) ou Tuples en mémoire seule, qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées ;
 * l'étalement des points de vérification (checkpoints), qui réduit leur impact sur les temps de réponse ;
-* l'auto-optimisation du démon d'écriture sur disque (background writer).
+* l'auto-optimisation du démon d'écriture sur disque (background writer) ;
+* l'option de validation asynchrone pour des temps de réponse plus courts sur certaines transactions.
 
 Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
 
