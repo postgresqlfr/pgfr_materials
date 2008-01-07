@@ -29,9 +29,10 @@ La version 8.3 fournit une meilleure harmonisation des performances que les vers
 <p>Les améliorations majeures incluent&nbsp;: 
 </p>
 <ul>
-<li>le «&nbsp;Heap Only Tuples&nbsp;» (HOT) ou «&nbsp;Tuples en mémoire seule&nbsp;», qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
-<li>l'étalement des points de vérification (checkpoints), qui réduit l'impact des points de vérification sur les temps de réponse&nbsp;;</li>
-<li>l'auto-optimisation du démon d'écriture sur disque (background writer).</li>
+<li>le «&nbsp;Heap Only Tuples&nbsp;» (HOT) ou «&nbsp;Tuples en mémoire seule&nbsp;» élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées&nbsp;;</li>
+<li>l'étalement des points de vérification (checkpoints) réduit l'impact des points de vérification sur les temps de réponse&nbsp;;</li>
+<li>l'auto-optimisation du démon d'écriture sur disque (background writer)&nbsp;;</li>
+<li>l'option de validation asynchrone raccourcit considérablement les temps de réponses de quelques transactions.</li>
 </ul><p>
 Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
 </p><p>

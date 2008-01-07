@@ -7,6 +7,7 @@ Version 8.3 provides greater consistency of performance than previous versions, 
 * Heap Organized Tuples (HOT), which eliminate up to 3/4 of the maintenance overhead of frequently updated tables
 * Load distributed checkpoints, which decrease checkpoint activity at peak load times
 * Automated self-tuning of the background writer
+* Asynchronous commit option for much faster response times on some transactions
 
 These changes also significantly accelerate transaction processing throughput, between 5% and 30%, depending on the workload.
 
