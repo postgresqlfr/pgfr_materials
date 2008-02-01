@@ -20,7 +20,7 @@ Dossier de presse PostgreSQL 8.3
 
 <a name="original_release"></a><h2>Version courte</h2>
 
-<p><b>## Janvier 2008, New-York, NY&nbsp;:</b>Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+<p><b>04 février 2008, New-York, NY&nbsp;:</b>Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
 </p><p>
 «&nbsp;L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer,&nbsp;» déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 </p><p>
