@@ -83,7 +83,7 @@ Liste des fonctionnalités de PostgreSQL 8.3
 <dt>pg_standby</dt>
 <dd>Outil d'administration qui facilite la configuration des serveurs de reprise intermédiaire («&nbsp;Warm Standby&nbsp;»).</dd>
 <dt>ORDER BY Nulls First/Last</dt>
-<dd>Permet de créer des index qui indexent NULL au début ou à la fin de l'index.</dd>
+<dd>Permet de préciser si les valeurs NULL apparaissent au début ou à la fin de la sortie.</dd>
 </dl>
 
 <h2>Developpeurs</h2>
