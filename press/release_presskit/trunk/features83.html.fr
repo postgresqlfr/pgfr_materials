@@ -4,7 +4,7 @@ Liste des fonctionnalités de PostgreSQL 8.3
 
 <h1>Liste des fonctionnalités de PostgreSQL 8.3</h1>
 
-<p>La liste qui suit couvre la majorité, mais pas la totalité des nouvelles fonctionnalités apparues dans la version 8.3. Ces fonctionnalités étant très nombreuses, elles sont regroupées par objectifs avec une brève description. Pour de plus amples détails, on peut se référer à la documentation de PostgreSQL et aux notes de version. Pour une version encore plus condensée, voir la <a href="/about/featurematrix">matrice de fonctionnalités</a> (en anglais uniquement).</p>
+<p>La liste qui suit couvre la majorité, pas la totalité des nouvelles fonctionnalités apparues dans la version 8.3. Ces fonctionnalités étant très nombreuses, elles sont regroupées par objectifs avec une brève description. Pour de plus amples détails, on peut se référer à la documentation de PostgreSQL et aux notes de version. Pour une version encore plus condensée, voir la <a href="/about/featurematrix">matrice de fonctionnalités</a> (en anglais uniquement).</p>
 
 <h2>Avertissement</h2>
 
@@ -110,7 +110,7 @@ Liste des fonctionnalités de PostgreSQL 8.3
 <dt>Tableaux de types composites</dt>
 <dd>Les tableaux peuvent désormais être créés à l'aide de types composites (types qui retournent plusieurs colonnes pour un type simple, type table ou type personnalisé, par exemple).</dd>
 <dt>ENUM</dt>
-<dd>PostgreSQL supporte désormais les colonne de type ENUM avec une liste ordonnée d'alternatives. Cela doit faciliter les migrations de MySQL vers PostgreSQL.</dd>
+<dd>PostgreSQL supporte désormais les colonnes de type ENUM avec une liste ordonnée d'alternatives. Cela doit faciliter les migrations de MySQL vers PostgreSQL.</dd>
 </dl>
 
 <h3>Procédures stockées</h3>
