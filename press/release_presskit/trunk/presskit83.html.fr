@@ -20,7 +20,7 @@ Dossier de presse PostgreSQL 8.3
 
 <a name="original_release"></a><h2>Version courte</h2>
 
-<p><b>04 février 2008, New-York, NY&nbsp;:</b>Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+<p><b>4 février 2008, New-York, NY&nbsp;:</b> Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
 </p><p>
 «&nbsp;L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer,&nbsp;» déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
 </p><p>
@@ -76,8 +76,8 @@ La version 8.3 comporte un nombre inédit de nouvelles fonctionnalités. Plusieu
 </ul>
 <a name="download"></a><h2>Téléchargements</h2>
 <ul>
-<li><a href="/ftp/source/v8.3">Code source</a></li>
-<li><a href="/ftp/binary/v8.3">Binaires</a>, dont Windows, Red Hat Linux et Solaris</li>
+<li><a href="/ftp/source/v8.3.0">Code source</a></li>
+<li><a href="/ftp/binary/v8.3.0">Binaires</a>, dont Windows, Red Hat Linux et Solaris</li>
 <li><a href="http://www.pgfoundry.org">Composants optionnels</a></li>
 </ul>
 
@@ -96,10 +96,10 @@ PostgreSQL utilise la <a href="/about/licence">licence BSD</a>, qui n'impose que
 <p><a href="http://www.postgresql.org">Page d'acceil PostgreSQL</a></p>
 
 <p>Contact Presse<br />
-Stéphane SCHILDKNECHT
-Contact pour les pays francophones
-fr@postgresql.org
-Tél&nbsp;: +33 9 53 69 97 12
+Stéphane SCHILDKNECHT<br />
+Contact pour les pays francophones<br />
+fr@postgresql.org<br />
+Tél&nbsp;: +33 9 53 69 97 12</p>
 
 <p>Pour les contacts des autres régions, voir <a href="/about/press/contact">la liste des contacts à l'international.</a></p>
 
