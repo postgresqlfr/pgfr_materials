@@ -65,9 +65,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.175"
      inkscape:cx="2333.8423"
-     inkscape:cy="1230.6714"
+     inkscape:cy="2144.9571"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2980"
      width="841.00002mm"
      height="1189mm"
      inkscape:window-width="1272"
@@ -358,33 +358,36 @@
            id="flowPara2675"><flowSpan
    id="flowSpan2566"
    style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L">Freedom.</flowSpan> PostgreSQL’s BSD Licence is simple and non-ambiguous: you can use, modify and redistribute it freely.</flowPara></flowRoot>    </g>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3285"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
-       transform="matrix(3.9951815,0,0,3.8830076,-8.6378353,942.17446)"><flowRegion
-         id="flowRegion3287"><rect
-           id="rect3289"
-           width="58.524521"
-           height="64.238815"
-           x="40"
-           y="280.93362"
-           style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L" /></flowRegion><flowPara
-         id="flowPara3291">5.</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2679"
-       style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-       transform="matrix(4.5670178,0,0,3.8830076,-82.919783,1199.2005)"><flowRegion
-         id="flowRegion2681"><rect
-           id="rect2683"
-           width="550.92999"
-           height="57.325348"
-           x="100.25033"
-           y="223.97787"
-           style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L" /></flowRegion><flowPara
-         id="flowPara2685"><flowSpan
-   id="flowSpan2847"
-   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L">Performance. </flowSpan>Numerous studies show that PostgreSQL is able to compete with the best DBMS on the marketplace.</flowPara></flowRoot>    <g
+    <g
+       id="g3328">
+      <flowRoot
+         transform="matrix(3.9951815,0,0,3.8830076,-8.6378353,942.17446)"
+         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
+         id="flowRoot3285"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3287"><rect
+             style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
+             y="280.93362"
+             x="40"
+             height="64.238815"
+             width="58.524521"
+             id="rect3289" /></flowRegion><flowPara
+           id="flowPara3291">5.</flowPara></flowRoot>      <flowRoot
+         transform="matrix(4.5670178,0,0,3.8830076,-82.919783,1199.2005)"
+         style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
+         id="flowRoot2679"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2681"><rect
+             style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
+             y="223.97787"
+             x="100.25033"
+             height="57.325348"
+             width="550.92999"
+             id="rect2683" /></flowRegion><flowPara
+           id="flowPara2685"><flowSpan
+   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
+   id="flowSpan2847">Performance. </flowSpan>Numerous studies show that PostgreSQL is able to compete with the best RDBMS on the marketplace.</flowPara></flowRoot>    </g>
+    <g
        id="g2674">
       <flowRoot
          transform="matrix(3.9951815,0,0,3.8830076,-8.6378353,1275.1523)"
@@ -416,35 +419,38 @@
     <g
        id="g2980"
        transform="matrix(3.9951815,0,0,3.8830076,8.8111742,34.747431)">
-      <flowRoot
-         transform="translate(-4.3675136,393.73897)"
-         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
-         id="flowRoot3333"
-         xml:space="preserve"><flowRegion
-           id="flowRegion3335"><rect
-             style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
-             y="280.93362"
-             x="40"
-             height="64.238815"
-             width="58.524521"
-             id="rect3337" /></flowRegion><flowPara
-           id="flowPara3339">7.</flowPara></flowRoot>      <flowRoot
-         transform="matrix(1.1431315,0,0,1,-22.960398,438.96443)"
-         style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-         id="flowRoot2699"
-         xml:space="preserve"><flowRegion
-           id="flowRegion2701"><rect
-             style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-             y="223.97787"
-             x="100.25033"
-             height="80.291924"
-             width="550.92999"
-             id="rect2703" /></flowRegion><flowPara
-           id="flowPara2705" /><flowPara
-           id="flowPara4578"><flowSpan
-   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-   id="flowSpan2851">Native full text search engine</flowSpan>. PostgreSQL’s expression search functions are among the simpliest and fastest.</flowPara><flowPara
-           id="flowPara2618" /></flowRoot>    </g>
+      <g
+         id="g3339">
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3333"
+           style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L"
+           transform="translate(-4.3675136,393.73897)"><flowRegion
+             id="flowRegion3335"><rect
+               id="rect3337"
+               width="58.524521"
+               height="64.238815"
+               x="40"
+               y="280.93362"
+               style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2048c8;font-family:Nimbus Sans L" /></flowRegion><flowPara
+             id="flowPara3339">7.</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot2699"
+           style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
+           transform="matrix(1.1431315,0,0,1,-22.960398,438.96443)"><flowRegion
+             id="flowRegion2701"><rect
+               id="rect2703"
+               width="550.92999"
+               height="80.291924"
+               x="100.25033"
+               y="223.97787"
+               style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L" /></flowRegion><flowPara
+             id="flowPara2705" /><flowPara
+             id="flowPara4578"><flowSpan
+   id="flowSpan2851"
+   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L">Native full text search engine</flowSpan>. PostgreSQL’s expression search functions are among the simplest and fastest.</flowPara><flowPara
+             id="flowPara2618" /></flowRoot>      </g>
+    </g>
     <g
        id="g2694">
       <flowRoot
