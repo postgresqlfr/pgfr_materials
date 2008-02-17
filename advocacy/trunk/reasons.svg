@@ -17,7 +17,10 @@
    version="1.0"
    sodipodi:docbase="/media/sda5/damien/dev/advocacy/trunk"
    sodipodi:docname="reasons.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/media/sda5/damien/dev/advocacy/trunk/reasons.png"
+   inkscape:export-xdpi="15.10328"
+   inkscape:export-ydpi="15.10328">
   <defs
      id="defs2882">
     <linearGradient
@@ -58,11 +61,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.175"
      inkscape:cx="2333.8423"
-     inkscape:cy="2830.6714"
+     inkscape:cy="1230.6714"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      width="841.00002mm"
@@ -381,7 +384,7 @@
            style="font-size:17.77074051px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L" /></flowRegion><flowPara
          id="flowPara2685"><flowSpan
    id="flowSpan2847"
-   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L">Performance. </flowSpan>DNumerous studies show that PostgreSQL is able to compete with the best DBMS on the marketplace.</flowPara></flowRoot>    <g
+   style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L">Performance. </flowSpan>Numerous studies show that PostgreSQL is able to compete with the best DBMS on the marketplace.</flowPara></flowRoot>    <g
        id="g2674">
       <flowRoot
          transform="matrix(3.9951815,0,0,3.8830076,-8.6378353,1275.1523)"
@@ -409,7 +412,7 @@
              id="rect2693" /></flowRegion><flowPara
            id="flowPara4564"><flowSpan
    style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-   id="flowSpan2849">Scalability</flowSpan>. Thanks to its great adaptation to any kind of infrastructure, PostgreSQL allows optimal use of resources..</flowPara></flowRoot>    </g>
+   id="flowSpan2849">Scalability</flowSpan>. Thanks to its great adaptation to any kind of infrastructure, PostgreSQL allows optimal use of resources.</flowPara></flowRoot>    </g>
     <g
        id="g2980"
        transform="matrix(3.9951815,0,0,3.8830076,8.8111742,34.747431)">
@@ -530,7 +533,7 @@
              id="rect2733" /></flowRegion><flowPara
            id="flowPara2735"><flowSpan
    style="font-size:19px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Sans L"
-   id="flowSpan2863">An active international community.</flowSpan> PostgreSQL is an independant project, supported by hundreds of individuals and corporations.</flowPara></flowRoot>    </g>
+   id="flowSpan2863">An active international community.</flowSpan> PostgreSQL is an independent project, supported by hundreds of individuals and corporations.</flowPara></flowRoot>    </g>
     <g
        id="g2644">
       <flowRoot
