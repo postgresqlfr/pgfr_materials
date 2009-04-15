@@ -1,27 +1,40 @@
-Le Groupe de développement mondial de PostgreSQL (PGDG) vient de publier la première bêta de la version 8.4 de PostgreSQL.
+Le Groupe de développement mondial de PostgreSQL (PGDG) vient de publier la
+première bêta de la version 8.4 de PostgreSQL.
 
-Après 14 mois de développement, la version 8.4 peut être testée par les utilisateurs de PostgreSQL à travers le monde de sorte à en faire la meilleure version jamais publiée.
+Après 14 mois de développement, la version 8.4 peut être testée par les
+utilisateurs de PostgreSQL à travers le monde de sorte à en faire la meilleure
+version jamais publiée.
 
-La version 8.4 inclut plusieurs centaines de correctifs et des douzaines de nouvelles fonctionnalités. Parmi celles-ci, citons :
+La version 8.4 inclut plusieurs centaines de correctifs et des douzaines de
+nouvelles fonctionnalités. Parmi celles-ci, citons :
 
     * les fonctions de fenêtrage ;
-    * les expressions de table commune (CTE, Common Table Expressions) et les jointures récursives ;
+    * les expressions de table commune (CTE, Common Table Expressions) et les
+      jointures récursives ;
     * les paramètres par défaut et de nombres variables pour les fonctions ;
     * la parallélisation des restaurations ;
     * les permissions de niveau colonne ;
     * le parmétrage des locales par base ;
     * l'amélioration des index de hachage ;
-    * l'amélioration des performances des jointures pour les requêtes EXISTS et NOT EXISTS ;
-    * une utilisation plus facile de la reprise semi-automatique (Warm Standby) ;
+    * l'amélioration des performances des jointures pour les requêtes EXISTS et
+      NOT EXISTS ;
+    * une utilisation plus facile de la reprise semi-automatique (Warm Standby)
+;
     * l'auto-paramétrage de la carte des espaces libres (Free Space Map) ;
     * la carte de visibilité (réduit la charge induite par le vacuum) ;
     * le psql rétro-compatible (commandes antislash) ;
     * le support des certificats SSL pour l'authentification des utilisateurs ;
     * les statistiques de fonctionnement par fonction ;
     * l'édition facilité des fonctions en psql ;
-    * de nouveaux modules contributifs : pg_stat_statements,                auto_explain, citext, btree_gin...
+    * de nouveaux modules contributifs : pg_stat_statements,
+      auto_explain, citext, btree_gin...
 
-N'hésitez pas à télécharger et installer la version 8.4 pour pouvoir rapidement tester toutes ces nouveautés. En essayant des combinaisons de nouvelles fonctionnalités, ou en testant le portage de vos applications de production vers la version 8.4, vous aiderez les développeurs de PostgreSQL. Des comparaisons de performance avec la version 8.3 seront toutes aussi utiles. Dîtes-nous ce que vous trouverez.
+N'hésitez pas à télécharger et installer la version 8.4 pour pouvoir rapidement
+tester toutes ces nouveautés. En essayant des combinaisons de nouvelles
+fonctionnalités, ou en testant le portage de vos applications de production vers
+la version 8.4, vous aiderez les développeurs de PostgreSQL. Des comparaisons de
+performance avec la version 8.3 seront toutes aussi utiles. Dites-nous ce que
+vous trouverez.
 
 Page d'information sur la bêta :
    http://www.postgresql.org/developer/beta
@@ -32,14 +45,21 @@ Notes de version :
 Code source :
    http://www.postgresql.org/ftp/source/v8.4beta/
 
-Pour les installeurs Windows et autres versions binaires : se référer à la page d'information sur la bêta.
+Pour les installeurs Windows et autres versions binaires : se référer à la page
+d'information sur la bêta.
 
-Il est d'ores et déjà demandé aux équipes de traduction de finaliser la traduction des messages pour la version 8.4.
+Il est d'ores et déjà demandé aux équipes de traduction de finaliser la
+traduction des messages pour la version 8.4.
 
-Le projet PostgreSQL a toujours besoin de nouveaux traducteurs. Si vous êtes bilingue, pourquoi ne pas vous joindre à une équipe de traducteurs pour participer à l'effort de traduction ?
+Le projet PostgreSQL a toujours besoin de nouveaux traducteurs. Si vous êtes
+bilingue, pourquoi ne pas vous joindre à une équipe de traducteurs pour
+participer à l'effort de traduction ?
 
-Page d'acceuil de la traduction : http://babel.postgresql.org/
+Page d'accueil de la traduction : http://babel.postgresql.org/
 
 Liste de diffusion des traducteurs : pgtranslation-translators@pgfoundry.org
 
-La durée habituelle de la période de bêta tests d'une nouvelle version est de 6 semaines. Cette durée varie toutefois grandement en fonction des bogues découverts pendant les tests. Le projet PostgreSQL ne publie jamais avant que tous les bogues découverts soient corrigés.
+La durée habituelle de la période de bêta tests d'une nouvelle version est de 6
+semaines. Cette durée varie toutefois grandement en fonction des bogues
+découverts pendant les tests. Le projet PostgreSQL ne publie jamais avant que
+tous les bogues découverts soient corrigés.
