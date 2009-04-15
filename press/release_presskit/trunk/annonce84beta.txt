@@ -1,0 +1,56 @@
+The first beta of Version 8.4 of the world's most advanced open source 
+database, PostgreSQL, was just released by the PostgreSQL Global 
+Development Group. After fourteen months of development, 8.4 is ready for 
+testing by PostgreSQL users all over the world in order to make it our 
+best release ever.
+
+8.4 includes hundreds of patches and dozens of new features. Among them:
+
+    * Windowing Functions
+    * Common Table Expressions & Recursive Joins
+    * Default & Variadic parameters for functions
+    * Parallel Restore
+    * Column Permissions
+    * Per-database locale settings
+    * Improved hash indexes
+    * Improved join performance for EXISTS and NOT EXISTS queries
+    * Easier-to-use Warm Standby
+    * Free Space Map auto-tuning
+    * Visibility Map (reduces vacuum overhead)
+    * Version-aware psql (backslash commands)
+    * Support SSL certs for user authentication
+    * Per-function runtime statistics
+    * Easy editing of functions in psql
+    * New contrib modules: pg_stat_statements,
+                  auto_explain, citext, btree_gin
+
+Please download and install version 8.4 and test out these new features as 
+soon as you can! You can especially help the PostgreSQL developers by 
+trying new features in combination, and by doing a test port of your 
+production applications to version 8.4. Performance comparisons with 8.3 
+are also very helpful. Tell us what you find!
+
+Beta Information Page:
+   http://www.postgresql.org/developer/beta
+
+Release Notes:
+   http://www.postgresql.org/docs/8.4/static/release-8-4.html
+
+Source Code:
+   http://www.postgresql.org/ftp/source/v8.4beta/
+
+Windows Installers and Binaries: see the Beta Information Page
+
+Translation teams are at this time asked to begin completing the message 
+translations for the 8.4 release. The PostgreSQL project always needs more 
+translators! If you are bilingual please consider joining a translation 
+team to help translate PostgreSQL:
+
+Translation home page: http://babel.postgresql.org/
+
+Translators mailing list: pgtranslation-translators@pgfoundry.org
+
+The usual duration of the beta testing period for a new version of 
+PostgreSQL is 6 weeks. However, that time can vary significantly depending 
+on what bugs our testing discovers. The PostgreSQL project does not 
+release until all significant known bugs are fixed.
