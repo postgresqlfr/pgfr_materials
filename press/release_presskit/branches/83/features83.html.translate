@@ -1,0 +1,148 @@
+<!-- BEGIN page_title_block -->
+PostgreSQL 8.3 Feature List
+<!-- END page_title_block -->
+
+<h1>PostgreSQL 8.3 Feature List</h1>
+
+<p>The following list covers most, but not all, of the new features included in version 8.3.  As there are a large number of features, they have been grouped by purpose and the descriptions kept brief.  For more detail, see the PostgreSQL documentation and release notes.  For an even more compact format, see the <a href="/about/featurematrix">feature matrix</a> (English only).</p>
+
+<h2>Upgrade Warning</h2>
+
+<p>In order to uphold the PostgreSQL Project's very high standards for data integrity and reliability, in version 8.3 we have cleaned up some of the data type conversions ("casts"). This refactoring may cause problems for some users upgrading older applications which were written to be careless about data type comparisons, especially from versions of PostgreSQL which are several years old.  Users who are upgrading very old applications, or who suspect that they may have some sloppy application or stored procedure code, should do extra testing before upgrading their production systems. See the <a href="/docs/8.3/static/release-8-3.html">release notes</a> for more information.</p>
+
+<h2>Performance</h2>
+
+<h3>Performance Consistency</h3>
+
+<p>These features improve PostgreSQL's ability to deliver consistent response times regardless of server load:</p>
+
+<dl>
+<dt>HOT</dt>
+<dd>Heap Only Tuple (HOT) dramatically reduces the database maintenance issues associated with frequently updated data, reducing the need to vacuum and giving substantial throughput improvements for some applications.</dd>
+<dt>Asynchronous Commit</dt>
+<dd>Allows the ability for COMMIT to return control without waiting for a physical disk write.  This gives better response time at the expense of potentially losing a set amount of transactions in the event of system failure.</dd>
+<dt>Spread Checkpoints</dt>
+<dd>Checkpoint autotuning: delays and spreads out checkpoints, reducing the impact of checkpoints on response times.</dd>
+<dt>Just-in-time background writing strategy</dt>
+<dd>Auto-tuning for the Background Writer estimates how many buffers it should try to clean based on statistics about recent activity.</dd>
+</dl>
+
+<h3>Speed Improvements</h3>
+
+<p>Many new features significantly improve the speed of specific operations, including:</p>
+
+<dl>
+<dt>Improved Recovery Times</dt>
+<dd>The amount of I/O from the Write Ahead Log at recovery time has been halved through efficiency improvements.</dd>
+<dt>Circular Buffer in Tuplestore</dt>
+<dd>Dramatically speeds up small merge joins by avoiding the need to spill to disk.</dd>
+<dt>Faster LIKE/ILIKE comparisons</dt>
+<dd>Improves speed of partial matches, especially with multibyte encodings.</dd>
+<dt>Top-N Sorting</dt>
+<dd>Dramatically faster searches for results with LIMIT.</dd>
+<dt>Lazy XID Assignment</dt>
+<dd>Allows PostgreSQL to avoid assigning transaction IDs for some read-only queries, resulting in noticeably faster throughput on read-mostly or read-only databases.</dd>
+<dt>Function Costing</dt>
+<dd>Allows users to inform the query planner of estimated function execution costs and rows returned, resulting in better query plans.</dd>
+</dl>
+
+<h3>Large Databases</h3>
+
+<p>A few improvements will allow users to run even larger data warehouses on PostgreSQL:</p>
+<dl>
+<dt>Synchronized Scans</dt>
+<dd>Allows "piggybacking" of large table scans by multiple users, tremendously reducing the overall I/O required.</dd>
+<dt>L2 Cache Scan Protection</dt>
+<dd>New code optimizations prevent thrashing CPU caches which slows concurrent queries.</dd>
+<dt>Varlena Header Size Reduction ("Var-Varlena")</dt>
+<dd>Shrinks header sizes for most variable size fields.  Can shrink overall database size up to 20%.</dd>
+</dl>
+
+<h3>Windows Performance</h3>
+
+<p>No, we haven't forgotten our Windows users.  8.3 may allow Windows to finally become a first-class platform for PostgreSQL:</p>
+<dl>
+<dt>MS Visual C++ Support</dt>
+<dd>Allows the PostgreSQL source code to be compiled using Microsoft's C++ compiler, rather than the 3rd party MinGW toolset. This improves performance and stability on MS platforms. </dd>
+<dt>Backend starting code redesign</dt>
+<dd>Drastically reduces the memory space requirements in the postmaster, allowing for more parallel backends running on Windows.</dd>
+</dl>
+
+<h2>Administration</h2>
+
+<p>While PostgreSQL already surpasses proprietary databases for ease of administration, there's always room for improvement.  Therefore, we've added quite a few features to version 8.3 to make administering database servers easier and to provide more information to DBAs: </p>
+<dl>
+<dt>CSV Log Output</dt>
+<dd>Logs to a database-loadable file, enabling the easy creation of ad-hoc auditing and performance analysis tools.</dd>
+<dt>SSPI and GSSAPI Support</dt>
+<dd>Kerberos authentication on PostgreSQL now supports the industry-standard secure APIs: SSPI on Windows and GSSAPI on Unix and Linux, making integration into large enterprise networks easier. </dd>
+<dt>Per Function GUC Settings</dt>
+<dd>Allows for functions to have GUC settings embedded at function creation time. Especially helpful for things like defining the search path of a function at creation time, which tightens security.</dd>
+<dt>Multiple Autovacuum Workers</dt>
+<dd>Enables configurable parallelism for the PostgreSQL maintenance daemon, making autovacuum feasible for applications with thousands of tables.</dd>
+<dt>pg_standby</dt>
+<dd>An administrative tool which makes configuration of Warm Standby servers much easier. </dd>
+<dt>ORDER BY Nulls First/Last</dt>
+<dd>Permits creation of indexes where NULLs are indexed at either the beginning or end of the index.</dd>
+</dl>
+
+<h2>Developers</h2>
+
+<h3>Application Development</h3>
+
+<p>Many enhancements help PostgreSQL 8.3 match the top proprietary databases for supporting complex, multi-layered database applications, including :</p>
+<dl>
+<dt>Full Text Search</dt>
+<dd>TSearch2, our cutting-edge full text search tool, has been fully integrated into the core code, and also has a cleaner API.  This will both make TSearch2 easier to use and to extend with new languages, dictionaries and weighting systems.</dd>
+<dt>Plan Invalidation</dt>
+<dd>Both allows for clearing cached plans by application call, and automatically dropping plans when tables are updated.</dd>
+<dt>Updatable Cursors</dt>
+<dd>Cursors now support WHERE CURRENT OF, making cursor-based application designs more flexible.</dd>
+</dl>
+
+<h3>New Data Types</h3>
+
+<dl>
+<dt>XML Support</dt>
+<dd>New XML data type fully supports the SQL/XML specification of ANSI SQL:2003, including well-formedness checks, type-safe operations, SQL/XML publishing and XPath queries.  Version 8.3 also includes additional functions for XML data export.</dd>
+<dt>UUID</dt>
+<dd>This new 128 bit type is compatible with most common GUID and UUID generators, supporting distributed application design.</dd>
+<dt>Arrays of Compound Types</dt>
+<dd>Arrays can now be created using compound types (types returning multiple columns for a single type, such as a table type or custom type).</dd>
+<dt>ENUM</dt>
+<dd>PostgreSQL now supports ENUM columns with a defined ordered list of alternatives.  This will make migrating applications from MySQL to PostgreSQL easier.</dd>
+</dl>
+
+<h3>Stored Procedures</h3>
+
+<p>Two new features expand the utility of PL/pgSQL, PostgreSQL's most popular stored procedure language:</p>
+<dl>
+<dt>Table Function Support</dt>
+<dd>PL/pgSQL, our most popular procedural language, now supports a simplified syntax for row-returning functions.</dd>
+<dt>Scrollable Cursors in PL/pgSQL</dt>
+<dd>PL/pgSQL now also supports scrollable cursors, allowing PL/pgSQL procedures to perform complex row manipulations.</dd>
+</dl>
+
+<h2>Accessories</h2>
+
+<p>Many important tools are not distributed with the PostgreSQL core code in order to keep the core distribution small and easily maintained.  They are part of a collection of several hundred optional PostgreSQL components which support replication, high availability, language interfaces, application integration and experimental cutting-edge features, most of which are accessible from <a href="http://www.pgfoundry.org">pgFoundry</a>.   The following PostgreSQL tools are being released for version 8.3, or achieved maturity during the 8.3 timeframe, including several replication systems which have been modified to use the new replication hooks in the 8.3 backend:</p>
+<dl>
+<dt><a href="https://developer.skype.com/SkypeGarage/DbProjects/PgBouncer">pgBouncer</a></dt>
+<dd>This multi-threaded connection pooler allows a single PostgreSQL database server to support up to 100,000 application server connections.</dd>
+<dt><a href="https://developer.skype.com/SkypeGarage/DbProjects/PlProxy">PL/Proxy</a></dt>
+<dd>A distributed, horizontally scaled table interface for PostgreSQL.</dd>
+<dt><a href="http://pgsnmpd.projects.postgresql.org/">pgSNMP</a></dt>
+<dd>A standards-compliant SNMP interface for PostgreSQL, simplifying integration with large server monitoring networks.</dd>
+<dt><a href="http://code.google.com/p/sepgsql/downloads/list">SEpgsql</a></dt>
+<dd>A security extension based on SELinux model and policy which allows applying a unified SELinux policy to both the OS and DBMS.</dd>
+<dt><a href="http://pgfoundry.org/projects/edb-debugger/">PL/pgSQL Debugger</a></dt>
+<dd>A new graphical interface which supports interactive debugging and step-through execution of PL/pgSQL procedures.</dd>
+<dt><a href="http://pgfoundry.org/projects/pgpool/">pgPool-II</a></dt>
+<dd>Building on the success of pgPool, the new replicated query agent for PostgreSQL adds data partitioning.</dd>
+<dt><a href="http://bucardo.org/">Bucardo</a></dt>
+<dd>PostgreSQL's first multi-master asynchronous replication system is now available.</dd>
+<dt><a href="http://www.postgresql.at/english/pr_cybercluster_e.html">CyberCluster</a></dt>
+<dd>This newly open-sourced project integrates and improves several existing PostgreSQL clustering tools, such as pgCluster and pgPool. </dd>
+<dt><a href="http://www.slony.info/">Slony-I</a></dt>
+<dd>Version 2.0 of Slony-I, our most popular replication system, now uses the new replication hooks in PostgreSQL 8.3.</dd>
+</dl>
