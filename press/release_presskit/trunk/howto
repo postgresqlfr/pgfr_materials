@@ -1,0 +1,154 @@
+= How to Translate Releases =
+
+This is a set of instructions for Regional Contacts (RCs) and Advocacy volunteers on how to translate major version releases and other PR materials for PostgreSQL.  It is not about translating the web site or translating PostgreSQL itself.
+
+== General Information ==
+
+=== Procedure & Timeline ===
+
+Generally you will have a very short time to get a release translated.  The schedule generally goes like this:
+
+# Day Minus 15: draft release send to Regional Contacts for questions and typo-spotting.
+# Day Minus 12: release finalized, offered to RCs for translation
+# Day Minus 6: draft copies of all languages checked in
+# Day Minus 4: final versions of all languages checked in 
+
+Yes, that does mean that you need to have your translations finalized at least 4 days before the final release (and preferably earlier).  This is because all Presskits need to be integrated into the www.postgresql.org infrastructure, checked, and corrected.
+
+The translation cycle generally goes like this:
+
+# Do draft translation
+# Send it to your proofreader for corrections
+# Correct mistakes
+# Send it back to proofreader for check
+# Send it in to Josh / check in to CVS for HTML checking
+# Correct HTML errors
+# Finalize
+
+=== Encoding ===
+
+All translations of HTML documents must be UTF8 and not any other encoding.  Our web infrastructure is UTF8 only.
+
+=== ProofReading ===
+
+All translations must be checked by someone ''other than the person who did the translation'' to look for mistakes in spelling, punctuation and grammar.  It is not humanly possible to proofread your own work.  Note that this proofreader does not need to be a PostgreSQL community member; they can just be a friend of yours who writes your language very well.
+
+Stupid grammar and spelling mistakes reflect badly on the whole project and make us look amateur.  Don't let them get out.
+
+For the groups where several RCs have the same language, of course, the RCs can check each other's work.
+
+=== Sharing Translation Work ===
+
+RCs are strongly encouraged to share work on the translations with other community members, especially other RCs. Several languages, notably Spanish and German, have several RCs who share responsibility for them.  It is up to you to figure out how to divide up the work; however, you must coordinate with each other because there will be only ''one'' Spanish presskit.
+
+'''Warning: Do not, under any circumstances, post the contents of the press release to a public mailing list, forum, or blog while you are working on it!'''
+
+Using closed, private archive mailing lists is fine, but lists like pgsql-es-ayuda would be a mess.  Don't do it.
+
+== Files to Translate ==
+
+There are ''two'' files you need to translate for a major version release.  If you do not translate ''both'' of them, you won't be included in the release process.  While the two do share text, it is formatted differently in each file and needs to be translated as a separate file.
+
+=== release.txt.translate ===
+
+This file is the text of the e-mail for Regional Contacts to send out on the day of the release.  It is pure text for that reason, and is relatively short.
+
+==== Customizations ====
+
+Each RC will be customizing this text with their own contact information, you will notice a block in the middle of the text file which looks like this:
+
+  YOUR NAME HERE
+  YOUR @POSTGRESQL.ORG EMAIL HERE
+  YOUR PHONE NUMBER HERE
+  YOUR LOCALIZED WEB SITE HERE, IF ANY
+
+You needn't translate this block, as it will be filled in by the RC when they send the e-mail (hopefully!).  Also there is a dateline at the beginning of the release, like this:
+
+  DATE HERE: The PostgreSQL Global Development Group has released ...
+
+You will need to replace the "DATE HERE" words with the translated final date when the final release date is confirmed, about 5 days from the actual release.
+
+==== File Name ====
+
+When you are finished translating, you should rename this file to "release.txt.XX" where "XX" is your language's ISO code. e.g. "release.txt.fr".
+
+Note: a couple of the links say "(English)".  This is to indicate that the documents linked to will not be translated, and should contain a warning that the link goes to an English-language document.
+
+=== presskit84.html.translate ===
+
+This file becomes the online Press Kit for the release.  It includes the text of the e-mail release, as well as a collection of links, expanded quotes, and further information about PostgreSQL.  
+
+The difficulty with this file is that it's full of HTML markup which has been checked extensively by our web staff.  As such, it's critically important that you translate the text ''without'' modifying any of the HTML tags at all, except for the Customization section below.
+
+==== Customizations ====
+
+In the center of the page is the Contact section.  You need to customize this section.  First, you need to add links to your langauge/region's PostgreSQL community page:
+
+ <pre><p>Web Pages</p>
+ <ul>
+ <li><a href="http://www.postgresql.org">PostgreSQL home page</a></li>
+ <li><a href="YOUR LOCALIZED POSTGRES PAGE">NAME OF YOUR LOCALIZED POSTGRES PAGE</a></li>
+ </ul></pre>
+
+That second link needs to be customized to your local Postgres community page, like so:
+
+ <pre><li><a href="http://www.postgresql.org.br/">Comunidade Brasileira de PostgreSQL</a></li></pre>
+
+If you are translating for a language which has multiple local websites (Spanish, German, Italian, etc.) then please add additional Listitems with the additional pages.  If you do not have a localized web site, simply delete that line.
+
+The second customization you need to make is here:
+
+ <pre><p>Press Inquiries</p>
+ <p>REGIONAL CONTACT NAME HERE<br />
+ <a href="RC@POSTGRESQL.ORG">REGIONAL CONTACT EMAIL HERE</a><br />
+ REGIONAL CONTACT PHONE HERE</p></pre>
+
+This is where you put other contact information for the regional contacts in your language.  For example:
+
+ <pre><p>Guido Barosio<br />
+ <a href="ar@postgresql.org">ar@postgresql.org</a><br />
+ Cell: +54911-6641-1945</p></pre>
+
+If your language covers multiple Regional Contacts, then list them all, one after the other, in the above format, ordered alphabetically by region name.  Example:
+
+ <pre><p>Argentina<br />
+ Guido Barosio<br />
+ <a href="ar@postgresql.org">ar@postgresql.org</a><br />
+ Cell: +54911-6641-1945</p>
+ <p>Chile<br />
+ Álvaro Herrera<br />
+ <a href="alvherre@postgresql.org">alvherre@postgresql.org</a><br />
+ Phone: +56-9-74990919</p>
+
+ etc.
+ </pre>
+
+==== File Name ====
+
+When finished, name your translated Press Kit as "presskit##.html.XX" where ## is the number of the release, and XX is your ISO language code.  Example: "presskit84.html.jp".
+
+== Translation Source Management ==
+
+There are three ways to share and collaborate on editing translations: e-mail, CVS, and git.  If you are part of a translation "team" (e.g. Spanish) then you will need to pick ''one'' of these ways to use.  CVS is preferred if you can manage it, and git will be preferred in the next release when we're all a little more used to it.
+
+=== Translating by E-mail ===
+
+Josh will send the Regional Contacts list the final copies of the translate files in an e-mailed zip archive, and later on any line-item edits you need to have if we have last-minute text fixes.  
+
+You then e-mail around copies of the files to your co-translators and proofreader(s), being careful to make sure each person has the most updated version.  I suggest using version numbers to ensure this.
+
+Then you rename the files appropriately, zip them (or bzip or gzip) into an archive, and e-mail them to Josh.  The zipping of the files is important because it prevents e-mail clients and servers from mangling the encodings, which otherwise tends to happen.
+
+=== Translating by CVS ===
+
+The CVS repository for Press documents is located [http://pgfoundry.org/scm/?group_id=1000047 on pgFoundry].  You will need to be a developer on the "press" project to have access to this; e-mail Josh your pgfoundry login name in order to be added.
+
+Check out from the repository the files in "pr/releases/#.#/translate", where "#.#" is the version number, e.g. pr/releases/8.4/translate.  There may be an pr/releases/#.#/en directory present, do NOT use the files there.  Use only the files in /translate.
+
+Once you start translating, you need to create a subdirectory named after your ISO language code, e.g. pr/releases/8.4/es.  Check in your translated files, properly renamed, into that subdirectory, e.g. pr/releases/8.4/es/presskit84.html.es.  Then commit.
+
+When your team is done translating and proofreading, send an e-mail to the regional contacts list saying they're complete.
+
+=== Translating by git ===
+
+Instructions here when I figure this out.  Don't neccessarily expect it to be working by version 8.4.  Help very very welcome!
