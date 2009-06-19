@@ -1,0 +1,41 @@
+Subject: PostgreSQL 8.4 Released
+
+Email Body:
+
+FOR IMMEDIATE RELEASE
+
+DATE HERE: The PostgreSQL Global Development Group has released version 8.4, continuing the rapid development of the world's most advanced open source database.  This release contains an abundance of enhancements to make administering, querying, and programming of PostgreSQL databases easier than ever before.  With 293 new or improved features in version 8.4, there are even more reasons to choose PostgreSQL for your next project.
+
+The most numerous changes in PostgreSQL 8.4 are new or improved administration and monitoring tools and commands.  Each user has their own favorite features which will make day-to-day work with PostgreSQL easier and more productive for them.
+
+"We've used PostgreSQL for seven years now, and we're really looking forward to many of the features in 8.4, particularly column permissions, per-database locale, partial matches for GIN indexes and user defined exceptions," says Jeffrey Webster, CTO of ZooLoo.com. "PostgreSQL has allowed us to grow without sacrificing data integrity."
+
+Among the most popular enhancements are:
+
+ * Parallel Database Restore, speeding up recovery from backup up to 8 times
+ * Per-Column Permissions, allowing more granular control of sensitive data
+ * Per-database Collation Support, making PostgreSQL more useful in multi-lingual environments
+ * In-place Upgrades through pg_migrator beta, enabling upgrades from 8.3 to 8.4 without extensive downtime
+ * New Query Monitoring Tools, giving administrators more insight into query activity
+
+Version 8.4 makes data analysis easier through the advanced ANSI SQL2003 features of windowing functions, common table expressions and recursive joins.  "These query structures increase the expressiveness of PostgreSQL's dialect of SQL substantially, allowing users to ask interesting questions in a single query that would have been impossible to ask before," explains Sailesh Krishnamurthy, Founder, Truviso.  Enhancements to stored procedures, such as default parameters and variadic parameters, make database server programming simpler and more compact.
+
+The new release boosts application performance as well, as Kevin Grittner, Database Administrator for the Wisconsin Courts System comments, "PostgreSQL continues to improve performance in every major release.  Version 8.4 has added several optimizations, such as semi-joins and anti-joins, which provide dramatic improvement in the run time of some of our most demanding queries."
+
+These features mean that PostgreSQL 8.4 will serve more users than ever, such as the OpenStreetMap project.  "When we were planning the new version of the OpenStreetMap API, it became clear that we needed a world-class database that not only ticks the right feature boxes, but actually runs well at the scale we need. Although there are many open source databases available, PostgreSQL was the obvious choice," says Tom Hughes, OpenStreetMap system administrator.
+
+Contact for more information:
+  YOUR NAME HERE
+  YOUR @POSTGRESQL.ORG EMAIL HERE
+  YOUR PHONE NUMBER HERE
+  YOUR LOCALIZED WEB SITE HERE, IF ANY
+
+* Download PostgreSQL 8.4: http://www.postgresql.org/download/
+
+* Full list of 8.4 Features (English): http://www.postgresql.org/about/press/features84
+
+* Release Notes (English): http://www.postgresql.org/docs/8.4/static/release.html
+
+* Extended Press Release: http://www.postgresql.org/about/press/presskit84.html
+
+About PostgreSQL: PostgreSQL is the collective work of hundreds of developers, building on over twenty years of development which began at the University of California, Berkeley. With its long-term support of enterprise-level transactional database features and scalability, PostgreSQL is being used by many of today's most demanding businesses and government agencies. PostgreSQL is distributed under a BSD license, which allows use and distribution without fees for both commercial and non-commercial applications. Learn more on our home page: http://www.postgresql.org.
