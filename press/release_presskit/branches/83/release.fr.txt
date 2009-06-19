@@ -1,0 +1,48 @@
+4 février  2008, New-York, NY : Le PostgreSQL Global Development Group publie aujourd'hui la version 8.3 du système de gestion de bases de données relationnel-objet. Cette version contient un nombre record de fonctionnalités nouvelles ou améliorées. Ces fonctionnalités, issues de plus de 280 correctifs produits par de nombreux contributeurs de 18 pays différents, améliorent grandement PostgreSQL pour les concepteurs d'applications, les administrateurs de bases de données et les utilisateurs.
+
+« L'évolution continue du SGBD OpenSource PostgreSQL offre la possibilité de déployer un SGBD non-propriétaire. Cela permet d'économiser de l'argent, d'améliorer les performances et d'accroître la productivité. PostgreSQL 8.3 est une nouvelle version remarquable et nous encourageons les clients du monde entier à l'essayer, » déclare Rich Green, vice-président logiciels exécutif chez Sun Microsystems.
+
+La version 8.3 fournit une meilleure harmonisation des performances que les versions précédentes. De ce fait, tous les utilisateurs bénéficient des mêmes performances pour chaque transaction, qu'il y ait ou non un pic d'activité, et ce 7 jours sur 7, 52 semaines par an. Cela a notamment été prouvé par de récents tests de performance.
+
+Les améliorations majeures incluent :
+
+* le Heap Only Tuples (HOT) ou Tuples en mémoire seule, qui élimine jusqu'à 75% du temps de maintenance des tables fréquemment modifiées ;
+* l'étalement des points de vérification (checkpoints), qui réduit leur impact sur les temps de réponse ;
+* l'auto-optimisation du démon d'écriture sur disque (background writer) ;
+* l'option de validation asynchrone pour des temps de réponse plus courts sur certaines transactions.
+
+Ces changements accélèrent également de manière significative le débit de traitement des transactions, de 5% à 30%, selon la charge.
+
+« PostgreSQL est simplement devenu plus intelligent, » annonce Bruce Momjian, membre du PostgreSQL Core Team.
+
+PostgreSQL est le premier SGBD OpenSource à mettre en œuvre le parcours synchrone (Synchronized Scan), qui réduit fortement les E/S lors d'explorations des données (data mining). 
+
+L'équipe Windows a ajouté la possibilité de compiler PostgreSQL avec Visual C++, en a amélioré la stabilité et les performances tout en facilitant l'accès au projet pour les contributeurs. 
+
+De nouvelles possibilités de traçage ont été ajoutées et le temps-système nécessaire au collecteur de statistiques a été diminué pour faciliter la supervision des serveurs.
+
+Bien évidemment, une version PostgreSQL se doit d'apporter de nouvelles fonctionnalités pour les développeurs. Celles-ci incluent :
+
+* le support du SQL/XML selon le standard ANSI, ce qui comprend l'export XML ;
+* la recherche textuelle : l'outil de recherche en texte intégral, TSearch2, a été ajouté à la distribution de base, avec une meilleure gestion, de nouveaux langages et de nouveaux dictionnaires ;
+* le support des authentifications GSSAPI et SSPI ;
+* de nouveaux types de données : UUID, ENUM et les tableaux de types composites.
+
+« Nous exécutons plus de 18 000 requêtes par seconde sur plus de 300 Go de données utilisateur sur nos serveurs PostgreSQL, et ces nombres grossissent chaque mois, » déclare Gavin Roy, CTO du site de réseau social MyYearbook.com. « Nous sommes pressés de disposer du HOT, de l'amélioration des parcours de tampons partagés et de l'intégration de tsearch, l'indexeur en texte intégral. Les premiers tests indiquent que la version 8.3 va améliorer le niveau de charge de notre base et abaisser les temps de réponse. Nous l'attendons avec impatience. »
+
+En plus des nombreuses fonctionnalités de bases ajoutées, quelques nouveaux composants optionnels ont mûri et atteint la version 1.0 lors du cycle de publication de PostgreSQL 8.3. Parmi ceux-ci, on trouve le support SNMP, des possibilités d'extensibilité horizontale telles que PL/Proxy, PgPool-II et Bucardo, un débogueur graphique de procédures stockées et un concentrateur de connexion appelé pgBouncer. Tout cela s'ajoute aux très nombreux accessoires déjà disponibles.
+
+La version 8.3 apporte de très nombreuses améliorations et fonctionnalités additionnelles qui contribuent à rendre PostgreSQL encore plus performant. Pour les détails, on peut se reporter au dossier de presse : http://www.postgresql.org/about/press/presskit83
+
+PostgreSQL est téléchargeable à partir de : http://www.postgresql.org/download
+
+Pour de plus amples renseignements, contacter :
+Stéphane SCHILDKNECHT
+Contact pour les pays francophones
+fr@postgresql.org
+Tél.: +33 9 53 69 97 12
+
+À propos de PostgreSQL : 
+PostgreSQL est un travail collaboratif impliquant plusieurs centaines de développeurs. Le développement a démarré il y a 21 ans à l'Université de Californie, Berkeley. Grâce au support de longue date des fonctionnalités d'un SGBD transactionnel de niveau industriel et à son extensibilité, PostgreSQL est utilisé dans la plupart des agences gouvernementales et dans des sociétés exigeantes. PostgreSQL est distribué sous licence BSD, ce qui autorise son utilisation et sa distribution sans redevance que les applications soient commerciales ou non.
+
+Plus d'informations sur http://www.postgresql.org et http://www.postgresqlfr.org
