@@ -19,7 +19,7 @@ Dossier de presse PostgreSQL 8.4
 
 <a name="original_release"></a><h2>Texte d'origine</h2>
 
-<p><b>29 juin 2009</b> Le groupe de développement mondial de PostgreSQL (PGDG) a publié la version 8.4, dans la continuité du développement rapide de ce SGBD avancé.
+<p><b>1er juillet 2009</b> Le groupe de développement mondial de PostgreSQL (PGDG) a publié la version 8.4, dans la continuité du développement rapide de ce SGBD avancé.
 </p>
 <p>
 Cette version apporte un nombre considérable d'améliorations facilitant plus encore l'administration, le requêtage et la programmation des bases de données PostgreSQL.
