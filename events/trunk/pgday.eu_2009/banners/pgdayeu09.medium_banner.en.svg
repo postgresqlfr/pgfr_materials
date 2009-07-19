@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="180"
-   height="180"
+   width="468"
+   height="60"
    id="svg5789"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -103,7 +103,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#radialGradient3799);fill-opacity:1;fill-rule:nonzero;stroke:#424242;stroke-width:2.20999999999999996;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="fill:url(#radialGradient3799);fill-opacity:1;fill-rule:nonzero;stroke:#424242;stroke-width:2.21000004;stroke-linecap:butt;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect2383"
        width="177.41756"
        height="177.41809"
