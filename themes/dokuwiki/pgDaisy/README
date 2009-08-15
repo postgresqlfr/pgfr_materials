@@ -1,0 +1,23 @@
+====== README ======
+
+  * Name : pgDaisy
+  * Desc : Dokuwiki template for PGDay.eu 2009
+  * Author : damien.clochard@dalibo.com
+  * License : BSD
+  * Date : march 2009
+
+===== REQUIREMENT =====
+
+This theme was used with the following plug-ins. They might not be mandatory, but they're very useful :
+
+  * GoogleMaps : http://www.dokuwiki.org/plugin:googlemaps
+  * GoogleAnalytics : http://www.dokuwiki.org/plugin:googleanalytics
+  * pageredirect : http://www.dokuwiki.org/plugin:page_redirector
+  * note : http://www.dokuwiki.org/plugin:note
+  * translation : http://www.dokuwiki.org/plugin:translation 
+
+===== INSTALL =====
+
+  - Just copy this directory in dokuwiki's lib/tpl/ folder
+  - Go to the admin page and select this template
+
