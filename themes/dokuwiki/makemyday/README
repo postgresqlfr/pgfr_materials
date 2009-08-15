@@ -1,0 +1,19 @@
+====== README ======
+
+  * Name : MakeMyDay
+  * Desc : Dokuwiki template for PGDay.fr 2008
+  * Author : damien.clochard@dalibo.com
+  * License : BSD
+  * Date : september 2008 
+
+===== REQUIREMENT =====
+
+This theme was used with the following plug-ins. They might not be mandatory, but they're very useful :
+
+  * Formular : http://www.dokuwiki.org/plugin:form 
+  * GoogleMaps : http://www.dokuwiki.org/plugin:googlemaps 
+
+===== INSTALL =====
+ 
+  - Just copy this directory in dokuwiki's lib/tpl/ folder
+  - Go to the admin page and select this template

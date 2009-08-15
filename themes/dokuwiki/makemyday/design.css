@@ -1,0 +1,181 @@
+body {
+  font-family: verdana, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-size: 11px;
+  text-align : left;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+
+img {
+   border:0;
+}
+
+div.dokuwiki {
+  width: 800px;
+  border: none;
+}
+
+div.header {
+  width: 800px;
+  background: url(/lib/tpl/makemyday/images/hdr_fill.png);
+  background-repeat : none;
+  margin-top: 5px;
+}
+
+div#nav {
+  background: #b6b6b6;
+  margin-top: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+div#nav a, div#nav a:link, div#nav a:active, div#nav a:visited, div#nav a:hover {
+  color: #ffffff;
+  text-decoration: none; 
+  font-size: 12px;
+  font-weight: bold;
+}
+
+div#nav ul {
+  display : inline;
+  border: none;
+}
+
+div#nav ul li {
+  display : inline;
+  list-style : none;
+  border: none;
+}
+
+div#nav ul li:before {
+  content: none;
+}
+
+div#nav ul li div {
+  float : left;
+  padding-left: 5px; 
+  padding-top: 0px; 
+  border: none;
+}
+
+div#content, table, td {
+  font-size: 11px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #286aaf;
+  text-align: left;
+}
+
+h2 {
+  text-align: left;
+}
+
+
+div.fl { float: left; border: none; text-align: left; }
+div.flc { float: left; margin-left: 5px; border: none; text-align: left; }
+div.fls { float: left; padding-left: 5px; padding-right: 5px; border: none; text-align: left; background: #F5F5F5; }
+div.flp { float: left; padding-left: 10px; padding-top: 4px;  }
+div.fr { float: right; }
+div.cb { clear: both;  }
+
+/*
+ul {list-style: none;}
+
+li:before {content: "\00BB \0020";}
+*/
+.title { font-weight: bold; font-size: 13px; };
+.person { font-weight: bold; }
+
+div.wikipage {
+	text-align: left;
+	margin-left : 190px; 
+  	font-size: 1.1em;
+}
+
+div.wikipage h1 {
+        text-align: center;
+}
+
+div.sponsors {
+	float: left; 
+	padding-left: 5px; 
+	padding-right: 5px; 
+	border: none; 
+	text-align: center; 
+	background: #F5F5F5; 
+        width : 170px; 
+}
+
+div.sponsors h1 {
+ 	text-align : left;
+  	font-size: 13px;
+  	font-weight: bold;
+  	color: #286aaf;
+}
+
+}
+
+div.sponsors div p {
+	text-align : center;
+}
+
+div#bar__bottomleft {
+    margin-top : 30px;
+    margin-right:auto;
+    margin-left:0;
+    margin-bottom : 0;
+    text-align: left;
+    font-size: 0.8em;
+    padding: 3px;
+    color: #999;
+}
+
+div#bar__bottomright a {
+    color: #999;
+}
+
+
+
+div#bar__bottomright {
+    margin-top : 30px;
+    margin-left:auto;
+    margin-right:0;
+    margin-bottom : 0;
+    clear: both;
+    text-align: right;
+    font-size: 0.8em;
+    padding: 3px;
+}
+
+
+div#bar__bottomright a {
+    color: #999;
+}
+
+div.secedit {
+    display : none;
+    visible : 0;
+}
+
+.toc {
+    display : none;
+    visible : 0;
+}
+
+/* Ajout JCA */
+iframe{
+    border-style: none;
+    //border: 1px solid black;
+}
