@@ -6,6 +6,10 @@
   * License : BSD
   * Date : september 2008 
 
+===== DEMO =====
+
+This template is used there : http://2008.pgday.fr
+
 ===== REQUIREMENT =====
 
 This theme was used with the following plug-ins. They might not be mandatory, but they're very useful :
@@ -17,3 +21,17 @@ This theme was used with the following plug-ins. They might not be mandatory, bu
  
   - Just copy this directory in dokuwiki's lib/tpl/ folder
   - Go to the admin page and select this template
+
+===== SPECIAL PAGES =====
+
+There 2 special pages :
+
+-> The Navigation bar is a standalone wiki page called "nav". 
+So you can edit the nav bar very simply : just go to the url :
+
+http://your.wiki.address/nav?do=edit
+
+-> The sponsor sidebar can be edited too. The url is :
+
+http://your.wiki.address/sponsors?do=edit
+
