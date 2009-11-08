@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="pgday.logo.draft3.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2447"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="301.11729"
+     inkscape:cy="584.63131"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1360"
+     inkscape:window-height="782"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="356.58385,618.21336"
+       id="guide3328" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#66ff00;fill-opacity:0.01582277000000000;stroke:#12f539;stroke-width:3.87500000000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0"
+       id="path3383"
+       sodipodi:cx="360.62445"
+       sodipodi:cy="390.71228"
+       sodipodi:rx="83.842659"
+       sodipodi:ry="84.852814"
+       d="M 444.46711,390.71228 A 83.842659,84.852814 0 1 1 276.78179,390.71228 A 83.842659,84.852814 0 1 1 444.46711,390.71228 z"
+       transform="matrix(-1.2003556,0.425068,0.425068,1.2003556,718.70171,-236.13728)"
+       inkscape:export-filename="/home/damien/Desktop/pgday.logo.draft2.png"
+       inkscape:export-xdpi="93.370789"
+       inkscape:export-ydpi="93.370789" />
+    <path
+       style="fill:#000000"
+       d="M 442.95398,475.50736 C 378.65821,462.37368 347.13488,400.00838 377.0976,345.21807 C 413.97249,277.78805 514.10555,286.81472 538.28826,359.74888 C 542.72198,373.1208 542.02723,375.05926 535.18841,368.39789 C 531.33852,364.64789 531.33852,364.64789 520.98326,364.74473 C 510.99249,364.83817 510.58219,364.75597 509.32635,362.40942 C 505.80886,355.83693 491.45398,355.93325 491.45398,362.52934 C 491.45398,365.21865 488.61272,367.37644 483.91631,368.25383 C 474.48502,370.01579 461.54725,380.7023 448.88889,397.18624 C 432.91288,417.99049 421.63886,421.23141 414.42608,407.0932 C 409.58266,397.59931 411.94664,392.50076 427.00181,379.97034 C 453.4777,357.93445 455.58266,341.72095 434.07252,325.50803 C 422.01495,316.41983 420.78657,316.86194 422.07628,329.82559 C 422.95398,338.64789 422.95398,338.64789 426.0355,338.3402 C 428.5625,338.08787 429.77715,338.7632 432.7855,342.09308 C 439.64113,349.68144 438.29817,352.37159 422.22189,363.25365 C 386.5988,387.36697 384.38794,415.70422 416.79934,432.75583 C 427.02984,438.13809 419.38259,440.94208 406.31266,436.60095 C 400.23017,434.58067 399.3232,435.1813 403.0927,438.73334 C 411.46103,446.61892 426.2785,448.86361 438.95398,444.1659 C 447.91264,440.84571 448.79726,440.76475 450.8869,443.07376 C 453.24623,445.6808 454.45117,445.67211 458.9536,443.01561 C 471.11815,435.83835 493.75628,446.67888 496.00786,460.75947 C 497.44932,469.77387 462.47728,479.49538 442.95398,475.50736 z"
+       id="path2453"
+       inkscape:export-filename="/home/damien/Desktop/pgday.logo.draft2.png"
+       inkscape:export-xdpi="93.370789"
+       inkscape:export-ydpi="93.370789" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#66ff00;fill-opacity:0.01582277000000000;stroke:#ab12f5;stroke-width:3.87500000000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.00617284"
+       id="path2464"
+       sodipodi:cx="360.62445"
+       sodipodi:cy="390.71228"
+       sodipodi:rx="83.842659"
+       sodipodi:ry="84.852814"
+       d="M 444.46711,390.71228 A 83.842659,84.852814 0 1 1 276.78179,390.71228 A 83.842659,84.852814 0 1 1 444.46711,390.71228 z"
+       transform="matrix(-1.008147,-0.3570034,0.3570034,-1.008147,678.54543,910.29169)"
+       inkscape:export-filename="/home/damien/Desktop/pgday.logo.draft2.png"
+       inkscape:export-xdpi="93.370789"
+       inkscape:export-ydpi="93.370789" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Verdana;-inkscape-font-specification:Verdana"
+       id="text2498"
+       inkscape:export-filename="/home/damien/Desktop/pgday.logo.draft2.png"
+       inkscape:export-xdpi="93.370789"
+       inkscape:export-ydpi="93.370789"
+       transform="translate(-2.0203051,-2.0203051)"><textPath
+         xlink:href="#path2464"
+         id="textPath2504"><tspan
+           id="tspan2502"
+           y="240.681"
+           x="191.9375">2009.pgday.eu</tspan></textPath></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3385"><textPath
+         xlink:href="#path3383"
+         id="textPath3391"><tspan
+   id="tspan3387"><tspan
+     id="tspan3389"
+     y="527.81"
+     x="225.25">The European Postgresql Conference</tspan></tspan></textPath></text>
+  </g>
+</svg>
