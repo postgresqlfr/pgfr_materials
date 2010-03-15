@@ -14,7 +14,7 @@
    id="svg2890"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="badges_sl2010.svg">
+   sodipodi:docname="badges_sl2010_1.svg">
   <defs
      id="defs3">
     <inkscape:perspective
@@ -165,7 +165,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="424.08075"
-     inkscape:cy="497.65249"
+     inkscape:cy="269.08106"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
@@ -181,7 +181,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -191,7 +191,7 @@
      id="layer1">
     <g
        id="g3437"
-       transform="matrix(0.74632444,0,0,0.74632444,-6.8318928,20.948089)">
+       transform="matrix(0.74632444,0,0,0.74632444,20.310964,22.37666)">
       <g
          inkscape:label="francophonie"
          id="layer1-9" />
@@ -430,29 +430,29 @@
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold"
-       x="154.58342"
-       y="396.64789"
+       x="181.72627"
+       y="398.07645"
        id="text3472"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="154.58342"
-         y="396.64789"
+         x="181.72627"
+         y="398.07645"
          id="tspan3476"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Guillaume Lelarge</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Charly Clairmont</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="82.310471"
-       y="429.50504"
+       x="109.45333"
+       y="430.93359"
        id="text2990"><tspan
          sodipodi:role="line"
          id="tspan2992"
-         x="82.310471"
-         y="429.50504"
-         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: gleu</tspan></text>
+         x="109.45333"
+         y="430.93359"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: ccl</tspan></text>
     <g
        id="g3437-2"
-       transform="matrix(0.74632444,0,0,0.74632444,429.98591,24.182542)">
+       transform="matrix(0.74632444,0,0,0.74632444,388.55734,22.753971)">
       <g
          inkscape:label="francophonie"
          id="layer1-9-2" />
@@ -691,26 +691,26 @@
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold"
-       x="591.40118"
-       y="399.88232"
+       x="549.9726"
+       y="398.45377"
        id="text3472-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="591.40118"
-         y="399.88232"
+         x="549.9726"
+         y="398.45377"
          id="tspan3476-3"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Jean-Paul Argudo</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Stéphane Schildknecht</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="519.12823"
-       y="432.73947"
+       x="477.69968"
+       y="431.31091"
        id="text2990-9"><tspan
          sodipodi:role="line"
          id="tspan2992-0"
-         x="519.12823"
-         y="432.73947"
-         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: jpa</tspan></text>
+         x="477.69968"
+         y="431.31091"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: SAS</tspan></text>
     <g
        id="g3437-8"
        transform="matrix(0.74632444,0,0,0.74632444,7.2913286,626.85104)">
@@ -960,18 +960,18 @@
          x="168.70667"
          y="1002.5508"
          id="tspan3476-8"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Christophe Chauvet</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Marc Cousin</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="96.43367"
+       x="73.57653"
        y="1035.4081"
        id="text2990-5"><tspan
          sodipodi:role="line"
          id="tspan2992-9"
-         x="96.43367"
+         x="73.57653"
          y="1035.4081"
-         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: Kryskool</tspan></text>
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: marco44</tspan></text>
     <g
        id="g3437-2-7"
        transform="matrix(0.74632444,0,0,0.74632444,429.82341,627.22835)">
@@ -1221,17 +1221,17 @@
          x="591.23865"
          y="1002.9281"
          id="tspan3476-3-5"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Cédric Villemain</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Bold">Vincent Picavet</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="518.9657"
-       y="1035.7853"
+       x="530.39429"
+       y="1032.9281"
        id="text2990-9-9"><tspan
          sodipodi:role="line"
          id="tspan2992-0-4"
-         x="518.9657"
-         y="1035.7853"
-         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: klando</tspan></text>
+         x="530.39429"
+         y="1032.9281"
+         style="font-size:22px;font-style:italic;-inkscape-font-specification:Bitstream Vera Sans Oblique">surnom: vpi</tspan></text>
   </g>
 </svg>
