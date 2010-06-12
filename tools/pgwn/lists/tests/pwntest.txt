@@ -1,0 +1,105 @@
+Subject:
+[ANNOUNCE] == PostgreSQL Weekly News - August 27 2005 ==
+From:
+David Fetter <david@fetter.org>
+Date:
+Sat, 27 Aug 2005 16:50:49 -0700
+To:
+PostgreSQL Announce <pgsql-announce@postgresql.org>
+Return-Path:
+<cyrus@iux>
+Received:
+from iux ([unix socket]) (authenticated user=jx bits=0) by iux (Cyrus v2.1.18-IPv6-Debian-2.1.18-1) with LMTP; Sun, 28 Aug 2005 01:55:13 +0200
+X-Sieve:
+CMU Sieve 2.2
+Return-Path:
+<pgsql-announce-owner+M750=jx=tuxfarm.org@postgresql.org>
+Received:
+from hosting.commandprompt.com (128.commandprompt.com [207.173.200.128]) by iux (Postfix) with ESMTP id A2205300ED for <jx@tuxfarm.org>; Sun, 28 Aug 2005 01:55:12 +0200 (CEST)
+Received:
+from postgresql.org (svr1.postgresql.org [200.46.204.71]) by hosting.commandprompt.com (8.13.4/8.13.4) with ESMTP id j7RNnCAa030277 for <jx@tuxfarm.org>; Sat, 27 Aug 2005 16:49:52 -0700
+X-Original-To:
+pgsql-announce-postgresql.org@localhost.postgresql.org
+Received:
+from localhost (av.hub.org [200.46.204.144]) by svr1.postgresql.org (Postfix) with ESMTP id 6F7B8D7F8B for <pgsql-announce-postgresql.org@localhost.postgresql.org>; Sat, 27 Aug 2005 20:50:57 -0300 (ADT)
+Received:
+from svr1.postgresql.org ([200.46.204.71]) by localhost (av.hub.org [200.46.204.144]) (amavisd-new, port 10024) with ESMTP id 85089-03 for <pgsql-announce-postgresql.org@localhost.postgresql.org>; Sat, 27 Aug 2005 23:50:54 +0000 (GMT)
+Received:
+from fetter.org (dsl092-188-065.sfo1.dsl.speakeasy.net [66.92.188.65]) by svr1.postgresql.org (Postfix) with ESMTP id 9D5F6D7FAD for <pgsql-announce@postgresql.org>; Sat, 27 Aug 2005 20:50:52 -0300 (ADT)
+Received:
+from fetter.org (localhost.localdomain [127.0.0.1]) by fetter.org (8.13.4/8.12.10) with ESMTP id j7RNoopD017003 for <pgsql-announce@postgresql.org>; Sat, 27 Aug 2005 16:50:52 -0700
+Received:
+(from shackle@localhost) by fetter.org (8.13.4/8.13.4/Submit) id j7RNonoW017002 for pgsql-announce@postgresql.org; Sat, 27 Aug 2005 16:50:49 -0700
+Message-ID:
+<20050827235049.GE31342@fetter.org>
+MIME-Version:
+1.0
+Content-Type:
+text/plain; charset=us-ascii
+Content-Disposition:
+inline
+User-Agent:
+Mutt/1.4.2.1i
+X-Virus-Scanned:
+by amavisd-new at hub.org
+X-Spam-Status:
+No, hits=0.06 required=5 tests=[AWL=0.010, FORGED_RCVD_HELO=0.05]
+X-Mailing-List:
+pgsql-announce
+List-Archive:
+<http://archives.postgresql.org/pgsql-announce>
+List-Help:
+<mailto:majordomo@postgresql.org?body=help>
+List-ID:
+<pgsql-announce.postgresql.org>
+List-Owner:
+<mailto:pgsql-announce-owner@postgresql.org>
+List-Post:
+<mailto:pgsql-announce@postgresql.org>
+List-Subscribe:
+<mailto:majordomo@postgresql.org?body=sub%20pgsql-announce>
+List-Unsubscribe:
+<mailto:majordomo@postgresql.org?body=unsub%20pgsql-announce>
+Precedence:
+bulk
+Sender:
+pgsql-announce-owner@postgresql.org
+X-Greylist:
+Sender IP whitelisted, not delayed by milter-greylist-1.6 (hosting.commandprompt.com [192.168.1.101]); Sat, 27 Aug 2005 16:49:53 -0700 (PDT)
+
+== PostgreSQL Weekly News - August 27 2005 ==
+
+PostgreSQL 8.1 beta1 is out.  Congratulations to all who have
+participated in making this happen.
+http://www.postgresql.org/developer/beta
+
+Please test the new beta.  Some of the new features are at
+http://developer.postgresql.org/docs/postgres/release.html#RELEASE-8-1
+
+Congratulations to Dave Page, the newest addition to Core.  Dave has
+headed the pgODBC project for a couple of years, started the pgAdmin
+project in 1998, has been our lead webmaster for three years, and is
+now sharing responsibility for Win32 packaging with Magnus Hagander.
+In these latter two roles, Dave's help is indispensable to the
+PostgreSQL release process, so he now gets the title for the work he
+is already doing.
+
+Andrew Dunstan and Alvaro Herrera are now committers.  Kudos!
+
+== PostgreSQL Product News ==
+
+Oryx 0.97 is out
+http://www.oryx.com/mailstore/0.97.html
+
+== PostgreSQL in the News ==
+
+General Bits: http://www.varlena.com/GeneralBits/
+Overlapping Revisions
+
+PostgreSQL Weekly News is brought to you this week by David Fetter and
+Josh Berkus
+
+---------------------------(end of broadcast)---------------------------
+TIP 2: Don't 'kill -9' the postmaster
+
+
