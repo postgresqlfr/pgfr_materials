@@ -1,0 +1,18 @@
+.form-text {
+     font-size: 0.8em;
+      width: 140px;
+      border: 1px solid #7A7A7A;
+      background: #FFFFFF;
+      padding: 2px;
+ }
+.form-password{
+     font-size: 0.8em;
+      width: 140px;
+      border: 1px solid #7A7A7A;
+      background: #FF0000;
+      padding: 2px;
+ }
+
+h1.plop{
+    color: #FF0000;
+}

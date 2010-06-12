@@ -1,0 +1,21 @@
+td.orcntr{
+        padding: 8px 11px;
+        color: #555555;
+}
+td.ord{
+	background: url(/themes/pgfr/images/nav_tbl_btm.png);
+	width: 100%;
+}
+td.oru{
+	background: url(../../images/nav_tbl_top.png);
+	width: 100%;
+}
+td.lgu { 
+	background: url(../../images/usr_tbl_top.png); 
+	width: 100%; 
+}
+td.lgd { 
+	background: url(../../images/usr_tbl_ibtm.png); 
+	width: 100%; 
+}
+      

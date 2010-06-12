@@ -1,0 +1,278 @@
+<?php
+// $Id: pgfr-4.5.theme,v 1.2 2005/08/30 07:54:43 jx Exp $
+
+  /*********************************************************************
+
+   Theme: Pgfr
+   Author: JC Arnu
+   Email: jc dot arnu at free dot fr
+   Description: Uses Postgresql.org css
+
+   Todo: vérifier les align pour p, li, li p
+   Todo: voir pour le pgFrontUser
+
+  *********************************************************************/
+
+function pgfr_features() {
+  return array('logo', 'toggle_primary_links');
+}
+
+function pgfr_settings() {
+  $output = form_checkbox(t('Use the default secondary logo'), "pgfr_default_logo2", 1, variable_get('pgfr_default_logo2', 1), t('Check here if you want the theme to use the secondary logo supplied with it.'));
+  $output .= form_textfield(t('Path to custom secondary logo'), "pgfr_logo2", variable_get('pgfr_logo2', ''), 50, 60, t('The path to the file you would like to use as your secondary logo file instead of the default logo.'));
+  return $output;
+}
+
+function pgfr_page($content, $title = NULL, $breadcrumb = NULL) {
+  if (isset($title)) {
+    drupal_set_title($title);
+  }
+  if (isset($breadcrumb)) {
+    drupal_set_breadcrumb($breadcrumb);
+  }
+
+  $colspan = 1;
+  if ($blocksleft = theme("blocks", "left")) {
+    $colspan++;
+  }
+  if ($blocksright = theme("blocks", "right")) {
+    $colspan++;
+  }
+
+  $output = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+  <head>
+   ' . drupal_get_html_head() . '
+   <title>';
+
+  if ($title = drupal_get_title()) {
+    $output .= "$title - ". variable_get("site_name", "drupal");
+  }
+  else {
+    $output .= variable_get("site_name", "drupal");
+    $output .= ($slogan = variable_get("site_slogan", "")) ? " - $slogan" : "";
+  }
+
+  $output .= '</title>
+ <style type="text/css" media="screen" title="Normal Text">@import url("/layout/css/blue/fixed.css");</style>
+ <style type="text/css" media="screen" title="Normal Text2">@import url(/"'.path_to_theme().'/pgfr.css");</style>
+  <style type="text/css">
+   <!--
+   p, li, li p { text-align: justify; }
+  .form-text {
+     font-size: 0.8em;
+      width: 140px;
+      border: 1px solid #7A7A7A;
+      background: #FFFFFF;
+      padding: 2px;
+ }
+.form-password{
+     font-size: 0.8em;
+      width: 140px;
+      border: 1px solid #7A7A7A;
+      background: #FFFFFF;
+      padding: 2px;
+ }
+textarea,select,input,.form-radio{
+      font-size: 0.8em;
+      /*width: 140px;*/
+      border: 1px solid #7A7A7A;
+      background: #FFFFFF;
+      padding: 2px;
+
+ }
+ .form-submit{
+      font-size: 0.8em;
+      width: 140px;
+      border: 1px solid #7A7A7A;
+      background: #dddddd;
+      padding: 2px;
+
+ }
+hr{
+	color: #DADADA;
+	size: 1px;
+}
+
+.plop{
+    color: #FF0000;
+} 
+h1.plop a:link{
+	color: #EC5800;
+	text-decoration: none;
+}
+h1.plop a:hover{
+	color: #EC5800;
+	text-decoration: underline;
+}
+
+--></style>
+   <script language="JavaScript" type="text/javascript"><!--
+function b(title,content){
+    document.writeln("<div id=\"pgSideNav\">");
+    document.writeln("<h2>"+title+"</h2>");
+    document.writeln("<div>"+content+"</div>");
+    document.writeln("</div>");
+}
+function s(title,subleft,subright,body){
+	document.writeln("<!--<div class=\"pgFrontCenterUser\">\n<div class=\"pgFrontUser\">\n<div class=\"pgFrontUserInner\">\n--><div class=\"pgFrontUserWrap\">\n");
+	document.writeln("<div class=\"pgFrontUserContent\">");
+	document.writeln("<h1 class=\"plop\">"+subright+" | "+title+"</h1>");
+	document.writeln("<p>"+subleft+"</p>");
+	document.writeln("<p>"+body+"</p>");
+	document.writeln("</div>");
+	document.writeln("<!--</div>\n</div>\n</div>-->\n</div>\n");
+}
+function c(subject,mod,author,date,body){
+    document.writeln("<div class=\"pgContentWrap\">");
+    document.writeln("<h1 id=\"txtFrontFeatureHeading\">"+subject+"</h1>");
+    document.writeln("<p>"+author+"/"+mod+" = "+date+"</p>");
+    document.writeln("<p>"+body+"</p>");
+    document.writeln("</div>");
+}
+  //-->
+   </script>
+   </head>
+   <body' . theme_onload_attribute() . '>
+    <center><table border="0" cellspacing="3" cellpadding="0" width="100%">
+     <tr>
+      <td colspan="' . $colspan . '" width="100%"><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="left">';
+/*  if ($logo = theme_get_setting('logo')) {
+    $output .= "  <a href=\"./\" title=\"Home\"><img src=\"$logo\" alt=\"Home\" /></a>";
+  }*/
+//  $output .= '<div id<img src="/layout/images/hdr_left.png" width="230" height="80" alt="PostgreSQL" /><img src="/layout/images/hdr_right.png" width="210" height="80" alt="The world\'s most advanced open source database." />';
+$output .='<div id="pgHeader"><div id="pgHeaderLogoLeft"><a href="/" title="PostgreSQL"><img src="/layout/images/hdr_left.png" width="230" height="80" alt="PostgreSQL" /></a></div><div id="pgHeaderLogoRight"><span class="txtOffScreen">|</span><a href="/" title="The world\'s most advanced open source database."><img src="/layout/images/hdr_right.png" width="210" height="80" alt="The world\'s most advanced open source database." /></a></div></div>';
+  $output .= '</td><td align="right">';
+  $logo2 = variable_get('pgfr_default_logo2', 1) ? (path_to_theme() .'/drupal.png') : variable_get('pgfr_logo2', '');
+  if ($logo2) {
+    $output .= '<img src="'. $logo2 .'" alt="" />';
+  }
+  $output .= '</td></tr></table>
+' . pgfr_linksbar() . '
+      </td>
+     </tr>
+     <tr>
+';
+
+  if ($blocksleft) {
+    $output .= "    <td style=\"vertical-align: top; width: 20%;\">\n";
+    $output .= $blocksleft;
+    $output .= "    </td>\n";
+  }
+
+  $output .= '
+      <td style="vertical-align: top; width: ' . (($colspan == 1) ? '100%' : (($colspan == 2) ? '80%' : '60%')) . '">';
+
+  if ($title = drupal_get_title()) {
+    $output .= theme("breadcrumb", drupal_get_breadcrumb());
+    $output .= "<h2 class=\"title\">$title</h2>";
+  }
+
+  if ($tabs = theme('menu_local_tasks')) {
+    $output .= $tabs;
+  }
+
+  if ($help = menu_get_active_help()) {
+    $output .= "<div id=\"help\">$help</div><!--hr /-->";
+  }
+
+  $output .= theme_status_messages();
+
+  $output .= "\n<!-- begin content -->\n";
+  $output .= $content;
+  $output .= "\n<!-- end content -->\n";
+
+  $output .= '              </td>
+';
+
+  if ($blocksright) {
+    $output .= "              <td style=\"vertical-align: top; width: 20%;\">\n";
+    $output .= $blocksright;
+    $output .= "              </td>\n";
+  }
+
+  $output .= '
+    </tr>
+    <tr><td colspan="' . $colspan . '">
+' . pgfr_linksbar() . '
+    </td></tr>
+   </table>
+   <p style="text-align: center;">' . variable_get("site_footer", "") . '</p>
+   ' . theme_closure() . '
+</body>
+</html>';
+
+  return $output;
+}
+
+function pgfr_linksbar() { // helper function to prevent double code
+  return '<div id="pgTopNav" align="center">
+<div id="pgTopNavLeft" align="center"> 
+<img src="/layout/images/nav_lft.png" width="7" height="23" alt="" />
+</div>
+<div id="pgTopNavRight">
+<img src="/layout/images/nav_rgt.png" width="7" height="23" alt="" />
+</div><p align="center">
+<ul id="pgTopNavList" align="center"><li>'.str_replace("|","</li><li>",theme_get_setting('primary_links')).'</li>
+</ul>
+</p>
+</div>
+</div>';
+} // close linksbar function
+
+
+function pgfr_node($node, $main = 0, $page = 0) {
+  $output = "\n<!-- node: \"$node->title\" -->\n";
+  $title = l($node->title, "node/$node->nid");
+  $subleft = theme_get_setting("toggle_node_info_$node->type") ? t("Submitted by %a on %b", array("%a" => format_name($node), "%b" => format_date($node->created, "large"))) : '';
+
+  if (module_exist("taxonomy")) {
+    $terms = taxonomy_link("taxonomy terms", $node);
+    $subright = theme("links", $terms);
+  }
+  else {
+    $subright = '';
+  }
+
+  if ($main && $node->teaser) {
+    $body = $node->teaser;
+  }
+  else {
+    $body = $node->body;
+  }
+
+  if ($links = link_node($node, $main)) {
+    $body .= "<!-- hr color=\"#DADADA\" size=\"1px\"><div align=\"right\" -->[ " . theme("links", $links) . " ]</div>";
+  }
+
+  $output .= "<script language=\"JavaScript\"><!--\ns(\"". pgfr_stripbreaks(addslashes($title)) ."\",\"". pgfr_stripbreaks(addslashes($subleft)) ."\",\"". pgfr_stripbreaks(addslashes($subright)) ."\",\"". pgfr_stripbreaks(addslashes($body)) ."\"); // -->\n</script>\n";
+
+  return $output;
+} // close node function
+
+
+function pgfr_comment($comment, $link = "") {
+  $author = "<b>" . format_name($comment) . "</b>";
+  $body = $comment->comment ."<br><!--hr color=\"#DADADA\" size=\"1px\"--><div align=\"right\">[ $link ]</div>";
+
+  return "<script language=\"JavaScript\"><!--\nc(\"". pgfr_stripbreaks(addslashes($comment->subject)) ."\",\"". pgfr_stripbreaks(addslashes($comment->moderation)) ."\",\"". pgfr_stripbreaks(addslashes($author)) ."\",\"". pgfr_stripbreaks(addslashes(format_date($comment->timestamp))) ."\",\"". pgfr_stripbreaks(addslashes($body)) ."\"); // -->\n</script>\n";
+} // close comment function
+
+
+function pgfr_stripbreaks($a) { // helper function for generating the javascripted boxes
+  return str_replace("\n","\\n",str_replace("\r","\\r",$a));
+} // close stripbreaks function
+
+
+function pgfr_box($subject, $content, $region = "main") {
+  return "<script language=\"JavaScript\"><!--\nb(\"". pgfr_stripbreaks(addslashes($subject)) ."\",\"". pgfr_stripbreaks(addslashes($content)) ."\"); // -->\n</script>\n";
+} // close box function
+
+function pgfr_block($block) {
+  $output = "<div class=\"block block-$block->module\" id=\"block-$block->module-$block->delta\">\n";
+  $output .= pgfr_box($block->subject, $block->content);
+  $output .= "</div>\n";
+  return $output;
+} // close block function
+
+?>
