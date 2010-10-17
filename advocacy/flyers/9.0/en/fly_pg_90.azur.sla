@@ -126,7 +126,7 @@
             <ITEXT CH=" "/>
             <ITEXT FONTSIZE="12" FEATURES="inherit shadowed smallcaps" FCOLOR="pg_light_blue" FSHADE="100" SCOLOR="pg_light_blue" SSHADE="100" CH="... and so much more !"/>
             <ITEXT FONTSIZE="12" CH=" "/>
-            <ITEXT FONTSIZE="10" CH="PostgreSQL 9.0 includes many other major improvements, including : conditional and per-column triggers, deferrable unique constraints, improved VACUUM FULL and high-performance event messaging, ... "/>
+            <ITEXT FONTSIZE="10" CH="PostgreSQL 9.0 includes many other major improvements, including : conditional and per-column triggers, deferrable UNIQUE constraints, exclusion constraints, improved VACUUM FULL and high-performance event messaging, ... "/>
             <para PARENT="text"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
