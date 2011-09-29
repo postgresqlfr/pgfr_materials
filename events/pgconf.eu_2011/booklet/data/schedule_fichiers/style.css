@@ -1,0 +1,330 @@
+/* Main CSS */
+
+* {
+    font-family: Helvetica, Verdana,Arial;
+}
+
+body
+{
+    font-size: 14px;
+    color: #444;
+}
+
+div#logo
+{
+    position: absolute; 
+    top: 15px; 
+    left: 30px; 
+    z-index: 0;
+}
+
+div#top_banner
+{
+    background-color: #4D619D;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    color: white;
+    padding: 5px;
+}
+
+div#top_banner h1
+{
+    padding: 0;
+    margin: 0 0 5px;
+    color: white;
+}
+
+div#top_banner h2
+{
+    border: 0;
+    padding-bottom: 0;
+    margin: 0;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: inherit;
+}
+
+div#header,
+div#content,
+div#footer
+{
+    margin: 0 10px;
+}
+
+h1 {
+    clear: both;
+    text-align: center;
+    font-size: 2em;
+    color: #37466D;
+}
+
+h2 {
+    text-decoration: underline;
+    font-size: 1.4em;
+    color: #37466D;
+}
+
+p
+{
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+ul#menu {
+    background: #425382 url(/files/img/menu_top_bg.png) left top repeat-x;
+    height: 25px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    text-align: center;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    padding-left: 120px;
+    margin-left: 0;
+}
+
+ul#menu li {
+    float: left;
+    margin-right: 19px;
+    padding: 3px;
+}
+
+ul#menu li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul#menu li a:hover
+{
+    text-decoration: underline;
+}
+
+li.icon
+{
+    margin-top: -6px;
+}
+
+li.icon:hover
+{
+    margin-top: -11px;
+}
+
+a img
+{
+    border: 0;
+}
+
+table#content_container
+{
+    border: 0;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 1em;
+}
+
+table#content_container td
+{
+    vertical-align: top;
+}
+
+td#info div#main_content
+{
+    height: 100%;
+    margin: 0 10px 10px 0;
+    padding: 5px 5px 20px;
+    background-color: #EEEEEE;
+    border: 1px solid #BBBBBB;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+}
+
+div#main_content h3
+{
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+div#main_content h4
+{
+    margin-bottom: 3px;
+}
+
+div.frontpagenewsdate
+{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+div#sponsorship_list
+{
+    margin: 0 auto;
+    width: 600px;
+}
+
+div.sponsor_block
+{
+    padding-bottom: 25px;
+    border-bottom: 1px solid #213067;
+    margin-bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+div.sponsor_block h2
+{
+    text-align: center;
+}
+
+div.sponsor_block img
+{
+    vertical-align: middle;
+    margin: 10px;
+}
+
+td#sponsors
+{
+	width: 220px;
+}
+
+td#sponsors div
+{
+	width: 100%;
+}
+
+td#sponsors div h2
+{
+    margin-top: 30px;
+}
+
+td#sponsors div h2.platinum
+{
+    margin-top: 0;
+}
+
+td#sponsors p
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+div#twitter_feed
+{
+    width: 750px;
+    margin: 0 auto;
+}
+
+div#twitter_feed p
+{
+    text-align: left;
+}
+
+div#twitter_feed div
+{
+    width: auto;
+}
+
+divtwitter_feed img
+{
+    height: 20px;
+    width: 20px
+}
+
+div#frontrotateimg
+{
+  text-align: center;
+}
+
+div#frontslidewrap
+{
+  width: 640px;
+  height: 340px;
+  margin: 0 auto;
+}
+
+div#frontslideshow div
+{
+  width: 640px;
+  height: 340px;
+  display: block;
+}
+
+div#frontslideshow div img
+{
+  margin: auto;
+  display: block;
+}
+
+div#frontslideshow div.secondaryslide
+{
+  display: none;
+  opacity: 0;
+}
+
+form input,
+form textarea
+{
+  font-size: 1em;
+  width: 400px;
+}
+
+form input[type='submit']
+{
+ width: 100px;
+}
+
+#additional_options input 
+{
+  width: 20px;
+}
+
+#additional_options li 
+{
+  list-style: none; 
+}
+
+/* A table that looks like, eh, a table. And is not for layout */
+table.listtable
+{
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table.listtable thead th
+{
+  text-align: left;
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #8CACBB;
+  background-color: #DEE7EC;
+}
+table.listtable tbody td
+{
+  border: 1px solid #8CACBB;
+  padding: 4px;
+}
+
+tr.strikethrough td
+{
+  text-decoration: line-through;
+}
+
+/* IE still refuses to follow standards so a couple hacks here */
+div#frontslidewrap
+{
+  width: 50%;
+}
+
+div#frontslideshow
+{
+  width: 100%;
+}
+
