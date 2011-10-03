@@ -1,0 +1,151 @@
+Alexander Korotkov,aekorotkov@gmail.com,"",""
+Andreas Scherbaum,ads@pgug.de,EMC/Greenplum,"Andreas Scherbaum is working with PostgreSQL since 1997. He is involved in several PostgreSQL related community projects, member of the Board of Directors of the European PostgreSQL User Group and also wrote a PostgreSQL book (in German).
+Since 2011 he is working for EMC/Greenplum and tackles very big databases."
+Bruce Momjian,bruce@momjian.us,EnterpriseDB,"Bruce Momjian is a co-founder of the PostgreSQL Global Development Group, and has worked on PostgreSQL since 1996. He is the author of PostgreSQL: Introduction and Concepts, published by Addison-Wesley. Bruce is employed by EnterpriseDB. Previously, he was employed by SRA Japan and Great Bridge LLC, both PostgreSQL support companies. He has spoken at many international open-source conferences. Prior to his involvement with PostgreSQL, Bruce worked as a consultant, developing custom database applications for some of the world's largest law firms. As an academic, Bruce was a high school computer science teacher for five years, holds a Masters in Education, and is an adjunct professor at Drexel University."
+Cédric Villemain,cedric.villemain@gmail.com,2ndQuadrant,"Cédric Villemain is a member of the PostgreSQL community  and a professional  PostgreSQL consultant in France. Interested by several part of the project, he  contributes in the areas of monitoring, administration and products like Slony."
+Christoph Berg,cb@df7cb.de,credativ GmbH,"Christoph is a senior consultant at credativ GmbH in Mönchengladbach, Germany. Topics include PostgreSQL, monitoring, high availability and infrastructure services. Before that, he was a research assistant at Saarland University in Saarbrücken where he graduated in computer science. Christoph is member of the Debian Project where he maintains several PostgreSQL-related packages, works for the quality assurance team, and is one of the account managers accepting new members into the project."
+Daniel Farina,drfarina@acm.org,Heroku,"A member of the Heroku Department of Data, which provides instant access to reliable data management via monitored and managed PostgreSQL databases.
+
+At Heroku I wrote the program WAL-E, which is a continuous archiver toolkit specifically targeted at the management of many databases and use with highly durable object/blob storage, specifically Amazon S3.  It is available as open source software, and could use a lot of work.
+
+Prior to working at Heroku, I was a hacker at Truviso, where I worked on the planning and execution of streaming database queries utilizing a modified fork of PostgreSQL."
+Dave Page,dpage@pgadmin.org,EnterpriseDB UK Ltd,"Dave has been actively involved in the PostgreSQL Project since 1998, as the lead developer of pgAdmin, maintainer of the PostgreSQL installers and one of the projects resident Windows hackers. He also serves on the project's web and sysadmin teams and is a member of the PostgreSQL Core Team.
+
+Dave is employed by EnterpriseDB where he works as a software architect and developer on EnterpriseDB products in addition to his community PostgreSQL work."
+Dimitri Fontaine,dim@tapoueh.org,2ndQuadrant,"Dimitri Fontaine is part of the PostgreSQL community and has been
+contributing to Open Source for more than 10 years now.  He is the lead
+developer of enterprise ready solutions such as pgloader (ETL), PostgreSQL
+prefix indexing (telephony routing), pg_staging (dev environment maintenance
+from production backups), preprepare (allow easy usage of prepare statements
+behind a connection pooler), and some backports of recent PostgreSQL
+features (such as the UUID type or the suppress-redundant-update trigger).
+
+
+
+He also contributed to Skytools and the Londiste replication system (both
+code and documentation), and authored a PHP layer for the PGQ event handler,
+allowing for robust asynchronous processing and code reuse.
+
+
+
+Dimitri likes system architecture and design, with the goal of reduced maintenance time and very high availibility.
+
+
+Professional experience, community involvement and PostgreSQL expertise
+have led Dimitri to now work as a principal consultant at 2ndQuadrant,
+France."
+Ed Boyajian,ed.boyajian@enterprisedb.com,EnterpriseDB,"President and Chief Executive Officer, EnterpriseDB
+
+Before joining EnterpriseDB, Ed spent six years at Red Hat®, Inc., the
+world's leading open source solutions provider, most recently serving
+as vice president and general manager of North America. Before that,
+he was vice president of Red Hat's global OEM business, responsible
+for all partnerships, including HP®, IBM®, and Dell®. During his time
+at Red Hat, Ed was instrumental in developing the foundational methods
+for selling open source software into the enterprise.
+
+Prior to Red Hat, Ed held executive sales and marketing positions at
+ArsDigita, an early leader in open source software for building
+database-backed community websites (acquired by Red Hat) and
+ServiceSoft (now Kana). Ed is a former U.S. Army Captain, and earned
+his MBA from Harvard Business School and his undergraduate degree from
+Boston University."
+Gavin M. Roy,gmr@myyearbook.com,myYearbook.com,"Gavin M. Roy is the Chief Technology Officer for myYearbook.com (http://myYearbook.com) and is an active open-source evangelist, an advocate in the PostgreSQL community, and a sought-after speaker on web application development. In addition to being a member of the Python Software Foundation, Gavin is active in the RabbitMQ community and is the maintainer of the Python AMQP driver, Pika.
+
+With over 20 years of programming experience, he has overseen the formation of several open-source projects and online communities, including the GameSurge IRC Network and Pathetic.org (http://Pathetic.org). Gavin has worked closely with both internet startup companies and well-established organizations, providing system analysis and architecture strategy."
+Gianni Ciolli,gianni.ciolli@2ndquadrant.it,2ndQuadrant,"I have been working with Free and Open Source Software since 1997.
+I have been an organiser of the European PGDay in Prato, Italy, and I am a member of ITPUG.
+I started my career in Mathematics as a university researcher and a teacher, and now I work with 2ndQuadrant as a PostgreSQL consultant and trainer.
+My  favourite PostgreSQL topics are training, database optimisation, replication, application development.
+I currently live in London; my other interests include drama, music, poetry and sport."
+Gilles Darold,gilles@darold.net,Dalibo,"Gilles has been a system administrator for the past 15 years and a PostgreSQL user since 1995. Gilles is also the creator and maintainer of numerous Open Source projects.
+
+He's now a database consultant for Dalibo a french PostgreSQL support company, where he works on consulting, support and training services."
+Greg Smith,gsmith@gregsmith.com,2ndQuadrant,"Greg Smith leads the US-based work for international PostgreSQL services firm 2ndQuadrant.  He's also the author of ""PostgreSQL 9.0 High Performance"", available from Packt Publishing."
+Guillaume (ioguix) de Rorthais,jg@derorthais.net,Dalibo,""
+Guillaume Lelarge,guillaume@lelarge.info,Dalibo,"Guillaume Lelarge is involved with the PostgreSQL community as a contributor, and as an evangelist. He developed many patches for PostgreSQL, pgAdmin, pgpool, check_postgres, Slony, etc. He's even a commiter on pgAdmin, pgpool, and check_postgres. As an evangelist, he wrote many articles in french computer magazines, translated the PostgreSQL manual, and Greg Smith's book, and gave many talks in France. He's also vice-treasurer in PostgreSQL Europe.
+
+At work, he's the CTO of Dalibo, a french company highly specialized on PostgreSQL. He's often on customer's workplace to provide support and training."
+Harald Armin Massa,haraldarminmassa@gmail.com,2ndQuadrant Deutschland GmbH,""
+Heikki Linnakangas,heikki@enterprisedb.com,EnterpriseDB,""
+Jean-Paul Argudo,jean-paul@postgresqlfr.org,Dalibo,"Jean-Paul promotes Free Software since 2000 and takes actively part in the PostgreSQL community. He created the french-speaking PostgreSQL website (http://www.PostgreSQL.fr/). This was the first step in creating a french-speaking community, in which he takes part too.
+
+He's a member of the administration council and one of the founders of the french PostgreSQLFr non profit organization.
+
+He's also the treasurer  and board member of PostgreSQL Europe since its beginning.
+
+He performed numerous migrations from proprietary databases to PostgreSQL as the owner of Dalibo, the french PostgreSQL expertise company.
+
+He daily helps users having the best PostgreSQL clusters for the best performances, matching users'needs."
+Jonathan S. Katz,jonathan.katz@excoventures.com,Exco Ventures,"Jonathan S. Katz is an entrepreneur living in New York and one of the co-organizers of the New York City PostgreSQL User Group (http://www.nycpug.org).  His primary focus has been building data-driven web applications from all parts of the software-cycle, though he tends to work on architecting and implementing the data-related features in addition to managing the databases and providing analytical information.  Jonathan has used PostgreSQL as his primary database software since 2003, and tries to write extensions in his programming languages, such as Python and Ruby, to help developers better leverage the features available in PostgreSQL.  Jonathan graduated from Tufts University with a B.S. in Computer Science and a B.A. in Mathematics."
+Jon Erdman,postgresql@thewickedtribe.net,Enova Financial,"Jon Erdman began using Postgres heavily around the release of 7.4 as a backend for a medical billing company called Progressive Practice. He has since worked as a Postgres DBA first at BlueTie, then Rackspace. He is currently working as a Senior Database Developer at Enova Financial. You can find him on IRC in #postgresql on freenode as StuckMojo."
+Leonardo Augusto Sapiras,l.sapiras@gmail.com,FACCAT,"Leonardo Augusto Sapiras is a developer of phpPgAdmin team. He started contribuiting with the PostgreSQL community in 2010 through the Google Summer of Code program, being accepted as student twice. He is also a student of Information Systems in Brazil.
+
+To pay his studies, he works in a instituition called FACCAT as information systems developer. Developing applications with PHP and Java using PostgreSQL data bases."
+Luis Ochoa,ziul1979@gmail.com,Personal,"Graduated at UNET with computer engineering title.
+Graduated at UOC with free software master.
+
+Student from San Cristobal City, locate at Táchira State in Venezuela, South America. 
+
+Right now working at development of improvements at pgAdmin database designer, created by me at last GSoC.
+
+Creator of Graphical Query Builder (GQB) embedded inside pgAdmin III database administration tool.
+
+Creator of programming language for ecma-335 (.net/mono) environment in spanish language called Ñ#
+
+
+"
+Magnus Hagander,magnus@hagander.net,Redpill Linpro AB,"Magnus Hagander is a member of the PostgreSQL Core Team and a developer and code committer in the PostgreSQL Global Development Group.
+
+Magnus is one of the original developers of the Windows port of PostgreSQL, and currently a part of the team that maintains it. These days, he mostly works on other parts of the PostgreSQL backend, recently with a focus on security features such as authentication and encryption.
+
+He is also one of the core members of the postgresql.org infrastructure team, maintaining the servers that power the project, and one of the maintainers of the postgresql.org website. He also contributes to pgAdmin and other related projects.
+
+He's been a PostgreSQL user since version 6 (with some non-serious use of Postgres 95 before that), and currently serves on the Core Team and as President of the Board for PostgreSQL Europe.
+
+To pay the bills, he is a PostgreSQL and open source software consultant at Redpill Linpro in Stockholm, Sweden, where he works on consulting, support and training services, as well as custom development work."
+Marc Balmer,marc@msys.ch,"","Marc Balmer ist ein Softwareentwicklier mit langjähriger Erfahrung und
+Spezialisierung im Unix Umfeld.
+
+Er ist ein ehemaliger Dozent und Studienleitungsmitglied des Institut
+HyperWerk der Fachhochschule beider Basel, heute Fachhochschule
+Nordwestschweiz.  Er ist ein aktiver *BSD Entwickler und sein Code
+findet sich sin FreeBSD, NetBSD und OpenBSD.  Er ist Mitglied der X.Org
+Foundation.  Marc Balmer ist verheiratet und lebt in der Nähe von Basel,
+Schweiz, wo er seine Firma micro systems führt."
+Michael Meskes,meskes@postgresql.org,credativ GmbH,"Michael Meskes leitet die credativ GmbH, ein international im Open-Source-Bereich tätiges Dienstleistungsunternehmen. Seit 1993 entwickelt er Freie Software. Am Linux Kernel arbeitet er seit 1994 mit. Debian-Entwickler ist er seit 1995 und PostgreSQL-Teammitglied seit 1996. Hier ist er zuständig für den Embedded-SQL-Präprozessor ECPG."
+Peter van Hardenberg,pvh@pvh.ca,Heroku,"Project lead for Heroku Postgres, the world's largest PostgreSQL service. Home to more than 150,000 individual databases."
+Poojan Kumar,poojan@vmware.com,"Director, R&D",""
+Ram Mohan,dschwartz@afilias.info,Afilias,"Ram Mohan – Executive Vice President and Chief Technology Officer
+ 
+Ram Mohan is Executive Vice President, & Chief Technology Officer of Afilias Limited.  Ram oversees key strategic, management and technology choices for the company in support of the company’s various lines of business.  These include fifteen generic top-level domains (gTLDs) including .INFO and .ORG.  Ram has led the strategic growth of the company in registry services and security as well as new product sectors such as Managed DNS, RFID/Auto-ID, and Internationalized Domain Names (IDNs).
+ 
+Ram serves on the Board of Directors of the Internet Corporation for Assigned Names and Numbers (ICANN) in a non-voting capacity. Ram leads several international initiatives in both Internet security and Internationalization.  He is a founding member of the Security and Stability Advisory Committee (SSAC), which consists of Internet pioneers and technical experts who provide guidelines and advice on matters concerning Internet security and stability.  He serves on the steering committee of the Anti-Phishing Working Group (APWG) and is on the Advisory Committee of the Internet Society (ISOC).  Ram led both the GNSO Internationalized Domain Name (IDN) Working Group and the ICANN Board IDN Working Group; he is the co-founder of the Arabic Script IDN Working Group (ASIWG).  He advises several governments on Internet security and Internet globalization issues as part of Afilias’ ccTLD portfolio. 
+"
+Robert J.C. Ivens,robert@roclasi.com,ROCLASI Software Solutions,"Short version: Developer, Servoy, ServoyForge, PostgreSQL, Autodidact, Entrepreneur
+
+Long version:
+Founder of ROCLASI Software Solutions and has been building database solutions for over 22 years (of which 8 years with Servoy).
+Has been a PostgreSQL user since 7.4.
+Strong supporter of (Free) Open Source Software and started the ServoyForge website in 2005 to facilitate anything FOSS in the Servoy ecosystem and authored/sponsored several projects on there."
+Selena Deckelmann,selenamarie@gmail.com,"","Selena Deckelmann is a major contributor to <a href=""http://postgresql.org"">PostgreSQL</a>. She speaks internationally about free software, developer communities and trolling. Her interests include opening up government data with the City of Portland, urban chickens and finding ways to make databases run faster.
+
+You can find her on twitter at @<a href=""http://twitter.com/selenamarie"">selenamarie</a>.
+
+She founded <a href=""http://postgresopen.org"">Postgres Open</a>, a conference dedicated to the business of PostgreSQL and disruption of the database industry. She founded and co-chaired <a href=""http://www.opensourcebridge.org"">Open Source Bridge</a>, a developer conference for open source citizens."
+Simon Riggs,simon@2ndquadrant.com,2ndQuadrant,"Major Developer & Committer, PostgreSQL
+CTO of 2ndQuadrant
+"
+Stefan Kaltenbrunner,stefan@kaltenbrunner.cc,Conova Communications GmbH,"Stefan Kaltenbrunner is a ""major contributor"" to the PostgreSQL opensource project working on the projects server and software infrastructure as well as the website.
+
+Aside from his duties as part of the sysadmin team, he is also doing regular benchmarking and regression testing of PostgreSQL and related tools. During paid daytime, he is a the Team Lead for Engineering and Consulting at conova communications GmbH in Salzburg/Austria, an IT consulting and service company providing services through its own datacenter."
+Stephen Frost,sfrost@snowman.net,"Noblis, Inc.","Stephen Frost is a Principal with Noblis, Inc., a nonprofit science, technology and strategy organization that helps clients solve complex systems, process and infrastructure problems, with our unique impartial stance, we do what's right and what works best for our clients and the public good.
+
+His work includes system architecture, system design, programming, unix administration, database administration, and management of the Noblis Innovation and Collaboration Center Computing Resources.
+
+As a PostgreSQL contributor, Stephen implemented roles support in 8.1 to replace the existing user/group system, and SQL column-level privileges in 8.4."
+Steve Singer,ssinger_pg@sympatico.ca,Afilias,Steve Singer is a database developer & architect at Afilias. He has been involved with PostgreSQL since 2000 and and is currently a maintainer of the Slony replication system.
+Vincent Picavet,vincent.pg@picavet.info,Oslandia,"Vincent Picavet is an engineer in applied mathematics. After a few years  working on satellite imagery, he dedicates himself to GIS, designing and  implementing spatial data infrastructures with PostGIS and PostgresQL as main  components. Vincent is a PostGIS contributor and has given a lot of training  sessions at the university or for private companies. He took part in previous PGDays (FR&EU), OGRS 2009, FOSS4G 2010 and many other events related to GIS and  PostGIS. He founded Oslandia in 2009 with Olivier Courtin, providing services  in opensource GIS."
+Will Leinweber,will@heroku.com,Heroku ,"As a member of Heroku's Department of Data, Will enjoys improving his experience his customers have with their data."
+Yeb Havinga,yhavinga@gmail.com,MGRID B.V.,"Yeb is partner and co-founder of MGRID, a dutch startup that aims to develop a scalable database platform targeted at healthcare and clinical research.
+Before co-founding MGRID, Yeb was a software architect at Portavita, who develops the largest online Electronic Health Record in the Netherlands. Before joining Portavita, Yeb co-founded DD&H, where he was the technical director and pioneered database-driven websites. His professional software engineering career started at Mediacenter Automatisering, where he developed for IBM's AS/400 database system."
