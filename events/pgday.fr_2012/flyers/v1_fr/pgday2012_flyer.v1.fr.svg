@@ -48,10 +48,6 @@
        position="20.329787,298.17021"
        id="guide2506" />
     <sodipodi:guide
-       orientation="1,0"
-       position="615.54078,387.39539"
-       id="guide2508" />
-    <sodipodi:guide
        orientation="0,1"
        position="-55.342199,428.05496"
        id="guide2510" />
@@ -65,7 +61,7 @@
        id="guide3826" />
     <sodipodi:guide
        orientation="1,0"
-       position="559.04063,164.51767"
+       position="527.09545,860.92256"
        id="guide3828" />
   </sodipodi:namedview>
   <metadata
@@ -228,7 +224,8 @@
            height="35.012413"
            width="493.56204"
            id="rect3631" /></flowRegion><flowPara
-         id="flowPara3049">PostgreSQL.fr présente</flowPara></flowRoot>    <flowRoot
+         id="flowPara3049"
+         style="-inkscape-font-specification:DejaVu Sans;font-family:DejaVu Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">PostgreSQL.fr présente</flowPara></flowRoot>    <flowRoot
        transform="matrix(1.7817335,0,0,2.3025521,-20.205478,-302.50057)"
        style="font-size:32.05612564px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
        id="flowRoot3635"
@@ -253,7 +250,7 @@
            height="50.824467"
            width="468.71454"
            id="rect3647" /></flowRegion><flowPara
-         style="font-size:28.65982366px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:28.65982366000000070px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara3051">le jeudi 7 juin à Lyon</flowPara></flowRoot>    <rect
        y="346.89011"
        x="1374.4149"
@@ -262,30 +259,18 @@
        id="rect3288-2"
        style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#333333;stroke-width:0.26794335;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     <flowRoot
-       transform="matrix(1.7086516,0,0,1.7086516,-7.8327163,-268.00304)"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+       transform="matrix(1.7086516,0,0,1.7086516,-54.153226,-265.19756)"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
        id="flowRoot3659"
        xml:space="preserve"><flowRegion
          id="flowRegion3661"><rect
-           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
            y="379.51923"
            x="122.98894"
            height="42.327362"
            width="487.16397"
            id="rect3663" /></flowRegion><flowPara
-         id="flowPara3665">Infos et inscriptions sur http://www.pday.fr</flowPara></flowRoot>    <flowRoot
-       transform="matrix(1.2929833,0,0,1.1892573,-364.59368,-858.12038)"
-       style="font-size:24.80228233px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
-       id="flowRoot3659-6"
-       xml:space="preserve"><flowRegion
-         id="flowRegion3661-1"><rect
-           style="font-size:24.80228233px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
-           y="379.51923"
-           x="122.98894"
-           height="52.901531"
-           width="762.19531"
-           id="rect3663-0" /></flowRegion><flowPara
-         id="flowPara3126">Rencontres et conférences autour de PostgreSQL et de ses logi ciels associés</flowPara></flowRoot>    <flowRoot
+         id="flowPara3665">Infos et inscriptions sur http://www.pgday.fr</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3074"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><flowRegion
@@ -377,9 +362,9 @@
            height="82.597954"
            width="483.67499"
            id="rect3647-8" /></flowRegion><flowPara
-         style="font-size:22.92785835px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:121.00000381%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:22.92785835000000105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:121.00000380999999550%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara4238">L'événement annuel de la communauté </flowPara><flowPara
-         style="font-size:22.92785835px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:121.00000381%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:22.92785835000000105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:121.00000380999999550%;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara4242">PostgreSQL francophone </flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4246"
@@ -394,7 +379,9 @@
        transform="matrix(2.093523,0,0,2.093523,30.763071,-151.09358)"
        style="font-size:22.85250473px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
        id="flowRoot3643-5"
-       xml:space="preserve"><flowRegion
+       xml:space="preserve"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><flowRegion
          id="flowRegion3645-8"><rect
            style="font-size:22.85250473px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#333333;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
            y="96.61702"
@@ -402,13 +389,13 @@
            height="81.035843"
            width="251.00198"
            id="rect3647-9" /></flowRegion><flowPara
-         style="font-size:19.10654831px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:19.10654831000000087px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara3051-3">» Rencontres</flowPara><flowPara
-         style="font-size:19.10654831px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:19.10654831000000087px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara4296">» Conférences</flowPara><flowPara
-         style="font-size:19.10654831px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:19.10654831000000087px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara4281">» Témoignages</flowPara><flowPara
-         style="font-size:19.10654831px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-size:19.10654831000000087px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowPara4283">» Stands</flowPara></flowRoot>    <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none"
        id="rect4285"
