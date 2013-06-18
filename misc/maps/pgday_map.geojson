@@ -5,15 +5,15 @@
       "properties": {"ville": "Toulouse"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [48.861, 2.345]},
+      "geometry": {"type": "Point", "coordinates": [2.345,48.861]},
       "properties": {"ville": "Paris"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [45.767, 4.833]},
+      "geometry": {"type": "Point", "coordinates": [4.833,45.767]},
       "properties": {"ville": "Lyon"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [47.233, -1.583]},
+      "geometry": {"type": "Point", "coordinates": [ -1.583,47.233]},
       "properties": {"ville": "Nantes"}
       }
      ]
