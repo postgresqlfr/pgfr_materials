@@ -1,7 +1,7 @@
 { "type": "FeatureCollection",
   "features": [
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [43.617, 1.450]},
+      "geometry": {"type": "Point", "coordinates": [1.450,43.617]},
       "properties": {"ville": "Toulouse"}
       },
     { "type": "Feature",
