@@ -15,7 +15,6 @@
     { "type": "Feature",
       "geometry": {"type": "Point", "coordinates": [47.233, -1.583]},
       "properties": {"ville": "Nantes"}
-      },
-
+      }
      ]
 }
