@@ -1,19 +1,19 @@
 { "type": "FeatureCollection",
   "features": [
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [43.617, 1.450]},
+      "geometry": {"type": "Point", "coordinates": [1.450,43.617]},
       "properties": {"ville": "Toulouse"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [39.580, -87.670]},
+      "geometry": {"type": "Point", "coordinates": [2.345,48.861]},
       "properties": {"ville": "Paris"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [45.767, 4.833]},
+      "geometry": {"type": "Point", "coordinates": [4.833,45.767]},
       "properties": {"ville": "Lyon"}
       },
     { "type": "Feature",
-      "geometry": {"type": "Point", "coordinates": [47.233, -1.583]},
+      "geometry": {"type": "Point", "coordinates": [ -1.583,47.233]},
       "properties": {"ville": "Nantes"}
       }
      ]
